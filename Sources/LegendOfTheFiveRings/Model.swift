@@ -8,18 +8,18 @@
 import Foundation
 
 // MARK: - Clan
-struct Clan: Codable {
+public struct Clan: Codable {
     let name, description: String
     let great: Bool
 }
 
 // MARK: - Family
-struct Family: Codable {
+public struct Family: Codable {
     let name, clan, benefit, description: String
 }
 
 // MARK: - School
-struct School: Codable {
+public struct School: Codable {
     let name: String
     let clan: String
     let description: String
@@ -32,7 +32,7 @@ struct School: Codable {
     let ringTraits, other: String?
 }
 
-enum Discipline: String, Codable {
+public enum Discipline: String, Codable {
     case artisan = "Artisan"
     case artisanBushi = "Artisan, Bushi"
     case bushi = "Bushi"
@@ -43,7 +43,7 @@ enum Discipline: String, Codable {
 }
 
 // MARK: - Skill
-struct Skill: Codable {
+public struct Skill: Codable {
 
     let name: String
     let category: Category
@@ -54,12 +54,12 @@ struct Skill: Codable {
     var emphases: [String]?
     var isSchool: Bool?
 
-    mutating func updateRank(newRank: Int) {
+    mutating public func updateRank(newRank: Int) {
         self.rank = newRank
     }
 }
 
-enum Category: String, Codable {
+public enum Category: String, Codable {
     case bugei = "Bugei"
     case high = "High"
     case low = "Low"
@@ -67,21 +67,21 @@ enum Category: String, Codable {
 }
 
 // MARK: - Weapon
-struct Weapon: Codable {
+public struct Weapon: Codable {
     let name, type: String
     let dr, special, price, description: String?
     let range, keywords, strength: String?
 }
 
 // MARK: - Armor
-struct Armor: Codable {
+public struct Armor: Codable {
     let name, tn, reduction, price: String
     let description: String
     let special: String?
 }
 
 // MARK: - Advantage
-struct Advantage: Codable {
+public struct Advantage: Codable {
     let name: String
     let subtype: Subtype
     let points, description: String
@@ -89,7 +89,7 @@ struct Advantage: Codable {
     var cost: Int?
 }
 
-enum Subtype: String, Codable {
+public enum Subtype: String, Codable {
     case material = "Material"
     case mental = "Mental"
     case mystical = "Mystical"
@@ -101,7 +101,7 @@ enum Subtype: String, Codable {
 }
 
 // MARK: - Disadvantage
-struct Disadvantage: Codable {
+public struct Disadvantage: Codable {
     let name: String
     let subtype: Subtype
     let points, description: String
@@ -110,7 +110,7 @@ struct Disadvantage: Codable {
 }
 
 // MARK: - Spell
-struct Spell: Codable {
+public struct Spell: Codable {
     let name: String
     let ring: Ring
     let mastery, keywords: String?
@@ -119,7 +119,7 @@ struct Spell: Codable {
     let description: String
 }
 
-enum Ring: String, Codable, Equatable {
+public enum Ring: String, Codable, Equatable {
     case air = "Air"
     case all = "All"
     case any = "Any"
@@ -132,19 +132,19 @@ enum Ring: String, Codable, Equatable {
 }
 
 // MARK: - Ancestor
-struct Ancestor: Codable {
+public struct Ancestor: Codable {
     let name, description, points, clan, demands: String
 }
 
 // MARK: - Kata
-struct Kata: Codable {
+public struct Kata: Codable {
     let name: String
     let ring: Ring
     let mastery, schools, description: String
 }
 
 // MARK: - Kiho
-struct Kiho: Codable {
+public struct Kiho: Codable {
     let name: String
     let ring: Ring
     let mastery, atemi: String
@@ -152,7 +152,7 @@ struct Kiho: Codable {
     let description: String
 }
 
-enum KihoType: String, Codable {
+public enum KihoType: String, Codable {
     case kharmic = "Kharmic"
     case martial = "Martial"
     case mystical = "Mystical"
@@ -160,17 +160,17 @@ enum KihoType: String, Codable {
 }
 
 // MARK: - Tattoo
-struct Tattoo: Codable {
+public struct Tattoo: Codable {
     let name, description: String
 }
 
 // MARK: - ShadowPower
-struct ShadowPower: Codable {
+public struct ShadowPower: Codable {
     let name, description: String
     let level: Level
 }
 
-enum Level: String, Codable {
+public enum Level: String, Codable {
     case akutenshi = "Akutenshi"
     case greater = "Greater"
     case lesser = "Lesser"

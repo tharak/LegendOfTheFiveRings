@@ -4,21 +4,21 @@ struct LegendOfTheFiveRings {
 
 import Foundation
 
-struct Book {
-    let clans: [Clan] = load(resource: "Clans") ?? []
-    let families: [Family] = load(resource: "Families") ?? []
-    let schools: [School] = load(resource: "Schools") ?? []
-    let skills: [Skill] = load(resource: "Skills") ?? []
-    let weapons: [Weapon] = load(resource: "Weapons") ?? []
-    let armors: [Armor] = load(resource: "Armors") ?? []
-    let advatages: [Advantage] = load(resource: "Advantages") ?? []
-    let disadvatages: [Disadvantage] = load(resource: "Disadvantages") ?? []
-    let spells: [Spell] = load(resource: "Spells") ?? []
-    let katas: [Kata] = load(resource: "Katas") ?? []
-    let kihos: [Kiho] = load(resource: "Kihos") ?? []
-    let tattoos: [Tattoo] = load(resource: "Tattoos") ?? []
-    let ancestors: [Ancestor] = load(resource: "Ancestors") ?? []
-    let shadowlandsPowers: [ShadowPower] = load(resource: "ShadowlandsPowers") ?? []
+public struct Book {
+    public let clans: [Clan] = load(resource: "Clans") ?? []
+    public let families: [Family] = load(resource: "Families") ?? []
+    public let schools: [School] = load(resource: "Schools") ?? []
+    public let skills: [Skill] = load(resource: "Skills") ?? []
+    public let weapons: [Weapon] = load(resource: "Weapons") ?? []
+    public let armors: [Armor] = load(resource: "Armors") ?? []
+    public let advatages: [Advantage] = load(resource: "Advantages") ?? []
+    public let disadvatages: [Disadvantage] = load(resource: "Disadvantages") ?? []
+    public let spells: [Spell] = load(resource: "Spells") ?? []
+    public let katas: [Kata] = load(resource: "Katas") ?? []
+    public let kihos: [Kiho] = load(resource: "Kihos") ?? []
+    public let tattoos: [Tattoo] = load(resource: "Tattoos") ?? []
+    public let ancestors: [Ancestor] = load(resource: "Ancestors") ?? []
+    public let shadowlandsPowers: [ShadowPower] = load(resource: "ShadowlandsPowers") ?? []
     
     static func load<T: Codable>(resource: String, withExtension: String = "json") -> T? {
         if let path = Bundle.module.url(forResource: resource, withExtension: withExtension) {
