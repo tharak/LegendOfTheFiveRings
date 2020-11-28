@@ -1,0 +1,232 @@
+[
+    {
+        "name": "Above the Elements",
+        "level": "Minor",
+        "description": "The power of Jigoku renders you resistant to normal (non-maho) magic. All normal elemental spells that could affect you suffer a +10 TN penalty to their Spell Casting Rolls. However, you are more vulnerable to the power of the kansen, and any maho spell that targets you gains a Free Raise. Any shugenja who casts Sense within range of you will notice a distinct absence of kami around you."
+    },
+    {
+        "name": "Blackened Claws",
+        "level": "Minor",
+        "description": "You have claws of obsidian, concealed within your fingertips, which you can extend as a Free Action. The claws grant you a DR of 2k3 with unarmed attacks (in place of the normal 0k1) and are considered obsidian for the purpose of bypassing Reduction and Invulnerability. However, you feel the urge to use these claws every time you fight  you must make a Willpower Roll at TN 10 any time you enter a fight with a weapon other than the claws."
+    },
+    {
+        "name": "Blood Knows Blood",
+        "level": "Minor",
+        "description": "You may continually sense the location of any portion of your blood or flesh (anything but hair and fingernails), no matter where they may be. If you also possess the Blood Domination power (see below), you can track the location of any creature that has consumed your blood."
+    },
+    {
+        "name": "Blessing of the Dark One",
+        "level": "Minor",
+        "description": "You have an unnatural resistance to pain and physical harm. Your Wounds at each Wound Rank are increased by 3"
+    },
+    {
+        "name": "Child of Darkness",
+        "level": "Minor",
+        "description": "The power of the Taint protects you from other servants of Jigoku. Shadowlands creatures will not attack unless you threaten them first. If you can communicate with them, they might obey your commands, especially if you seem powerful or persuasive."
+    },
+    {
+        "name": "Jade Sense",
+        "level": "Minor",
+        "description": "You have an innate sense for the presence of sacred substances such as jade. You can detect the presence of all jade, crystal, and obsidian near you, out to a maximum distance equal to Earth x10 in feet.\n Concealing magic can obstruct this sense. You cannot detect Jade Petal Tea."
+    },
+    {
+        "name": "Master of Blood",
+        "level": "Minor",
+        "description": "The kansen are your friends, and you have an innate talent for casting maho spells. You may cast maho for one less Wound than normally required, and the amount of Taint you gain from casting maho spells is reduced by your Earth (to a minimum of 1 point of Taint). All non-maho spells you cast, however, are at a +10 TN penalty."
+    },
+    {
+        "name": "Master of Shadows",
+        "level": "Minor",
+        "description": "You have an unnatural affinity for darkness and shadows. You may add your Taint Rank in unkept dice to all Stealth Skill rolls you make.\n You gain the Discolored Skin mutation if you do not already have it, as your skin develops a dark and shadowy tone."
+    },
+    {
+        "name": "Mind of Darkness",
+        "level": "Minor",
+        "description": "You may embrace the Taint to enhance your rolls with mental Traits (Intelligence, Willpower, Awareness, and Perception) in the same manner as you would normally enhance rolls with physical Traits. If you become Lost, you may add your Taint Rank to the total of all rolls made with mental Traits as well as all rolls with physical Traits."
+    },
+    {
+        "name": "Monstrous Strength",
+        "level": "Minor",
+        "description": "The Taint suffuses your muscles, giving you a swollen, unnatural build that unsettles those who meet you. You suffer 1k0 to all Social rolls. In return, you add your Taint Rank in unkept dice to all Strength rolls, Strength-based Skill rolls, and Damage rolls you make."
+    },
+    {
+        "name": "Uncanny Speed",
+        "level": "Minor",
+        "description": "The Taint grants you speed greater than should be possible for someone of your size and strength. Your Water Ring is considered to be two Ranks higher for the purpose of how far you can move with a Simple or Complex Move Action. In return, you are fidgety and nervous, unable to sit still for more than a few minutes."
+    },
+    {
+        "name": "Unholy Stamina",
+        "level": "Minor",
+        "description": "You may go without rest or sleep for up to three days with no penalties of any kind. This power must be reactivated after three days, requiring another roll to resist gaining Taint."
+    },
+    {
+        "name": "Beside the Darkness",
+        "level": "Greater",
+        "description": "You have the ability to temporarily suppress your Taint, making it impossible for others to detect. If you meditate uninterrupted for a period of 2 hours and make a Meditation/Willpower roll at TN 20, you can metabolize your Taint for a period of 8 hours. During that time, you are not considered Tainted for mechanical purposes, and spells and Techniques which target Tainted creatures will not affect you. Physical mutations (such as extra limbs) will remain in place, however. This power cannot be ended before its duration expires. While it is in effect, you cannot use any of your other Shadowlands powers, cannot cast maho, and cannot embrace the Taint to enhance your rolls."
+    },
+    {
+        "name": "Blood Domination",
+        "level": "Greater",
+        "description": "Your blood carries your will, and any creature who drinks or otherwise ingests so much as a spoonful of your blood (equal to 1 Wound) will be subject to your demands. You may make a Contested Willpower roll against such a target to force them to obey your commands for a number of hours equal to your Taint Rank. You cannot force them to directly kill themselves, but all other commands  including potentially lethal orders like, Fight that oni  must be obeyed. If you fail the Contested Willpower Roll, the target will be aware of your attempt, and you may not try to command that target again for one full day."
+    },
+    {
+        "name": "Chosen of Fu Leng",
+        "level": "Greater",
+        "description": "The Taint grants you an unnatural strength of will, allowing you to shrug off any attempt to influence your mind or opinions. Any attempt to influence you with Social skills or Techniques, or to control your mind through spells, will automatically fail."
+    },
+    {
+        "name": "Drawing Out the Darkness",
+        "level": "Greater",
+        "description": "The Taint has the power to evoke Taint in others, spreading corruption far and wide. If you can maintain physical contact with another creature for at least 1 minute, you may make a Contested Willpower roll. If you win the roll, the victim gains a number of points of Taint equal to your current Taint Rank. If you fail the roll, nothing happens, although the victim will feel a sense of unease and perhaps a physical chill."
+    },
+    {
+        "name": "Father of Lies",
+        "level": "Greater",
+        "description": "The Taint thrives on deception, and strengthens your own efforts to trick, deceive, and manipulate others. You may add your Taint Rank in kept dice to any rolls made with the Temptation or Intimidation skills or with the Deceit emphasis of the Sincerity skill."
+    },
+    {
+        "name": "Feeding on Flesh",
+        "level": "Greater",
+        "description": "The Taint draws strength from unnatural acts, especially the taste of blood and raw meat. You may take a Simple Action to feed on the flesh of a person or creature who is either dead or helpless to resist you (e.g. Down or Out, bound securely, etc). This inflicts 1k1 Wounds on the target (if they are still alive) and heals you a number of Wounds equal to 5 x your Taint Rank."
+    },
+    {
+        "name": "Protection of the Dark",
+        "level": "Greater",
+        "description": "You are considered to be Invulnerable, in the same manner as some creatures.\n Whenever you ignore damage due to this Power, your skin glows with a throbbing black energy that is impossible to hide."
+    },
+    {
+        "name": "Strength of Madness",
+        "level": "Greater",
+        "description": "You can draw on your own physical essence to enhance your actions, much in the way that normal humans draw on the Void. A number of times per day equal to your Earth Ring, you may suffer Wounds equal to your Earth to replicate the effect of spending a Void Point. This power cannot be used to reduce damage, but any other normal effect of Void Points  including activating School techniques or awarding a +1k1 bonus to rolls  can be duplicated."
+    },
+    {
+        "name": "Thy Master's Will",
+        "level": "Greater",
+        "description": "The Taint will not allow you to truly die  you are too useful to Jigokus purposes. If you are killed, you will return from the dead at some later time, as an intelligent undead creature. You retain all Rings, Traits, abilities, School techniques, and Skills, but no longer have a Void Ring. Your body is undead, and will begin to rot and decay over time."
+    },
+    {
+        "name": "Undead Strength",
+        "level": "Greater",
+        "description": "Your body does not feel pain, and continues to function normally even after suffering devastating injuries. You do not suffer Wound penalties  no matter how many Wounds you suffer, you continue to operate at full effect until you are actually killed."
+    },
+    {
+        "name": "Unearthly Regeneration",
+        "level": "Greater",
+        "description": "The Taint infuses your body with a horrible vitality, healing injuries within minutes.\n Each Round at the start of your Turn, you heal a number of Wounds equal to your Taint Rank. Healed injuries leave no scars behind, and while you do not regrow lost limbs, such limbs will reattach if held in place for a few minutes."
+    },
+    {
+        "name": "Unholy Beauty",
+        "level": "Greater",
+        "description": "Jigoku considers you to have use as an infiltrator within the Empire. You do not suffer any outward, visible effects of the Taint, and any physical mutations you already possess will fade away. You may still gain Shadowlands Powers normally but they do not exhibit any perceptible physical symptoms.\n However, your body will mutate internally to compensate for the lack of external change, exhibiting redundant or distorted organs, cancerous tumors, and other distortions."
+    },
+    {
+        "name": "Chitinous Armor",
+        "level": "Lesser",
+        "description": "Your skin has hardened into an insect-like shell that protects you physically but also exposes your inhuman nature. This grants you Reduction of 10 (which stacks with any Reduction you gain from armor, spells, or other effects)."
+    },
+    {
+        "name": "Calligraphy of Thought",
+        "level": "Lesser",
+        "description": "You can read the surface thoughts of anyone within your line of sight. This is a Free Action and requires you to win a Contested Air Roll. With a success, you sense whatever the target is thinking about at that moment. This power cannot root out deeper emotions or subconscious knowledge."
+    },
+    {
+        "name": "Eyes of Hell",
+        "level": "Lesser",
+        "description": "The power of the Taint allows you to see with an unnatural clarity under any circumstances.\n You may choose to see through darkness, shadows, fog, smoke, or any similar visual impairment. However, whenever you use this power your eyes glow with an unnatural light (usually green or blue), betraying your presence and nature."
+    },
+    {
+        "name": "Fear",
+        "level": "Lesser",
+        "description": "The power of the Taint allows you to unleash a wave of inhuman terror, freezing the blood of your enemies. Once per skirmish you can project an aura of fear, inflicting a Fear 5 effect on all your enemies within sight."
+    },
+    {
+        "name": "Sense Purity",
+        "level": "Lesser",
+        "description": "The absence of Taint calls to you, setting your teeth on edge with the knowledge of purity and honor. As a Free Action you can sense the presence of non-Tainted humans within fifty feet by winning a Contested Awareness Roll. (This naturally makes you extremely difficult to surprise.) You can sense them at greater distances, up to a half mile, but this requires a Complex Action and they receive two Free Raises on their Awareness roll."
+    },
+    {
+        "name": "Wings",
+        "level": "Lesser",
+        "description": "Your body has sprouted large wings that allow you to fly for short distances. These wings may be birdlike (feathered), leathery, or reptilian in nature. They can be folded up and with some difficulty can be concealed beneath a cloak or haori (with a roll of Acting / Awareness at TN 25). Folding or unfolding the wings is a Simple Action. When unfolded, the wings allow you to fly, with your Move Actions calculated at Water +2."
+    },
+    {
+        "name": "Armor of Death",
+        "level": "Greater",
+        "description": "The power of the Taint allows you to strengthen yourself by spilling the blood of others, making you resistant to their attacks. Each time you inflict at least 15 Wounds on an opponent, you gain Reduction of 10 (5 to jade) for the remainder of that skirmish. This effect stacks with other sources of Reduction but cannot stack with itself."
+    },
+    {
+        "name": "Beyond the Elements",
+        "level": "Greater",
+        "description": "Your Taint makes you extremely resistant to the power of the kami, inflicting a +15 TN penalty on any elemental magic that targets you. In exchange, however, maho spells that target you gain two Free Raises. This power stacks with the effects of Above the Elements."
+    },
+    {
+        "name": "Blood Shouting",
+        "level": "Greater",
+        "description": "Your blood carries a sinister power that allows you to share your injuries with anyone who has ingested it. It works on anyone within hearing who has ingested any of your blood (even as little as a drop). When you take Wounds, you emit a ghastly and terrifying scream, and half the damage you would have taken is instead inflicted on the person who ingested your blood. If there are multiple such persons within hearing of you, the damage is divided between them (rounded up)."
+    },
+    {
+        "name": "Distrupt the Chi",
+        "level": "Greater",
+        "description": "Your aura of power and dominance causes lesser persons to succumb to their own inner weakness. Using this power is a Simple Action and it can only target an opponent within your sight. You make a Contested Willpower Roll against the target.\n You add your Taint to the total of your roll, while your target adds his Honor to the total of his roll. If you succeed, the target must use his lowest Trait for all Skill and Trait rolls for the next ten Rounds."
+    },
+    {
+        "name": "Evade the Unworthy",
+        "level": "Greater",
+        "description": "You can become completely invisible, undetectable to any normal sight. Activating this power is a Simple Action and it encompasses both your body and anything you are carrying (including helpless or unconscious persons). This invisibility does not conceal noise or scent, and can be penetrated by magical effects such as the spell By the Light of the Moon. It comes to an end immediately after you make an attack."
+    },
+    {
+        "name": "Flight of Darkness",
+        "level": "Greater",
+        "description": "You may call upon the Air kansen to carry you through the sky, moving across air as easily as the ground. You can fly at will, without need for spells or wings, and moving at the same speed as your normal ground movement."
+    },
+    {
+        "name": "Strength of the Dark One",
+        "level": "Greater",
+        "description": "The power of the Taint enhances your physical resilience, making you extremely difficult to kill. You gain +5 Wounds per Rank. This powers effects stack with those of Blessing of the Dark One."
+    },
+    {
+        "name": "Awe of the Dark One",
+        "level": "Akutenshi",
+        "description": "The akutenshi may exert its will against other Shadowlands creatures, forcing them to do whatever it might desire. No die roll is needed. This power will work against any undead creature and any beast or oni of the Shadowlands, as well as against any Lost with lower Willpower. It will not work against Lost with equal or higher Willpower, nor against Tainted humans who are not Lost. This power cannot affect uniquely powerful creatures such as Oni Lords or other akutenshi."
+    },
+    {
+        "name": "Body of Damned Time",
+        "level": "Akutenshi",
+        "description": "The akutenshi can force those gazing upon it to see their own deaths. This power requires a Simple Action to use, and may target a number of opponents up to the akutenshis Taint Rank, all of whom must be able to see it. (Thus it will not work against blind opponents, for example.) Anyone who is affected by this power momentarily does not see the akutenshi, but instead a terrible void within which they can see their own future death. The akutenshi makes a Contested roll of its Taint against the Void of the targets; all targets who lose the roll immediately age by 1-10 years."
+    },
+    {
+        "name": "Breath of Taint",
+        "level": "Akutenshi",
+        "description": "The akutenshi breaths forth an invisible cloud of pure Taint, corrupting and befouling everything it touches. The cloud can target any one creature within ten feet, forcing the target to make an Earth Roll at TN 25 or immediately gain 1-10 points of Taint. The breath can also be directed against a physical object (as large as a door or wagon), causing it to become Tainted  anyone subsequently touching that object must roll Earth at TN 15 or gain 1 point of Taint.\n Jade targeted with the Breath of Taint will instantly corrupt into black sludge, but crystal is immune"
+    },
+    {
+        "name": "Claim the Body",
+        "level": "Akutenshi",
+        "description": "The akutenshi has the ability to send out its spirit and possess other Shadowlands creatures, controlling them like puppets. The akutenshi remains aware of its own body (which is immobile and inactive) but can see, smell, feel, and otherwise sense everything the possessed creature perceives. This power can target any Shadowlands creature the akutenshi can see. If it has previously possessed a particular creature, it can now do so at any distance, even from all the way across the Empire. Each such possession attempt is a Simple Action and requires the akutenshi to win a Contested Willpower roll. If the possessed creature is killed, or the akutenshis body is harmed or disturbed, the akutenshis spirit immediately returns to its own body. It can also return to its own body voluntarily as a Free Action."
+    },
+    {
+        "name": "Passing Through the Light",
+        "level": "Akutenshi",
+        "description": "The akutenshi moves with inhuman and unnatural speed, to the point that it seems to warp or fall through space from one location to another. The akutenshi can move up to its Water x25 as a Free Action, and up to its Water x50 as a Simple Action."
+    },
+    {
+        "name": "Mastery of Darkness",
+        "level": "Akutenshi",
+        "description": "The akutenshi is a supreme master of the art of maho, and its spells are fearsomely powerful and effective. It knows all maho spells and can cast them without the need to spill blood. (If the akutenshi does spill blood to cast a maho spell, it gains 3 Free Raises on that spell.) In addition, the akutenshi can cast non-maho elemental spells as maho, although it must spill blood in the normal way to do so."
+    },
+    {
+        "name": "Shapeshifting",
+        "level": "Akutenshi",
+        "description": "The akutenshi can freely alter its appearance, so long as it remains broadly human-like in size and shape. It can shift its body and features instantly, combining human and monstrous features, making itself as beautiful or as horrible as it desires.\n It can imitate anyone it has seen before, although its monstrous nature means that those familiar with the original person can try to see through the akutenshis deception (this is a Contested Roll, typically Investigation against the akutenshis Acting). Shapeshifting is a Free Action that may be taken any number of times each Round."
+    },
+    {
+        "name": "Soul Drinking",
+        "level": "Akutenshi",
+        "description": "The akutenshi can consume the soul of a victim, sucking it out through the mouth. This is normally done to a dying victim, but can also be employed against a living but helpless target by making a Contested Roll of the akutenshis Taint against the targets Honor / Willpower. The consumed soul is stored within the akutenshis intestines, where it exists in endless torment and agony. Imprisoned souls can only be freed by killing the akutenshi."
+    },
+    {
+        "name": "Terror of Fu Leng",
+        "level": "Akutenshi",
+        "description": "The akutenshi unleashes a wave of monstrous, supernatural terror that freezes the blood of everyone within sight. Activating this power is a Complex Action and it affects everyone within line of sight. All targets are afflicted with a Fear 10 effect."
+    }
+]

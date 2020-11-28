@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Ashigaru Armor",
+        "tn": "+3",
+        "reduction": "1",
+        "price": "5 Koku",
+        "description": "Much less expensive to produce than either light or heavy samurai armor, ashigaru armor is also lighter, less restrictive, and less protective than traditional light and heavy armor. It consists of plates that protect the head, torso, and upper legs.\n It is not unheard of for scouts among the samurai caste to wear ashigaru armor in lieu of traditional samurai armor to afford them greater mobility in the execution of their duties.\n Ronin also wear it because of its affordability."
+    },
+    {
+        "name": "Light Armor",
+        "tn": "+5",
+        "reduction": "3",
+        "special": "Wearing light armor increases the TN of all Athletics and Stealth rolls by 5.",
+        "price": "25 Koku",
+        "description": "Far and away the most common armor worn by samurai in the armies of the Great Clans, light armor is the standard by which other armor is measured. The overlapping plates protect primarily the torso, head, upper arms and upper legs, but the lower arms and legs are left largely uncovered in order to prevent excessive loss of mobility or range of movement. Light armor is generally favored by scouts and infantry, particularly infantry that needs to move quickly on the battlefield."
+    },
+    {
+        "name": "Heavy Armor",
+        "tn": "+10",
+        "reduction": "5",
+        "special": "Wearing heavy armor increases the TN of all Skill Rolls using Agility or Reflexes by 5.",
+        "price": "40 Koku",
+        "description": "While light armor is frequently worn by scouts or rapid infantry, heavy armor is preferred by troops on the front lines or those who are expected to be in the thickest part of the fighting.\n Heavy armor protects the entire body, including the arms, legs, hands, feet, and face, which is protected by a full helm called a kabuto. While the wearer’s mobility is significantly impacted, many consider the increased protection well worth the effort."
+    },
+    {
+        "name": "Riding Armor",
+        "tn": "+4, +12 while on horseback",
+        "reduction": "4",
+        "special": "Riding armor is considered heavy armor for the purposes of mechanical effects that specify armor type, including Techniques, Advantages, etc.\n Wearing riding armor increases the TN of all Agility and Reflexes rolls by +5 unless the wearer is on horseback.",
+        "price": "55 Koku",
+        "description": "A modified version of light armor, riding armor is designed to be worn by soldiers on horseback, and the plates have been reoriented in order to deflect blows from troops on foot. This customization dramatically increases the effectiveness of the armor, but only so long as the wearer is on horseback."
+    }
+]

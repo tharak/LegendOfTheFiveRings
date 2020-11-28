@@ -1,0 +1,422 @@
+[
+    {
+        "name": "Hida",
+        "clan": "Crab",
+        "benefit": "+1 Strength",
+        "description": "The descendants of the Kami Hida are among the largest and most powerful samurai in all the Empire. The burden of defending the Empire falls upon them, and they are both incredible warriors and skilled defensive tacticians. Hida samurai often resent the other Clans for enjoying their protection even as they mock the Crab for their mannerisms."
+    },
+    {
+        "name": "Hiruma",
+        "clan": "Crab",
+        "benefit": "+1 Agility",
+        "description": "Silent and deadly, the Hiruma are the scouts and yojimbo of the Crab. They are as agile and graceful as the Hida are powerful, and warriors from the two families tend to complement one another very well. Hiruma samurai often have the unsavory duty of scouting the Shadowlands for enemies, a task that leads many to death or ruination."
+    },
+    {
+        "name": "Kaiu",
+        "clan": "Crab",
+        "benefit": "+1 Intelligence",
+        "description": "The industrious Kaiu are responsible for the most impressive and long-standing feats of engineering in all the Empire. They are the siege engineers and architects of the Crab Clan, and are responsible for maintaining the Great Carpenter Wall as well as its defenses."
+    },
+    {
+        "name": "Kuni",
+        "clan": "Crab",
+        "benefit": "+1 Intelligence",
+        "description": "Sinister in appearance and deed, the Kuni are among the most feared shugenja families in the Empire. Long ago, the family’s leadership determined the only hope of defeating the Shadowlands lay in understanding it, and so the Kuni possess knowledge of things that would drive most men mad."
+    },
+    {
+        "name": "Toritaka",
+        "clan": "Crab",
+        "benefit": "+1 Perception",
+        "description": "The tiny Toritaka family was once known as the Falcon Clan before tragedy threatened to destroy the Minor Clan completely.\n It was absorbed by the Crab to prevent a threat from growing within its ranks. The Toritaka hail from a region frequented by spirits, and they are highly knowledgeable about ghosts and spirits of all different sorts."
+    },
+    {
+        "name": "Yasuki",
+        "clan": "Crab",
+        "benefit": "+1 Awareness",
+        "description": "Strangely at odds with the other Crab families, the Yasuki are slight of build and devious of mind. They were once part of the Crane Clan, but joined the Crab in the third century, provoking the first great internal war in Rokugani history. They are merchants and courtiers, always looking for any means to gain an advantage for their Clan, and tend to be more concerned with monetary gain than is considered respectable for someone of the samurai caste."
+    },
+    {
+        "name": "Asahina",
+        "clan": "Crane",
+        "benefit": "+1 Intelligence",
+        "description": "Quiet and serene, the Asahina are among the most monastic of all samurai families. They are also perhaps the most pacifistic, even more so than the Phoenix Clan, and abhor violence, seeking other means of resolving disputes at all costs. The Asahina are also known for their devotion to philosophy and the arts."
+    },
+    {
+        "name": "Daidoji",
+        "clan": "Crane",
+        "benefit": "+1 Stamina",
+        "description": "The so-called Iron Crane are the strong arm of the Crane Clan and the enforcers of the Doji and Kakita’s will. They do not employ grace and style as their kinsmen do, but instead focus on sheer strength of arms and employ tactics that some might consider ruthless or even dishonorable. Daidoji means “defenders of Doji,” and it is a name the family has earned."
+    },
+    {
+        "name": "Doji",
+        "clan": "Crane",
+        "benefit": "+1 Awareness",
+        "description": "Lords of the Crane Clan, the Doji are the unquestioned masters of culture and politics in the Empire. It is a testament to the Doji’s cunning and influence that the Clan has endured for a thousand years despite being beset by larger, more militant Clans who find the Crane’s dominance of the courts endlessly antagonistic."
+    },
+    {
+        "name": "Kakita",
+        "clan": "Crane",
+        "benefit": "+1 Agility",
+        "description": "Literal cousins of the Doji, the Kakita family was created by the children of Lady Doji and her husband Kakita during the dawn of the Empire. The Kakita believe in excelling at one’s chosen task, whether that task is making war or creating the most glorious pieces of art. Like other Crane families, the Kakita are also well known for their physical beauty."
+    },
+    {
+        "name": "Kitsuki",
+        "clan": "Dragon",
+        "benefit": "+1 Awareness",
+        "description": "The ever-perceptive Kitsuki serve the Dragon Clan as magistrates and court representatives, although they are better suited as the former. Even in court, however, a Kitsuki’s ability to perceive truth when presented with lies has proven a tremendous asset to the Dragon in their pursuit of an Empire free of deceit and treachery."
+    },
+    {
+        "name": "Mirumoto",
+        "clan": "Dragon",
+        "benefit": "+1 Agility",
+        "description": "The Mirumoto are the broad shoulders that carry the burdens of the Dragon Clan. While the Togashi pursue their unique brand of enlightenment, the Mirumoto rule the clan in all but name, overseeing its day to day operations and filling the ranks of its military. Comprising more than half the Clan’s ranks, the Mirumoto are the most commonly encountered Dragon samurai in the Empire."
+    },
+    {
+        "name": "Tamori",
+        "clan": "Dragon",
+        "benefit": "+1 Willpower",
+        "description": "Perhaps the most militant shugenja family in the Empire, the Tamori embrace unique magical styles, including alchemy, blacksmithing, and melding the arts of magic and war. The Tamori are more feared than other shugenja because of their willingness to commit to violence when other priests would turn away."
+    },
+    {
+        "name": "Togashi",
+        "clan": "Dragon",
+        "benefit": "+1 Reflexes",
+        "description": "A monastic order rather than a true family, the Togashi accept all who wish to join their ranks, provided they are able to embrace the order’s teachings and endure its trials, which many are not. Over the centuries, the monks of this order have used the divine blood of the Dragon Kami to create mystical tattoos that grant them incredible, supernatural abilities."
+    },
+    {
+        "name": "Akodo",
+        "clan": "Lion",
+        "benefit": "+1 Agility",
+        "description": "The lords of the Lion Clan, the Akodo are the unquestioned masters of battle throughout the Empire. It is said that no army led by an Akodo has ever known defeat, and while this is something of an exaggeration, it is not all that far from the truth. Akodo samurai tend to be calm and analytical, and often lack the fiery nature for which the Lion are so well known."
+    },
+    {
+        "name": "Ikoma",
+        "clan": "Lion",
+        "benefit": "+1 Awareness",
+        "description": "The voice of the Lion Clan, the Ikoma speak on behalf of the Clan in court and in the annals of history. The family provides not only the majority of the clan’s courtiers, but virtually all of its historians and storytellers as well, studies that the Clan considers extremely important. For every stoic Lion who refuses to allow emotion to affect him, there is an Ikoma bard who weeps openly when he tells the samurai’s story to others."
+    },
+    {
+        "name": "Kitsu",
+        "clan": "Lion",
+        "benefit": "+1 Intelligence",
+        "description": "Quiet and reserved, the Kitsu are the most traditional and conservative, some might say old-fashioned, shugenja family in the Empire. Descended from the union of men and the ancient kitsu creatures that were driven nearly to extinction by the Lion during the dawn of the Empire, the Kitsu possess several bloodlines with strange, otherworldly abilities, such as the ability to walk between the mortal world and the spirit realms."
+    },
+    {
+        "name": "Matsu",
+        "clan": "Lion",
+        "benefit": "+1 Strength",
+        "description": "The Matsu are the largest family in the Empire, and they are the reason for the image many have of the vast legions of the Lion Clan. They are also the source of the tempestuous stereotype for the Lion, and it is largely correct; the Matsu are fiery in nature, quick to anger, and eager for battle at all times.\n They were founded by a female warrior, Matsu, and have a famous all-female military unit, the Lion’s Pride."
+    },
+    {
+        "name": "Kitsune",
+        "clan": "Mantis",
+        "benefit": "+1 Awareness",
+        "description": "Formerly known as the Fox Clan, the Kitsune joined the Mantis Clan decades after the other families founded it, and only then because the Fox were on the brink of annihilation and the Yoritomo could save them, with the only price being an oath of fealty. The Kitsune are a simple, quiet people who prefer to commune with the spirits of nature in the forest rather than travel across the Empire on formal business."
+    },
+    {
+        "name": "Moshi",
+        "clan": "Mantis",
+        "benefit": "+1 Intelligence",
+        "description": "Before the formation of the Mantis as a Great Clan, the Moshi were the Centipede Clan. An extremely devout and matriarchal people, the Moshi devoted themselves to the worship of the Sun for centuries, and find their active role among the other families of the Mantis mildly uncomfortable. Still, the family has sworn an oath to the Yoritomo and refuses to break it, no matter how much their duties conflict with their philosophies."
+    },
+    {
+        "name": "Tsuruchi",
+        "clan": "Mantis",
+        "benefit": "+1 Perception",
+        "description": "Formerly known as the Wasp Clan, the Tsuruchi are without question the greatest archers in the Empire, and have focused the majority of their efforts toward maintaining that level of skill. Generally perceptive and highly athletic, the Tsuruchi excel as warriors and magistrates."
+    },
+    {
+        "name": "Yoritomo",
+        "clan": "Mantis",
+        "benefit": "+1 Stamina",
+        "description": "The lords of the Mantis are descended from the Crab, and are equally hardy in their own way. They are the unquestioned masters of the seas, having dwelled on the Islands of Silk and Spice for the entirety of their existence. The Yoritomo are a hardy, industrious people ever eager to prove themselves against the other Great Clans."
+    },
+    {
+        "name": "Agasha",
+        "clan": "Phoenix",
+        "benefit": "+1 Perception",
+        "description": "Once a family of the Dragon Clan, the Agasha abandoned their Togashi masters when they felt the Dragon abandoned their duties to the Empire. The Phoenix have proven much more amenable to their unique brand of magic. The Agasha are highly experimental and curious, always pushing the boundaries of what is known and what can be safely attempted when dealing with magic."
+    },
+    {
+        "name": "Asako",
+        "clan": "Phoenix",
+        "benefit": "+1 Awareness",
+        "description": "The quiet, reclusive Asako are a very monastic family, living scholarly and ascetic lives more befitting the Brotherhood of Shinsei than a family of samurai. They comprise the majority of the Phoenix Clan’s courtiers, and the entirety of the mysterious Henshin monks. Asako are contemplative and inquisitive, but generally without ambition other than to serve and learn."
+    },
+    {
+        "name": "Isawa",
+        "clan": "Phoenix",
+        "benefit": "+1 Willpower",
+        "description": "The Isawa truly rule the Phoenix Clan, despite the presence of a Shiba Clan Champion. They are unquestionably the most knowledgeable, most powerful, and most numerous shugenja family in the Empire. Unfortunately, this has made them arrogant as well, and many Isawa constantly struggle against their own shortcomings."
+    },
+    {
+        "name": "Shiba",
+        "clan": "Phoenix",
+        "benefit": "+1 Perception",
+        "description": "The Shiba are among the most scholarly and least aggressive of all bushi families. They serve the Clan and the Isawa without complaint or consideration for themselves. Although they prefer peace and compassion, the Shiba will not retreat from a battle once the Phoenix have committed themselves to an engagement."
+    },
+    {
+        "name": "Bayushi",
+        "clan": "Scorpion",
+        "benefit": "+1 Agility",
+        "description": "Ruthless and deceitful, the lords of the Scorpion Clan possess many talents, all of which have been put to sinister use for the benefit of their Clan and their Emperor. The Bayushi are dark, dangerous, and manipulative, and always evaluate any situation in terms of how it can best benefit themselves and the Scorpion."
+    },
+    {
+        "name": "Shosuro",
+        "clan": "Scorpion",
+        "benefit": "+1 Awareness",
+        "description": "The Shosuro dwell in shadows, rarely being seen but always having an influence on those around them. They are secretive and withdrawn, keeping their own counsel but never failing to obey a command from their Bayushi lords. When the Scorpion require some impossible task performed without complication, it is a Shosuro who fulfills the duty."
+    },
+    {
+        "name": "Soshi",
+        "clan": "Scorpion",
+        "benefit": "+1 Intelligence",
+        "description": "The Soshi are the main shugenja family of the Scorpion Clan, founded soon after the Clan’s beginnings, and specialize in using magic to enhance the Clan’s efforts in politics, deceit, and manipulation. They often work in close concert with the Shosuro, using their magic to support the Shosuro’s ruthless and secret activities."
+    },
+    {
+        "name": "Yogo",
+        "clan": "Scorpion",
+        "benefit": "+1 Willpower",
+        "description": "No family among the accepted Great Clans is more feared or reviled than the Yogo, the Scorpion Clan’s second shugenja family. They are descended from a Phoenix who was cursed during the early days of the Empire to betray the one he loved the most. The curse has been passed down into the family’s bloodline, and as such many avoid the Yogo whenever possible.\n The Yogo pay no heed to their reputation, however, and use their powerful magic in service to the Scorpion regardless of how expendable they may be considered."
+    },
+    {
+        "name": "Horiuchi",
+        "clan": "Unicorn",
+        "benefit": "+1 Willpower",
+        "description": "The tiny Horiuchi family has never claimed more than a few dozen members at most. Created a few decades before the Clan War, the Horiuchi are a branch of the Iuchi family that specializes in defensive and protective magic. Horiuchi samurai are compassionate individuals who tend to intervene in the affairs of others during times of crisis."
+    },
+    {
+        "name": "Ide",
+        "clan": "Unicorn",
+        "benefit": "+1 Perception",
+        "description": "The public face of the Unicorn, the Ide have worked tirelessly to combat the perception many have of the Clan as barbarians and near-gaijin. They flawlessly merge the traditions of their people with the customs of the Empire, and in doing so seek to earn the gradual respect and acceptance of other clans. Samurai of the Ide family are almost universally even-tempered and eager to forge alliances with others, whether personal or larger in scale."
+    },
+    {
+        "name": "Iuchi",
+        "clan": "Unicorn",
+        "benefit": "+1 Intelligence",
+        "description": "With the exception of the Tamori, the Iuchi family is probably the most militant shugenja family in the Empire. They serve in the armies of the Unicorn Clan in considerable numbers, and while they enjoy friendship and scholarly debate as much as any priests, they do not shy away from conflict when pressed."
+    },
+    {
+        "name": "Moto",
+        "clan": "Unicorn",
+        "benefit": "+1 Agility",
+        "description": "The Moto exemplify virtually every negative stereotype that the Unicorn Clan as a whole has struggled with since their return to the Empire centuries ago. More than any other family, their gaijin blood is obvious from the look of them, short and squat as they are. They are alternately boisterous and brusque, depending upon the circumstances, and rarely fit in well with samurai of other Clans. They are respected, however, for their warrior traditions."
+    },
+    {
+        "name": "Shinjo",
+        "clan": "Unicorn",
+        "benefit": "+1 Reflexes",
+        "description": "The Shinjo family ruled the Unicorn Clan for most of their history, although in the latter portion of the Empire’s development they were removed from power by their founder, the Kami Shinjo, due to corruption within their ranks. The Shinjo are an affable, industrious family whose members adapt easily to almost any task set before them, and who work well with others in virtually any situation."
+    },
+    {
+        "name": "Utaku",
+        "clan": "Unicorn",
+        "benefit": "+1 Stamina",
+        "description": "The matriarchal Utaku family are rigidly honorable and pious individuals with carefully defined duties depending upon their gender. Women are generally trained to serve with the most elite cavalry units in the world, the Utaku Battle Maidens, while the men manage the households and serve among the legions of infantry in the Unicorn army."
+    },
+    {
+        "name": "Chuda",
+        "clan": "Spider",
+        "benefit": "+1 Intelligence",
+        "description": "The spiritual heirs of the first Chuda family, wiped out centuries previously, the Chuda are a collection of ambitious and power-hungry maho-tsukai who delve into the secrets of blood magic. Their loyalties are always suspect, since they have changed masters on more than one occasion in the past."
+    },
+    {
+        "name": "Daigotsu",
+        "clan": "Spider",
+        "benefit": "+1 Stamina",
+        "description": "The lords of the Spider Clan are far and away the most numerous of the families who comprise the Spider. Great numbers of samurai from all walks of life who have fallen to the Shadowlands Taint or succumbed to the worship of Fu Leng have embraced the philosophy and methodology of the Dark Lord Daigotsu, and eagerly enact his sinister will without consideration for their previous families and allies. Not all Daigotsu are Tainted, but a large majority of them have felt Jigoku’s sinister touch."
+    },
+    {
+        "name": "Goju",
+        "clan": "Spider",
+        "benefit": "+1 Agility",
+        "description": "In a very real way, those who bear the name Goju are no longer human. Once they served the primordial entity known as the Lying Darkness, and were little more than extensions of its will. Since its destruction, they serve its successor, the Shadow Dragon, and possess somewhat more individuality than before, although as often as not they remain faceless, soulless monstrosities."
+    },
+    {
+        "name": "Spider Monks",
+        "clan": "Spider",
+        "benefit": "+1 Reflexes",
+        "description": "The strangest agents of the Spider Clan are the monks of the Order of the Spider. Many among the order have not succumbed to the Shadowlands Taint at all, but instead embrace the philosophies of the Spider because they resonate with their own desires for personal power and achievement through strength."
+    },
+    {
+        "name": "Ichiro",
+        "clan": "Badger",
+        "benefit": "+1 Strength",
+        "description": "The Ichiro are rude and coarse in their interactions with the rest of the Empire. They believe in action over words and pragmatics over societal norms. The Ichiro are stocky by nature, and their mountainous lifestyle ensures a heavily muscular frame."
+    },
+    {
+        "name": "Komori",
+        "clan": "Bat",
+        "benefit": "+1 Intelligence",
+        "description": "The Komori is a family of shugenja, gathered under the Bat Clan banner by the founder of the clan himself. They are a unique lot with few characteristics to group them together.\n The two unifying factors of the Komori family are eagerness to learn and the intelligence to apply their newfound abilities."
+    },
+    {
+        "name": "Heichi",
+        "clan": "Boar",
+        "benefit": "+1 Willpower",
+        "description": "Few people could endure the dangers of the Twilight Mountains without breaking, yet the samurai of the Boar thrived on the land for centuries. They are a hard and bitter people who will fight with everything within reach to defend what is theirs. Once a Heichi sets his mind to a goal nothing will stop him from achieving it."
+    },
+    {
+        "name": "Tonbo",
+        "clan": "Dragonfly",
+        "benefit": "+1 Awareness",
+        "description": "The Tonbo are humble and plain despite their importance in the Empire. Most of the hard-working Tonbo are shugenja, and the few bushi who come from their lands typically use political favors to train with their Mirumoto allies. They are well suited for life within the mountains and can navigate the Dragon lands as well as any Mirumoto."
+    },
+    {
+        "name": "Toritaka",
+        "clan": "Falcon",
+        "benefit": "+1 Perception",
+        "description": "The Toritaka has always been a small brotherhood living near the Crab lands. Their typical samurai are large and bulky, their muscles are constantly honed by years of constant battle. Despite their brutish appearance, however, the Toritaka are quiet, calm, and distant from the rest of Rokugani society."
+    },
+    {
+        "name": "Kitsune",
+        "clan": "Fox",
+        "benefit": "+1 Willpower",
+        "description": "The Kitsune prefer the quiet of the forest to the bustle of civilization.\n They are a strongly spiritual family, and will fight tooth and nail to protect the natives of Chikushudo, the Realm of Animals. The Kitsune are strongly independent, but they are also pragmatic; Kitsune heroes will do whatever they must to accomplish their goals without giving up their souls."
+    },
+    {
+        "name": "Usagi",
+        "clan": "Hare",
+        "benefit": "+1 Awareness",
+        "description": "The Usagi have seen combat for almost their entire history. Because they know hidden threats like the Bloodspeakers and the Kolat exist, they are always alert and ready to spot signs of corruption.\n Unfortunately many elder members of the Usagi tend toward paranoia and do not trust strangers, although younger family members are usually more confident and optimistic"
+    },
+    {
+        "name": "Ujina",
+        "clan": "Hare",
+        "benefit": "+1 Agility",
+        "description": "Formed during the chaotic times following the Second Day of Thunder, the Ujina family is tiny, usually with less than two dozen members at any one time. Despite their modest numbers, the Ujina are proud to bear a name given by the Emperor. The Ujina are extreme pragmatists, and will not hesitate to perform the most underhanded feats if they will get the results the Hare need."
+    },
+    {
+        "name": "Toku",
+        "clan": "Monkey",
+        "benefit": "+1 Stamina",
+        "description": "The founder of the Toku family, once a mere ronin or less, became the Captain of the Imperial Guard, a hero of the Empire, and ultimately ascended to Tengoku as the Fortune of Virtue. His descendants share that great man’s zest for life and compassion for all the people of Rokugan. Toku samurai often become Imperial Magistrates to spread justice and peace across the land. The Toku are known for their cheerful disposition and their strange humor, both of which become apparent within minutes of encountering them."
+    },
+    {
+        "name": "Fuzake",
+        "clan": "Monkey",
+        "benefit": "+1 Perception",
+        "description": "The Fuzake were given their family name as a reward for continued service to the Imperial line. The Fuzake are a shugenja family of great intelligence and curiosity about life. Outsiders believe the members of the small family are whimsical and flighty, but the Fuzake have proven themselves stalwart and reliable."
+    },
+    {
+        "name": "Tsi",
+        "clan": "Oriole",
+        "benefit": "+1 Strength",
+        "description": "The Tsi family is quite small, and dedicated the art of the smith. Their uninviting demeanor and lack of social graces make the Tsi smiths seem unfriendly, but their skills with the hammer cannot be denied. They rarely travel outside of their lands, and when they do, typically go to Kaiu lands to observe the masters of engineering at work."
+    },
+    {
+        "name": "Morito",
+        "clan": "Ox",
+        "benefit": "+1 Stamina",
+        "description": "The samurai of the Morito family are determined to make a name for themselves. Their great ambition gained the interest of the Kolat, who accepted them into their ranks as enforcers and warriors. A Morito’s skill in the saddle is better than anyone else outside the Unicorn lands. The Morito keep an ear open for the murmurs of the Rokugani underworld, looking for opportunities to increase their power."
+    },
+    {
+        "name": "Chuda",
+        "clan": "Snake",
+        "benefit": "+1 Strength",
+        "description": "Isawa Chuda was a man of conviction and wisdom, and his family reflected that purity for generations. The Chuda were completely loyal to Rokugan and hated the dark forces that menaced its borders. Their hatred of maho-tsukai was well known and the Snake Clan often hunted down illegal cults with vigor."
+    },
+    {
+        "name": "Suzume",
+        "clan": "Sparrow",
+        "benefit": "+1 Awareness",
+        "description": "The Suzume are humble, tenacious, and easy-going. Their interests make them stand out from the rest of the Minor Clans.\n They appreciate the arts more so than the average samurai, with a particular interest in the art of reciting tales, one of the few forms of entertainment available in their poverty-stricken land.\n The Suzume feel a stronger connection to the peasantry than most believe a samurai should, some going as far as to work in the fields if extra hands are needed – and they often are."
+    },
+    {
+        "name": "Kasuga",
+        "clan": "Tortoise",
+        "benefit": "+1 Perception",
+        "description": "The Kasuga have little ambition, as the recognition of the Emperor outweighs any need for widespread fame. They are pragmatic and bitter from years of fighting for the cause with the scum of the Empire. They are smugglers, thieves, and often quite brutish, although they are also capable of being smooth diplomats when the clan requires such."
+    },
+    {
+        "name": "Miya",
+        "clan": "Imperial",
+        "benefit": "+1 Reflexes",
+        "description": "At the dawn of the Empire, Miya was assigned the duty of spreading the news of Fu Leng’s defeat across Rokugan. The Miya family has continued to fulfill their duty as heralds and peacemakers with diligence and pride. Miya samurai tend to be solemn, quiet, and focused on upholding their great responsibilities."
+    },
+    {
+        "name": "Otomo",
+        "clan": "Imperial",
+        "benefit": "+1 Intelligence",
+        "description": "The Otomo name is often invoked with an undertone of fear, a sentiment easily understood in Rokugan. The Otomo are frightful predators of the Empire’s courts, utilizing every advantage of their rank to its utmost potential. The Otomo are manipulative, fiendishly clever, and seem to have no remorse in verbally and politically devastating their foes. It is said that the court is a battlefield deadlier than combat, an adage the Otomo seem to gleefully prove every day. Members of the royal family who do not ascend to the throne often renounce their family name and join the Otomo family."
+    },
+    {
+        "name": "Seppun",
+        "clan": "Imperial",
+        "benefit": "+1 Agility",
+        "description": "Seppun was one of Hantei’s most loyal followers and the family remains closest to the Imperial line. Seppun samurai are dedicated to the health of the Empire and will perform all duties required to maintain the status quo, from the bureaucratic table to the chaos of the battlefield. Members of the royal family who do not ascend to the throne sometimes renounce their family name and join the Seppun family, although this is less common than in the Otomo family."
+    },
+    {
+        "name": "The Brotherhood of Shinsei",
+        "clan": "The Brotherhood of Shinsei",
+        "benefit": "+1 Void",
+        "description": "The Brotherhood of Shinsei is composed of a diverse group of monks and scholars dedicated to rescuing the soul of the Empire. They live their lives in search of the state of enlightenment, a perfect understanding of the world and everything that lives within it. Each sect of the Brotherhood believes its own method of enlightenment is the true path. This has led to hundreds of different techniques dedicated towards calming the spirit and reaching balance. The Brotherhood of Shinsei would have it no other way, since their founder’s greatest adage is that each man must follow his own road."
+    },
+    {
+        "name": "True Ronin #1",
+        "clan": "Ronin",
+        "benefit": "Gains no family bonus or school, +25 experience points, and must take Social Disadvantage: Ronin",
+        "description": "There are two principle types of ronin: clan ronin and true ronin. Clan ronin are samurai who once served a clan but for whatever reason have been cast out and forbidden to use their family name and the mon of the clan they once served.\n Typically such a punishment is reserved only for the grossest failures of duty. True ronin were born to one or both samurai parents, but were not offered fealty to a clan. This happens most often to children born out of wedlock to a mother who is not of the samurai caste, or when one or both parents were themselves ronin."
+    },
+    {
+        "name": "True Ronin #2",
+        "clan": "Ronin",
+        "benefit": "Gain no family bonus, +10 experience points, and must take Social Disadvantage: Ronin",
+        "description": "There are two principle types of ronin: clan ronin and true ronin. Clan ronin are samurai who once served a clan but for whatever reason have been cast out and forbidden to use their family name and the mon of the clan they once served.\n Typically such a punishment is reserved only for the grossest failures of duty. True ronin were born to one or both samurai parents, but were not offered fealty to a clan. This happens most often to children born out of wedlock to a mother who is not of the samurai caste, or when one or both parents were themselves ronin."
+    },
+    {
+        "name": "Hoshi",
+        "clan": "Dragon",
+        "benefit": "+1 Void",
+        "description": "During the internal struggle which rips the Dragon Clan apart in the Hidden Emperor era, two new “families” appear in the Tattooed Orders: the Hitomi who follow the half-crazed Dragon Thunder, and the Hoshi who follow Togashi’s half-mortal son. After the Lady Hitomi abdicates and departs to become the new Moon, Lord Hoshi attempts to restore unity and harmony to the clan by recognizing all three family names.\n This arrangement prevails for almost four decades before growing spiritual imbalance (within both the Dragon Clan and the Celestial Heavens) prompts Hoshi’s son Satsu to order the three families reunited under the Togashi name. However, the separate orders within the family—ise zumi, kikage zumi, and tsurui zumi—continue to pursue their separate paths toward enlightenment."
+    },
+    {
+        "name": "Hitomi",
+        "clan": "Dragon",
+        "benefit": "+1 Strength",
+        "description": "During the internal struggle which rips the Dragon Clan apart in the Hidden Emperor era, two new “families” appear in the Tattooed Orders: the Hitomi who follow the half-crazed Dragon Thunder, and the Hoshi who follow Togashi’s half-mortal son. After the Lady Hitomi abdicates and departs to become the new Moon, Lord Hoshi attempts to restore unity and harmony to the clan by recognizing all three family names.\n This arrangement prevails for almost four decades before growing spiritual imbalance (within both the Dragon Clan and the Celestial Heavens) prompts Hoshi’s son Satsu to order the three families reunited under the Togashi name. However, the separate orders within the family—ise zumi, kikage zumi, and tsurui zumi—continue to pursue their separate paths toward enlightenment."
+    },
+    {
+        "name": "Yotsu",
+        "clan": "Tiger",
+        "benefit": "+1 Intelligence",
+        "description": "Although the Heroes of Rokugan story elevates the Yotsu into a Minor Clan, their history as a ronin family begins long before then, and they appear in the canonical history of Rokugan from the pre-Coup era forward, sometimes playing a significant role in the events in and around the city of Otosan Uchi. GMs and players can make use of the Yotsu in many different eras of play, and they can also serve as a template for the depiction of ronin families in other eras of play as well."
+    },
+    {
+        "name": "Kaeru",
+        "clan": "Ronin",
+        "benefit": "+1 Awareness",
+        "description": "Rulers of the City of the Rich Frog. Become a vassal family of the Ikoma in the mid-twelfth century."
+    },
+    {
+        "name": "Tsi",
+        "clan": "Ronin",
+        "benefit": "+1 Willpower",
+        "description": "A family of extremely skilled smiths and weapon-makers, granted a name by the Emperor in the tenth century. Become the Oriole Clan in the twelfth century."
+    },
+    {
+        "name": "Tsume",
+        "clan": "Ronin",
+        "benefit": "+1 Reflexes",
+        "description": "Heroes of Rokugan era only.\n A former Crane vassal family, disbanded after losing the War of Bleeding Flowers."
+    },
+    {
+        "name": "Hantei",
+        "clan": "Owl",
+        "benefit": "+1 Void",
+        "description": "Hantei’s family, regardless of which timeline it occupies, benefits from its founder’s deep connection to the Heavens.\n Hantei was trained by the Celestial Dragons themselves before he confronted his divine father, and a touch of this divine favor is passed down to his descendents."
+    },
+    {
+        "name": "Yoshun",
+        "clan": "Owl",
+        "benefit": "+1 Agility",
+        "description": "The fourth family of the Owl Clan is a small one, comprised entirely of those who can claim direct descent from its founder, Seppun Yoshun. By tradition all in the family train as warriors, though only the most worthy are permitted to learn the fighting skills of the Kenku."
+    },
+    {
+        "name": "Susumu",
+        "clan": "Spider",
+        "benefit": "+1 Awareness",
+        "description": "The Susumu family was founded in 1173 after the Imperial declaration making the Spider a Great Clan. The family took the name of Daigotsu Susumu, who is considered to be its founder, even though he was never a Daimyo and the family didnot exist until after his death.\n Daigotsu Susumu was well-known for his courtly abilities and natural charm. Many were disarmed by his easygoing manner and natural diplomacy. Yet he was also ruthless in the courts, more than willing to use every advantage he could get. Even so, he never fully exploited his position as Imperial Advisor to undermine the throne, for in his heart he served two masters: Daigotsu and Iweko I.\n Daigotsu Susumu was a pioneer of the Spiders courtier techniques and made significant contributions to the school, in spite of the fact that he was not a Sensei. He shared many of his insights with his wife, Kakita Shizuka, and his daughter, Kuroko. Upon his death, Kuroko took her fathers name and became the first Daimyo of the Susumu family. While the Susumu have no true dojos, Kuroko has shared her fathers secrets with the clans courtiers, all the more benefit to the Spider. The Susumu act as the Clans liasons and diplomats, often becoming advisors to important lords of other clans. It is in keeping with the tradition of their founder; to this day, the Susumu often serve two masters."
+    }
+]

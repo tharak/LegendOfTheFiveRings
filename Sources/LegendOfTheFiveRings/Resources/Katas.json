@@ -1,0 +1,240 @@
+[
+    {
+        "name": "Art of Ninjutsu",
+        "ring": "Water",
+        "mastery": "5",
+        "schools": "Daigotsu Bushi, Bayushi Bushi, Daidoji Scout, Shosuro Actor, Shosuro Infiltrator, Goju Ninja",
+        "description": "Once per Round you may calculate the distance of a Move Action as if your Water is equal to your Stealth Skill Rank. This does not change the maximum distance you can move in a Round"
+    },
+    {
+        "name": "Balance The Elements Style",
+        "ring": "Void",
+        "mastery": "3",
+        "schools": "Mirumoto Bushi, Shiba Bushi",
+        "description": "You may use your Void Ring in place of your Reflexes for your Initiative roll"
+    },
+    {
+        "name": "Breath of Wind Style",
+        "ring": "Air",
+        "mastery": "3",
+        "schools": "Kakita Bushi, Bayushi Bushi",
+        "description": "Your initiative Score increases by 2 during the Reactions Stage of each Combat Round. This effect stacks but disappears immediately if the kata is no longer in effect"
+    },
+    {
+        "name": "Dance Of The Winds",
+        "ring": "Air",
+        "mastery": "3",
+        "schools": "Daidoji Iron Warriors, Shiba Bushi",
+        "description": "When wielding a polearm, or a spear, your Initiative Score is increased by 3"
+    },
+    {
+        "name": "Disappearing World Style",
+        "ring": "Fire",
+        "mastery": "4",
+        "schools": "Akodo Bushi, Kakita Bushi",
+        "description": "Choose one opponent. Once per turn against that opponent, you may use your Agility trait instead of your Strength Trait for damage rolls."
+    },
+    {
+        "name": "Hidden Blade Style",
+        "ring": "Air",
+        "mastery": "4",
+        "schools": "Bayushi Bushi, Yoritomo Bushi",
+        "description": "Your Disarm attacks deal normal damage rather than 2k1. You may not increase your damage on these attacks via Raises (including from use of the Feint Maneuver)"
+    },
+    {
+        "name": "Indomitable Warrior Style",
+        "ring": "Earth",
+        "mastery": "4",
+        "schools": "Daigotsu Bushi, Hida Bushi, Ichiro Bushi, Moto Bushi",
+        "description": "Reduce your TN penalties from Wound Ranks by your Earth Ring"
+    },
+    {
+        "name": "Iron Forest Style",
+        "ring": "Air",
+        "mastery": "4",
+        "schools": "Daidoji Iron Warrior, Heichi Bushi, Shiba Bushi",
+        "description": "While using a spear or polearm, you may use your Air Ring instead of Agility for attack rolls"
+    },
+    {
+        "name": "Iron in the Mountains Style",
+        "ring": "Earth",
+        "mastery": "3",
+        "schools": "Daidoji Iron Warrior, Hida Bushi",
+        "description": "You may use your Earth Ring in place of your Air Ring for the Defense Stance"
+    },
+    {
+        "name": "Lee of the Stone",
+        "ring": "Earth",
+        "mastery": "4",
+        "schools": "Any",
+        "description": "While you are in the Defense or Full Defense Stances, your Armor TN is increased by an additional amount equal to your Earth Ring"
+    },
+    {
+        "name": "Reckless Abandon Style",
+        "ring": "Fire",
+        "mastery": "4",
+        "schools": "Daigotsu Bushi, Matsu Berserker",
+        "description": "You may add your Fire Ring to your Armor TN while in the Full Attack Stance"
+    },
+    {
+        "name": "Son Of Storms",
+        "ring": "Water",
+        "mastery": "3",
+        "schools": "Akodo Bushi, Shosuro Infiltrator, Yoritomo Bushi",
+        "description": "When attacking with a Small melee weapon, any Reduction an opponent possesses is decreased by 1"
+    },
+    {
+        "name": "Spinning Blades Style",
+        "ring": "Fire",
+        "mastery": "5",
+        "schools": "Mirumoto Bushi, Yoritomo Bushi",
+        "description": "Once per turn while wielding a weapon in each hand, you may make the Extra Attack Maneuver for 3 Raises instead of 5.  The second attack comes from your off-hand weapon, dealing weapon damage as appropriate.  You may not increase your damage on either attack via Raises"
+    },
+    {
+        "name": "Strength In Arms Style",
+        "ring": "Water",
+        "mastery": "4",
+        "schools": "Hida Bushi, Ichiro Bushi, Moto Bushi",
+        "description": "Once per Turn while wielding a Heavy Weapon, you may use your Strength Trait instead of your Agility for an attack roll"
+    },
+    {
+        "name": "Strength Of Purity Style",
+        "ring": "Void",
+        "mastery": "4",
+        "schools": "Akodo Bushi, Kakita Bushi, Matsu Berserker, Utaku Battle Maiden",
+        "description": "Once per turn while rolling damage, you may roll your Honor Rank instead of the normal Strength + DR of the weapon.  You keep dice equal to the DR of the weapon as usual."
+    },
+    {
+        "name": "Strength Of The Crab",
+        "ring": "Earth",
+        "mastery": "3",
+        "schools": "Crab Bushi",
+        "description": "While wearing Armor and in the Attack Stance, your armor provides an additional +2 Reduction"
+    },
+    {
+        "name": "Strength Of The Crane",
+        "ring": "Air",
+        "mastery": "3",
+        "schools": "Crane Bushi",
+        "description": "When fighting with a sword or spear you add an amount equal to your Honor Rank - 3 (minimum 1) to your Armor TN"
+    },
+    {
+        "name": "Strength Of The Dragon",
+        "ring": "Fire",
+        "mastery": "3",
+        "schools": "Dragon Bushi",
+        "description": "While wielding a katana in your main hand and a wakizashi in your off hand, you gain a +3 bonus to your Armor TN"
+    },
+    {
+        "name": "Strength Of The Lion",
+        "ring": "Water",
+        "mastery": "3",
+        "schools": "Lion Bushi",
+        "description": "One per Round during the Reactions stage, you may add +3 to the Initiative Score of one ally in a skirmish.  This effect can stack, but the kata's benefit disappears immediately if the kata is no longer active"
+    },
+    {
+        "name": "Strength of The Mantis",
+        "ring": "Air",
+        "mastery": "3",
+        "schools": "Mantis Bushi",
+        "description": "The attack penalty for ranged attacks fired against opponents currently in melee range is reduced by 3"
+    },
+    {
+        "name": "Strength Of The Phoenix",
+        "ring": "Void",
+        "mastery": "3",
+        "schools": "Phoenix Bushi",
+        "description": "Once per Turn when you declare a Guard Action, you may increase the Armor TN of the person you are guarding by an additional +3"
+    },
+    {
+        "name": "Strength Of The Scorpion",
+        "ring": "Fire",
+        "mastery": "3",
+        "schools": "Scorpion Bushi",
+        "description": "Once per Turn after successfully making the Feint Maneuver, your damage total is increased by +3 Wounds"
+    },
+    {
+        "name": "Strength Of The Spider",
+        "ring": "Earth",
+        "mastery": "3",
+        "schools": "Spider Bushi",
+        "description": "Once per Round if you successfully cause at least 15 Wounds to your opponent, he suffers a -3 penalty to the total of all rolls on his next Turn"
+    },
+    {
+        "name": "Strength Of The Unicorn",
+        "ring": "Water",
+        "mastery": "3",
+        "schools": "Unicorn Bushi",
+        "description": "While you are mounted, your steed gains a bonus of +3 to its Armor TN and an additional 3 Reduction"
+    },
+    {
+        "name": "Strike as the Avalanche",
+        "ring": "Earth",
+        "mastery": "3",
+        "schools": "Any",
+        "description": "When using the Heavy Weapons Skill, your Strength is considered one Rank higher for the purposes of determining damage."
+    },
+    {
+        "name": "Striking as Air",
+        "ring": "Air",
+        "mastery": "3",
+        "schools": "Any",
+        "description": "When in the Defense Stance your Armor TN is increased by your Air Ring"
+    },
+    {
+        "name": "Striking as Earth",
+        "ring": "Earth",
+        "mastery": "3",
+        "schools": "Any",
+        "description": "When in the Full Defense Stance you gain Reduction equal to your Earth Ring.  This is cumulative with other forms of Reduction"
+    },
+    {
+        "name": "Striking as Fire",
+        "ring": "Fire",
+        "mastery": "3",
+        "schools": "Any",
+        "description": "When in the Full Attack Stance you may add your Fire Ring to the total of one attack roll made per round"
+    },
+    {
+        "name": "Striking as Void",
+        "ring": "Void",
+        "mastery": "3",
+        "schools": "Any",
+        "description": "When in the Center Stance your Armor TN is increased by your Void Ring"
+    },
+    {
+        "name": "Striking as Water",
+        "ring": "Water",
+        "mastery": "4",
+        "schools": "Any",
+        "description": "When in the Attack Stance you may move 5 additional feet as a Free Action"
+    },
+    {
+        "name": "The Power of the Mountain",
+        "ring": "Earth",
+        "mastery": "3",
+        "schools": "Any",
+        "description": "When this Kata is activated, you reduce your Armor TN by an amount up to your Earth Ring; this lasts until you deactivate the Kata. All damage rolls you make while this Kata is in effect have their totals increased by the same amount."
+    },
+    {
+        "name": "The Strength of the Mountain",
+        "ring": "Earth",
+        "mastery": "3",
+        "schools": "Any",
+        "description": "When this Kata is activated, you reduce your Initiative Score by an amount up to your Earth Ring. (This cannot reduce your Initiative below 0.) This Initiative penalty lasts until you deactivate the Kata. While this Kata is in effect, your Armor TN is increased by the same amount."
+    },
+    {
+        "name": "Veiled Menace Style",
+        "ring": "Air",
+        "mastery": "4",
+        "schools": "Bayushi Bushi, Hiruma Bushi, Tsuruchi Archer, Yoritomo Bushi",
+        "description": "Once per turn, you may add your Stealth Skill Rank to your Armor TN for a single attack"
+    },
+    {
+        "name": "Weathered and Unbroken",
+        "ring": "Earth",
+        "mastery": "5",
+        "schools": "Any",
+        "description": "Your Water is considered two Ranks lower (to a minimum of 1) for the purpose of movement. All attack rolls made with the Heavy Weapons Skill gain the benefit of one Free Raise which may only be used for the Knockdown Maneuver."
+    }
+]
