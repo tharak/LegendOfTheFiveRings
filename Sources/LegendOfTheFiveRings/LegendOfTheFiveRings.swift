@@ -1,10 +1,16 @@
-struct LegendOfTheFiveRings {
-    var text = "Hello, World!"
+public struct LegendOfTheFiveRings {
+    
+    public init() {}
+    
+    public var text = "Hello, World!"
 }
 
 import Foundation
 
 public struct Book {
+
+    public init() {}
+    
     public let clans: [Clan] = load(resource: "Clans") ?? []
     public let families: [Family] = load(resource: "Families") ?? []
     public let schools: [School] = load(resource: "Schools") ?? []

@@ -1,5 +1,5 @@
 import XCTest
-@testable import LegendOfTheFiveRings
+import LegendOfTheFiveRings
 
 final class LegendOfTheFiveRingsTests: XCTestCase {
     func testExample() {

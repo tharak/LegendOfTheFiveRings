@@ -9,27 +9,27 @@ import Foundation
 
 // MARK: - Clan
 public struct Clan: Codable {
-    let name, description: String
-    let great: Bool
+    public let name, description: String
+    public let great: Bool
 }
 
 // MARK: - Family
 public struct Family: Codable {
-    let name, clan, benefit, description: String
+    public let name, clan, benefit, description: String
 }
 
 // MARK: - School
 public struct School: Codable {
-    let name: String
-    let clan: String
-    let description: String
-    let discipline: Discipline
-    let benefit, honor, skills, outfit: String?
-    let advanced: Bool
-    let technique1, technique1Description, technique2, technique2Description: String?
-    let technique3, technique3Description, technique4, technique4Description: String?
-    let technique5, technique5Description, affinity, spells: String?
-    let ringTraits, other: String?
+    public let name: String
+    public let clan: String
+    public let description: String
+    public let discipline: Discipline
+    public let benefit, honor, skills, outfit: String?
+    public let advanced: Bool
+    public let technique1, technique1Description, technique2, technique2Description: String?
+    public let technique3, technique3Description, technique4, technique4Description: String?
+    public let technique5, technique5Description, affinity, spells: String?
+    public let ringTraits, other: String?
 }
 
 public enum Discipline: String, Codable {
@@ -45,18 +45,10 @@ public enum Discipline: String, Codable {
 // MARK: - Skill
 public struct Skill: Codable {
 
-    let name: String
-    let category: Category
-    let description, emphasis, mastery, trait: String
-    let type: String
-
-    var rank: Int?
-    var emphases: [String]?
-    var isSchool: Bool?
-
-    mutating public func updateRank(newRank: Int) {
-        self.rank = newRank
-    }
+    public let name: String
+    public let category: Category
+    public let description, emphasis, mastery, trait: String
+    public let type: String
 }
 
 public enum Category: String, Codable {
@@ -68,25 +60,23 @@ public enum Category: String, Codable {
 
 // MARK: - Weapon
 public struct Weapon: Codable {
-    let name, type: String
-    let dr, special, price, description: String?
-    let range, keywords, strength: String?
+    public let name, type: String
+    public let dr, special, price, description: String?
+    public let range, keywords, strength: String?
 }
 
 // MARK: - Armor
 public struct Armor: Codable {
-    let name, tn, reduction, price: String
-    let description: String
-    let special: String?
+    public let name, tn, reduction, price: String
+    public let description: String
+    public let special: String?
 }
 
 // MARK: - Advantage
 public struct Advantage: Codable {
-    let name: String
-    let subtype: Subtype
-    let points, description: String
-
-    var cost: Int?
+    public let name: String
+    public let subtype: Subtype
+    public let points, description: String
 }
 
 public enum Subtype: String, Codable {
@@ -102,21 +92,19 @@ public enum Subtype: String, Codable {
 
 // MARK: - Disadvantage
 public struct Disadvantage: Codable {
-    let name: String
-    let subtype: Subtype
-    let points, description: String
-
-    var cost: Int?
+    public let name: String
+    public let subtype: Subtype
+    public let points, description: String
 }
 
 // MARK: - Spell
 public struct Spell: Codable {
-    let name: String
-    let ring: Ring
-    let mastery, keywords: String?
-    let range, area, duration: String
-    let raises: String?
-    let description: String
+    public let name: String
+    public let ring: Ring
+    public let mastery, keywords: String?
+    public let range, area, duration: String
+    public let raises: String?
+    public let description: String
 }
 
 public enum Ring: String, Codable, Equatable {
@@ -133,23 +121,23 @@ public enum Ring: String, Codable, Equatable {
 
 // MARK: - Ancestor
 public struct Ancestor: Codable {
-    let name, description, points, clan, demands: String
+    public let name, description, points, clan, demands: String
 }
 
 // MARK: - Kata
 public struct Kata: Codable {
-    let name: String
-    let ring: Ring
-    let mastery, schools, description: String
+    public let name: String
+    public let ring: Ring
+    public let mastery, schools, description: String
 }
 
 // MARK: - Kiho
 public struct Kiho: Codable {
-    let name: String
-    let ring: Ring
-    let mastery, atemi: String
-    let type: KihoType
-    let description: String
+    public let name: String
+    public let ring: Ring
+    public let mastery, atemi: String
+    public let type: KihoType
+    public let description: String
 }
 
 public enum KihoType: String, Codable {
@@ -161,13 +149,13 @@ public enum KihoType: String, Codable {
 
 // MARK: - Tattoo
 public struct Tattoo: Codable {
-    let name, description: String
+    public let name, description: String
 }
 
 // MARK: - ShadowPower
 public struct ShadowPower: Codable {
-    let name, description: String
-    let level: Level
+    public let name, description: String
+    public let level: Level
 }
 
 public enum Level: String, Codable {
