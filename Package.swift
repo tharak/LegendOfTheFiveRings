@@ -17,6 +17,6 @@ let package = Package(
             resources: [.copy("Resources")]),
         .testTarget(
             name: "LegendOfTheFiveRingsTests",
-            dependencies: ["LegendOfTheFiveRings"]),
+            dependencies: ["LegendOfTheFiveRings2"]),
     ]
 )
