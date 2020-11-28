@@ -1,4 +1,4 @@
-public struct LegendOfTheFiveRings {
+public struct LegendOfTheFiveRings2 {
     
     public init() {}
     

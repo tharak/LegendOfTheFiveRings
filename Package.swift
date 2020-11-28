@@ -4,15 +4,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "LegendOfTheFiveRings",
+    name: "LegendOfTheFiveRings2",
     products: [
         .library(
-            name: "LegendOfTheFiveRings",
-            targets: ["LegendOfTheFiveRings"]),
+            name: "LegendOfTheFiveRings2",
+            targets: ["LegendOfTheFiveRings2"]),
     ],
     targets: [
         .target(
-            name: "LegendOfTheFiveRings",
+            name: "LegendOfTheFiveRings2",
             dependencies: [],
             resources: [.copy("Resources")]),
         .testTarget(
