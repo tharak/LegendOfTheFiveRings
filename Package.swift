@@ -13,8 +13,9 @@ let package = Package(
     targets: [
         .target(
             name: "LegendOfTheFiveRings",
-            dependencies: [],
-            resources: [.copy("Resources")]),
+            dependencies: []
+//            resources: [.copy("Resources")]
+        ),
         .testTarget(
             name: "LegendOfTheFiveRingsTests",
             dependencies: ["LegendOfTheFiveRings"]),
