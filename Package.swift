@@ -14,9 +14,21 @@ let package = Package(
         .target(
             name: "LegendOfTheFiveRings",
             dependencies: [],
-//            resources: [.copy("Resources")]
             resources: [
-                .process("Resources")
+                .process("Resources/Armors.json"),
+                .process("Resources/Tattoos.json"),
+                .process("Resources/Skills.json"),
+                .process("Resources/Disadvantages.json"),
+                .process("Resources/Advantages.json"),
+                .process("Resources/Families.json"),
+                .process("Resources/Weapons.json"),
+                .process("Resources/ShadowlandsPowers.json"),
+                .process("Resources/Spells.json"),
+                .process("Resources/Schools.json"),
+                .process("Resources/Ancestors.json"),
+                .process("Resources/Katas.json"),
+                .process("Resources/Kihos.json"),
+                .process("Resources/Clans.json"),
             ]
         ),
         .testTarget(

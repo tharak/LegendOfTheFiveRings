@@ -27,7 +27,7 @@ public struct Book {
     public let shadowlandsPowers: [ShadowPower] = load(resource: "ShadowlandsPowers") ?? []
     
     static func load<T: Codable>(resource: String, withExtension: String = "json") -> T? {
-        if let path = Bundle.main.url(forResource: resource, withExtension: withExtension) {
+        if let path = Bundle.module.url(forResource: resource, withExtension: withExtension) {
             do {
                 let data = try Data(contentsOf: path, options: .mappedIfSafe)
                 if let items = try? JSONDecoder().decode(T.self, from: data) {
