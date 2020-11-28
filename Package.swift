@@ -13,8 +13,11 @@ let package = Package(
     targets: [
         .target(
             name: "LegendOfTheFiveRings",
-            dependencies: []
+            dependencies: [],
 //            resources: [.copy("Resources")]
+            resources: [
+                .process("Resources")
+            ]
         ),
         .testTarget(
             name: "LegendOfTheFiveRingsTests",
