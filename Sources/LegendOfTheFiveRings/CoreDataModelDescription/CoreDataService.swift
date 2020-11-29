@@ -34,7 +34,7 @@ import Foundation
 import CoreData
 
 @available(iOS 11.0, *)
-public final class PersistenceService {
+public final class CoreDataService {
     // MARK: - Properties
     let managedObjectContext: NSManagedObjectContext
     let coreDataStack: CoreDataStack
@@ -50,7 +50,7 @@ public final class PersistenceService {
 
 // MARK: - Public
 @available(iOS 11.0, *)
-extension PersistenceService {
+extension CoreDataService {
     @discardableResult
     public func createCharacter(name: String, xp: Int) -> Character {
         let character = Character(context: managedObjectContext)

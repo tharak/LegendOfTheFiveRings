@@ -7,24 +7,24 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
 
     // MARK: - Properties
     // swiftlint:disable implicitly_unwrapped_optional
-    var persistenceService: PersistenceService!
+    var coreDataService: CoreDataService!
     var coreDataStack: CoreDataStack!
     // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
         super.setUp()
         coreDataStack = TestCoreDataStack()
-        persistenceService = PersistenceService(managedObjectContext: coreDataStack.mainContext, coreDataStack: coreDataStack)
+        coreDataService = CoreDataService(managedObjectContext: coreDataStack.mainContext, coreDataStack: coreDataStack)
     }
 
     override func tearDown() {
         super.tearDown()
-        persistenceService = nil
+        coreDataService = nil
         coreDataStack = nil
     }
 
     func testAddCharacter() {
-        let character = persistenceService.createCharacter(name: "Death Star", xp: 45)
+        let character = coreDataService.createCharacter(name: "Death Star", xp: 45)
         XCTAssertNotNil(character, "Character should not be nil")
         XCTAssertNotNil(character.id, "id should not be nil")
         XCTAssertTrue(character.player.isEmpty)
@@ -39,7 +39,7 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
 
     func testRootContextIsSavedAfterAddingCharacter() {
         let derivedContext = coreDataStack.newDerivedContext()
-        persistenceService = PersistenceService(managedObjectContext: derivedContext, coreDataStack: coreDataStack)
+        coreDataService = CoreDataService(managedObjectContext: derivedContext, coreDataStack: coreDataStack)
 
         expectation(
             forNotification: .NSManagedObjectContextDidSave,
@@ -48,7 +48,7 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
         }
 
         derivedContext.perform {
-            let character = self.persistenceService.createCharacter(name: "Death Star", xp: 100)
+            let character = self.coreDataService.createCharacter(name: "Death Star", xp: 100)
             XCTAssertNotNil(character)
         }
 
@@ -58,9 +58,9 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
     }
 
     func testGetCharacters() {
-        let newCharacter = persistenceService.createCharacter(name: "Endor", xp: 30)
+        let newCharacter = coreDataService.createCharacter(name: "Endor", xp: 30)
 
-        let getCharacters = persistenceService.getCharacters()
+        let getCharacters = coreDataService.getCharacters()
 
         XCTAssertNotNil(getCharacters)
         XCTAssertTrue(getCharacters?.count == 1)
@@ -68,17 +68,17 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
     }
 
     func testUpdateCharacter() {
-        let newCharacter = persistenceService.createCharacter(name: "Snow Planet", xp: 0)
+        let newCharacter = coreDataService.createCharacter(name: "Snow Planet", xp: 0)
         newCharacter.xp = 30
-        let updatedCharacter = persistenceService.update(newCharacter)
+        let updatedCharacter = coreDataService.update(newCharacter)
         XCTAssertTrue(newCharacter.id == updatedCharacter.id)
         XCTAssertTrue(updatedCharacter.xp == 30)
     }
 
     func testUpdateCharacterItems() {
-        let character = persistenceService.createCharacter(name: "Snow Planet", xp: 0)
+        let character = coreDataService.createCharacter(name: "Snow Planet", xp: 0)
         print(character)
-        let item = persistenceService.createItem(for: character, name: "allies", type: Item.ItemType.advantages.rawValue, points: 5)
+        let item = coreDataService.createItem(for: character, name: "allies", type: Item.ItemType.advantages.rawValue, points: 5)
         print(character)
         XCTAssertTrue(character.items.count == 1)
         XCTAssertTrue(character.items.contains(item))
@@ -86,15 +86,15 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
     }
 
     func testDeleteCharacter() {
-        let newCharacter = persistenceService.createCharacter(name: "Starkiller Base", xp: 100)
+        let newCharacter = coreDataService.createCharacter(name: "Starkiller Base", xp: 100)
 
-        var fetchCharacters = persistenceService.getCharacters()
+        var fetchCharacters = coreDataService.getCharacters()
         XCTAssertTrue(fetchCharacters?.count == 1)
         XCTAssertTrue(newCharacter.id == fetchCharacters?.first?.id)
 
-        persistenceService.delete(newCharacter)
+        coreDataService.delete(newCharacter)
 
-        fetchCharacters = persistenceService.getCharacters()
+        fetchCharacters = coreDataService.getCharacters()
 
         XCTAssertTrue(fetchCharacters?.isEmpty ?? false)
     }
