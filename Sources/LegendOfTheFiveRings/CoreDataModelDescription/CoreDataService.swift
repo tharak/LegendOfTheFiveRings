@@ -43,8 +43,6 @@ public final class CoreDataService {
     public init(managedObjectContext: NSManagedObjectContext, coreDataStack: CoreDataStack) {
         self.managedObjectContext = managedObjectContext
         self.coreDataStack = coreDataStack
-        
-        self.deleteAll()
     }
 }
 
