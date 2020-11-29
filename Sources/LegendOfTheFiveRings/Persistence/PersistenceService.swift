@@ -52,8 +52,8 @@ public final class PersistenceService {
 @available(iOS 11.0, *)
 extension PersistenceService {
     @discardableResult
-    public func createCharacter(name: String, xp: Int) -> CharacterO {
-        let character = CharacterO(context: managedObjectContext)
+    public func createCharacter(name: String, xp: Int) -> Character {
+        let character = Character(context: managedObjectContext)
         character.id = UUID()
         character.name = name
         character.player = ""
@@ -62,16 +62,15 @@ extension PersistenceService {
         character.glory = 0
         character.status = 0
         character.shadowlandsTaint = 0
-        
         coreDataStack.saveContext(managedObjectContext)
         return character
     }
 
     @discardableResult
-    public func createItem(for character: CharacterO, name: String, type: String, points: Int) -> Itemo {
-        let item = Itemo(context: managedObjectContext)
+    public func createItem(for character: Character, name: String, type: String, points: Int) -> Item {
+        let item = Item(context: managedObjectContext)
         item.id = UUID()
-        item.order = Int16(character.items!.count)
+        item.order = Int16(character.items.count)
         item.name = name
         item.type = type
         item.points = Int16(points)
@@ -81,8 +80,8 @@ extension PersistenceService {
         return item
     }
     
-    public func getCharacters() -> [CharacterO]? {
-        let reportFetch: NSFetchRequest<CharacterO> = CharacterO.fetchRequest()
+    public func getCharacters() -> [Character]? {
+        let reportFetch: NSFetchRequest<Character> = Character.fetchRequest()
         do {
             let results = try managedObjectContext.fetch(reportFetch)
             return results
@@ -93,12 +92,12 @@ extension PersistenceService {
     }
 
     @discardableResult
-    public func update(_ character: CharacterO) -> CharacterO {
+    public func update(_ character: Character) -> Character {
         coreDataStack.saveContext(managedObjectContext)
         return character
     }
     
-    public func delete(_ character: CharacterO) {
+    public func delete(_ character: Character) {
         managedObjectContext.delete(character)
         coreDataStack.saveContext(managedObjectContext)
     }

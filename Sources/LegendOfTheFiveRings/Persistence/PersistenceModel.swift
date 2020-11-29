@@ -9,24 +9,24 @@ import Foundation
 import CoreData
 
 @available(iOS 11.0, *)
-public final class CharacterO: NSManagedObject {
-    @NSManaged public var id: UUID?
-    @NSManaged public var name: String?
-    @NSManaged public var player: String?
+public final class Character: NSManagedObject {
+    @NSManaged public var id: UUID
+    @NSManaged public var name: String
+    @NSManaged public var player: String
     @NSManaged public var xp: Int16
-    @NSManaged public var items: NSSet?
+    @NSManaged public var items: NSSet
     @NSManaged public var honor: Int16
     @NSManaged public var glory: Int16
     @NSManaged public var status: Int16
     @NSManaged public var shadowlandsTaint: Int16
     
-    public class func fetchRequest() -> NSFetchRequest<CharacterO> {
-        return NSFetchRequest<CharacterO>(entityName: String(describing: CharacterO.self))
+    public class func fetchRequest() -> NSFetchRequest<Character> {
+        return NSFetchRequest<Character>(entityName: String(describing: Character.self))
     }
     
     static let entity = CoreDataEntityDescription.entity(
-        name: String(describing: CharacterO.self),
-        managedObjectClass: CharacterO.self,
+        name: String(describing: Character.self),
+        managedObjectClass: Character.self,
         attributes: [
             .attribute(name: "id", type: .UUIDAttributeType),
             .attribute(name: "name", type: .stringAttributeType),
@@ -38,26 +38,26 @@ public final class CharacterO: NSManagedObject {
             .attribute(name: "shadowlandsTaint", type: .integer16AttributeType)
         ],
         relationships: [
-            .relationship(name: "items", destination: String(describing: Itemo.self), toMany: true, deleteRule: .cascadeDeleteRule, inverse: "character")
+            .relationship(name: "items", destination: String(describing: Item.self), toMany: true, deleteRule: .cascadeDeleteRule, inverse: "character")
         ])
 }
 
 @available(iOS 11.0, *)
-public class Itemo: NSManagedObject {
-    @NSManaged public var id: UUID?
-    @NSManaged public var name: String?
-    @NSManaged public var type: String?
+public class Item: NSManagedObject {
+    @NSManaged public var id: UUID
+    @NSManaged public var name: String
+    @NSManaged public var type: String
     @NSManaged public var order: Int16
     @NSManaged public var points: Int16
-    @NSManaged public var character: CharacterO?
+    @NSManaged public var character: Character
     
-    public class func fetchRequest() -> NSFetchRequest<Itemo> {
-      return NSFetchRequest<Itemo>(entityName: String(describing: Itemo.self))
+    public class func fetchRequest() -> NSFetchRequest<Item> {
+      return NSFetchRequest<Item>(entityName: String(describing: Item.self))
     }
     
     static let entity = CoreDataEntityDescription.entity(
-        name: String(describing: Itemo.self),
-        managedObjectClass: Itemo.self,
+        name: String(describing: Item.self),
+        managedObjectClass: Item.self,
         attributes: [
             .attribute(name: "id", type: .UUIDAttributeType),
             .attribute(name: "name", type: .stringAttributeType),
@@ -66,7 +66,7 @@ public class Itemo: NSManagedObject {
             .attribute(name: "points", type: .integer16AttributeType)
         ],
         relationships: [
-            .relationship(name: "character", destination: String(describing: CharacterO.self), toMany: false, inverse: "items")
+            .relationship(name: "character", destination: String(describing: Character.self), toMany: false, inverse: "items")
         ])
     
     public enum ItemType: String {
@@ -87,7 +87,7 @@ public struct PersistenceModel {
     public init() { }
 
     public static let model: NSManagedObjectModel = CoreDataModelDescription(
-        entities: [CharacterO.entity, Itemo.entity]
+        entities: [Character.entity, Item.entity]
     ).makeModel()
 }
 

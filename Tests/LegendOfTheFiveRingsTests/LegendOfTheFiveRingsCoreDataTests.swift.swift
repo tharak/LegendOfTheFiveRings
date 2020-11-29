@@ -15,7 +15,6 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
         super.setUp()
         coreDataStack = TestCoreDataStack()
         persistenceService = PersistenceService(managedObjectContext: coreDataStack.mainContext, coreDataStack: coreDataStack)
-        persistenceService.deleteAll()
     }
 
     override func tearDown() {
@@ -26,12 +25,16 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
 
     func testAddCharacter() {
         let character = persistenceService.createCharacter(name: "Death Star", xp: 45)
-
         XCTAssertNotNil(character, "Character should not be nil")
         XCTAssertNotNil(character.id, "id should not be nil")
+        XCTAssertTrue(character.player.isEmpty)
+        XCTAssertTrue(character.glory == 0)
+        XCTAssertTrue(character.honor == 0)
+        XCTAssertTrue(character.status == 0)
+        XCTAssertTrue(character.shadowlandsTaint == 0)
         XCTAssertTrue(character.name == "Death Star")
         XCTAssertTrue(character.xp == 45)
-        XCTAssertTrue(character.items?.count == 0)
+        XCTAssertTrue(character.items.count == 0)
     }
 
     func testRootContextIsSavedAfterAddingCharacter() {
@@ -75,10 +78,10 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
     func testUpdateCharacterItems() {
         let character = persistenceService.createCharacter(name: "Snow Planet", xp: 0)
         print(character)
-        let item = persistenceService.createItem(for: character, name: "allies", type: Itemo.ItemType.advantages.rawValue, points: 5)
+        let item = persistenceService.createItem(for: character, name: "allies", type: Item.ItemType.advantages.rawValue, points: 5)
         print(character)
-        XCTAssertTrue(character.items?.count == 1)
-        XCTAssertTrue(character.items!.contains(item))
+        XCTAssertTrue(character.items.count == 1)
+        XCTAssertTrue(character.items.contains(item))
         XCTAssertTrue(character.xp == -5)
     }
 
@@ -94,4 +97,7 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
         fetchCharacters = persistenceService.getCharacters()
 
         XCTAssertTrue(fetchCharacters?.isEmpty ?? false)
-    }}
+    }
+    
+    
+}
