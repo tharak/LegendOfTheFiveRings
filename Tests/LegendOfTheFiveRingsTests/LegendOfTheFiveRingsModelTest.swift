@@ -24,31 +24,32 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
     }
 
     func testGetCharacters() {
-        XCTAssertNotNil(self.model.getCharacters())
-        XCTAssertNotNil(self.model.getCharacters().count == 0)
+        XCTAssertNotNil(self.model.characters)
+        XCTAssertNotNil(self.model.characters.count == 0)
     }
     
     func testCreateCharacters() {
-        XCTAssert(model.getCharacters().isEmpty)
-        XCTAssert(model.getCharacters().count == 0)
-        let char = self.model.create(name: "Wilson", xp: 45)
-        XCTAssert(char.id == model.getCharacters().last?.id)
-        XCTAssert(model.getCharacters().count == 1)
+        XCTAssert(model.characters.isEmpty)
+        XCTAssert(model.characters.count == 0)
+        self.model.create(name: "Wilson", xp: 45)
+        XCTAssert(model.characters.count == 1)
     }
     
     func testUpdateCharacter() {
-        let character = self.model.create(name: "Wilson", xp: 45)
+        self.model.create(name: "Wilson", xp: 45)
+        let character = self.model.characters.first!
         character.xp = 12
-        let updated = model.update(character: character)
+        model.update(character: character)
+        let updated = self.model.characters.first!
         XCTAssertTrue(character.id == updated.id)
         XCTAssertTrue(character.xp == updated.xp)
     }
 
     func testDeleteCharacters() {
-        XCTAssert(model.getCharacters().count == 0)
-        let char = self.model.create(name: "Wilson Dead", xp: 45)
-        XCTAssert(model.getCharacters().count == 1)
-        model.delete(character: char)
-        XCTAssert(model.getCharacters().count ==  0)
+        XCTAssert(model.characters.count == 0)
+        self.model.create(name: "Wilson Dead", xp: 45)
+        XCTAssert(model.characters.count == 1)
+        model.delete(character: self.model.characters.first!)
+        XCTAssert(model.characters.count ==  0)
     }
 }
