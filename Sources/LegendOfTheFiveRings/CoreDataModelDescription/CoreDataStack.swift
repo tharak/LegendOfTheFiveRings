@@ -33,7 +33,6 @@
 import Foundation
 import CoreData
 
-@available(iOS 11.0, *)
 open class CoreDataStack {
     public static let modelName = "LegendOfTheFiveRings"
     

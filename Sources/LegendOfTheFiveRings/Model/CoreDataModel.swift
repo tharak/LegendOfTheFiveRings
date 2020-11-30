@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-@available(iOS 11.0, *)
 public struct CoreDataModel {
     
     public init() { }

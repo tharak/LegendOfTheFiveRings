@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-@available(iOS 11.0, *)
 public class Item: NSManagedObject {
     @NSManaged public var id: UUID
     @NSManaged public var name: String

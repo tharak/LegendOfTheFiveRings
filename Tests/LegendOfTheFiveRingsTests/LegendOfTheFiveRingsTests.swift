@@ -2,7 +2,6 @@ import XCTest
 import LegendOfTheFiveRings
 import CoreData
 
-@available(iOS 11.0, *)
 final class LegendOfTheFiveRingsTests: XCTestCase {
     
     func testExample() {

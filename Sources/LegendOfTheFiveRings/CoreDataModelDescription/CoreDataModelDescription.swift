@@ -55,7 +55,7 @@ public struct CoreDataModelDescription {
             }
 
             entity.properties = Array(propertyNameToProperty.values)
-//            entity.uniquenessConstraints = [entityDescription.constraints]
+            entity.uniquenessConstraints = [entityDescription.constraints]
 
             // Map the entity to its name
             entityNameToEntity[entityDescription.name] = entity
@@ -125,30 +125,30 @@ public struct CoreDataModelDescription {
         entities = Array(entityNameToEntity.values)
 
         // Last step, build indexes
-//        for entityDescription in entitiesDescriptions {
-//            let entity = entityNameToEntity[entityDescription.name]!
-//            let propertyNameToProperty = entityNameToPropertyNameToProperty[entityDescription.name] ?? [:]
-//
-//            entity.indexes = entityDescription.indexes.map { indexDescription in
-//                let elements: [NSFetchIndexElementDescription] = indexDescription.elements.compactMap { elementDescription in
-//                    switch elementDescription.property {
-//                        case .property(let name):
-//                            guard let property = propertyNameToProperty[name] else {
-//                                assertionFailure("Can not find attribute, fetched property, or relationship with name: \(name).")
-//                                return nil
-//                            }
-//
-//                            return NSFetchIndexElementDescription(property: property, collationType: elementDescription.type)
-//
-//                        case .expression:
-//                            assertionFailure("Expression indexes are not supported yet")
-//                            return nil
-//                        }
-//                    }
-//
-//                return NSFetchIndexDescription(name: indexDescription.name, elements: elements)
-//            }
-//        }
+        for entityDescription in entitiesDescriptions {
+            let entity = entityNameToEntity[entityDescription.name]!
+            let propertyNameToProperty = entityNameToPropertyNameToProperty[entityDescription.name] ?? [:]
+
+            entity.indexes = entityDescription.indexes.map { indexDescription in
+                let elements: [NSFetchIndexElementDescription] = indexDescription.elements.compactMap { elementDescription in
+                    switch elementDescription.property {
+                        case .property(let name):
+                            guard let property = propertyNameToProperty[name] else {
+                                assertionFailure("Can not find attribute, fetched property, or relationship with name: \(name).")
+                                return nil
+                            }
+
+                            return NSFetchIndexElementDescription(property: property, collationType: elementDescription.type)
+
+                        case .expression:
+                            assertionFailure("Expression indexes are not supported yet")
+                            return nil
+                        }
+                    }
+
+                return NSFetchIndexDescription(name: indexDescription.name, elements: elements)
+            }
+        }
 
         // Set entities and configurations
 

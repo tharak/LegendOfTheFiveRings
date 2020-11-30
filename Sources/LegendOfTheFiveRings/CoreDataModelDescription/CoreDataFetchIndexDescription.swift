@@ -20,13 +20,13 @@ public struct CoreDataFetchIndexDescription {
             case expression(type: String)
         }
 
-//        public static func property(name: String, type: NSFetchIndexElementType = .binary, ascending: Bool = true) -> Element {
-//            Element(property: .property(name: name), type: type, ascending: ascending)
-//        }
+        public static func property(name: String, type: NSFetchIndexElementType = .binary, ascending: Bool = true) -> Element {
+            Element(property: .property(name: name), type: type, ascending: ascending)
+        }
 
         public var property: Property
 
-//        public var type: NSFetchIndexElementType
+        public var type: NSFetchIndexElementType
 
         public var ascending: Bool
     }

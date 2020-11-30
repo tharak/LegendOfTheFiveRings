@@ -34,7 +34,6 @@ import Foundation
 import CoreData
 import LegendOfTheFiveRings
 
-@available(iOS 11.0, *)
 class TestCoreDataStack: CoreDataStack {
     override init() {
         super.init()
