@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import LegendOfTheFiveRings
+@testable import LegendOfTheFiveRings
 
 final class LegendOfTheFiveRingsModelTests: XCTestCase {
 
@@ -62,14 +62,21 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         model.buyItem(type: Item.ItemType.advantages, name: "Allies", points: cost, for: character)
         XCTAssertTrue(character.items.count == 1)
         XCTAssertTrue(character.xp == xp - cost)
-        model.buyItem(type: Item.ItemType.advantages, name: "Allies", points: cost, for: character)
+        XCTAssertTrue(character.getItems()[0].name == "Allies")
+
+        model.buyItem(type: Item.ItemType.advantages, name: "Allies2", points: cost, for: character)
         XCTAssertTrue(character.items.count == 2)
         XCTAssertTrue(character.xp == xp - cost - cost)
+        XCTAssertTrue(character.getItems()[0].name == "Allies")
+        XCTAssertTrue(character.getItems()[1].name == "Allies2")
 
         model.buyItem(type: Item.ItemType.disadvantages, name: "Enemies", points: cost, for: character)
         XCTAssertTrue(character.items.count == 3)
         XCTAssertTrue(character.xp == xp - cost - cost + cost)
 
+        XCTAssertTrue(character.getItems()[0].name == "Allies")
+        XCTAssertTrue(character.getItems()[1].name == "Allies2")
+        XCTAssertTrue(character.getItems()[2].name == "Enemies")
     }
 
     func testCharacterCreation() {
@@ -80,7 +87,8 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.honor == 0)
         XCTAssertTrue(character.status == 0)
         XCTAssertTrue(character.glory == 0)
-        XCTAssertTrue(character.clans().isEmpty)
+        XCTAssertNil(character.clan())
+        XCTAssertNil(character.family())
         XCTAssertTrue(character.schools().isEmpty)
         XCTAssertTrue(character.items.count == 0)
         for trait in TraitName.allCases {
@@ -91,42 +99,86 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         }
         XCTAssertTrue(character.insight() == 100)
         XCTAssertTrue(character.rank() == 1)
- 
+        XCTAssertTrue(character.getItems().isEmpty)
     }
 
     func testCharacterBuyClan() {
         self.model.create(name: "Wilson", xp: 100)
         let character = self.model.characters.first!
-        self.model.buyItem(type: Item.ItemType.clan, name: ClanName.crab.rawValue, points: 0, for: character)
-        XCTAssertTrue(character.items.count == 1)
-        XCTAssertTrue(character.clans().first?.name == ClanName.crab.rawValue)
+        self.model.pickClan(name: ClanName.crab.rawValue, for: character)
+        XCTAssertTrue(self.model.characters.first!.items.count == 1)
+        XCTAssertTrue(self.model.characters.first!.clan()?.name == ClanName.crab.rawValue)
+        self.model.pickClan(name: ClanName.badger.rawValue, for: character)
+        XCTAssertTrue(self.model.characters.first!.getItems(type: Item.ItemType.clans).count == 1)
+        XCTAssertTrue(self.model.characters.first!.clan()?.name == ClanName.badger.rawValue)
+    }
+    
+    func testCharacterBuyFamily() {
+        self.model.create(name: "Wilson", xp: 100)
+        let character = self.model.characters.first!
+        let families = Book().families
+        let hida = families.first(where: {$0.name == "Hida"})!
+        
+        self.model.pickFamily(family: hida, for: character)
+        XCTAssertTrue(character.items.count == 2)
+        XCTAssertNotNil(character.family())
+        XCTAssertTrue(character.family()?.name == "Hida")
+        XCTAssertTrue(character.trait(name: TraitName.strength) == 3)
+        
+        let hiruma = families.first(where: {$0.name == "Hiruma"})!
+        self.model.pickFamily(family: hiruma, for: character)
+        XCTAssertTrue(character.items.count == 2)
+        XCTAssertNotNil(character.family())
+        XCTAssertTrue(character.family()?.name == "Hiruma")
+        XCTAssertTrue(character.trait(name: TraitName.strength) == 2)
+        XCTAssertTrue(character.trait(name: TraitName.agility) == 3)
     }
 
     func testCharacterBuySchool() {
-        let name = "SchoolName"
-        let name2 = "SchoolName2"
+        let schools = Book().schools
         self.model.create(name: "Wilson", xp: 100)
         let character = self.model.characters.first!
-        self.model.buyItem(type: Item.ItemType.schools, name: name, points: 0, for: character)
+        self.model.pickSchool(school: schools.first!, for: character)
         XCTAssertTrue(character.schools().count == 1)
-        XCTAssertTrue(character.schools().first?.name == name)
-        self.model.buyItem(type: Item.ItemType.schools, name: name2, points: 0, for: character)
-        XCTAssertTrue(character.schools().count == 2)
+        XCTAssertTrue(character.schools().first?.name == schools.first!.name)
+        self.model.pickSchool(school: schools.last!, for: character)
+        XCTAssertTrue(character.schools().count == 1)
     }
 
     func testCharacterBuyTrait() {
-        self.model.create(name: "Wilson", xp: 100)
+        self.model.create(name: "Wilson", xp: 0)
         let character = self.model.characters.first!
-        self.model.buyItem(type: Item.ItemType.traits, name: TraitName.agility.rawValue, points: 0, for: character)
+        self.model.buyTrait(name: TraitName.agility, for: character)
         XCTAssertTrue(character.trait(name: TraitName.agility) == 3)
-        XCTAssertTrue(character.trait(name: TraitName.intelligence) == 2)
+        assert(character.xp == -12)
+        self.model.buyTrait(name: TraitName.agility, for: character)
+        XCTAssertTrue(character.trait(name: TraitName.agility) == 4)
+        assert(character.xp == -12-16)
+        self.model.buyTrait(name: TraitName.agility, for: character)
+        XCTAssertTrue(character.trait(name: TraitName.agility) == 5)
+        assert(character.xp == -12-16-20)
         XCTAssertTrue(character.ring(name: RingName.fire) == 2)
-        XCTAssertTrue(character.ring(name: RingName.air) == 2)
-        self.model.buyItem(type: Item.ItemType.traits, name: TraitName.intelligence.rawValue, points: 0, for: character)
-        XCTAssertTrue(character.trait(name: TraitName.agility) == 3)
+        self.model.buyTrait(name: TraitName.intelligence, for: character)
+        assert(character.xp == -12-16-20-12)
         XCTAssertTrue(character.trait(name: TraitName.intelligence) == 3)
         XCTAssertTrue(character.ring(name: RingName.fire) == 3)
-        XCTAssertTrue(character.ring(name: RingName.air) == 2)
+
+        self.model.sellTrait(name: TraitName.agility, for: character)
+        XCTAssertTrue(character.trait(name: TraitName.agility) == 4)
+        assert(character.xp == -12-16-12, "\(character.xp)")
+        XCTAssertTrue(character.ring(name: RingName.fire) == 3)
+        self.model.sellTrait(name: TraitName.agility, for: character)
+        XCTAssertTrue(character.trait(name: TraitName.agility) == 3)
+        assert(character.xp == -12-12, "\(character.xp)")
+        XCTAssertTrue(character.ring(name: RingName.fire) == 3)
+        self.model.sellTrait(name: TraitName.agility, for: character)
+        XCTAssertTrue(character.trait(name: TraitName.agility) == 2)
+        assert(character.xp == -12, "\(character.xp)")
+        XCTAssertTrue(character.ring(name: RingName.fire) == 2)
+        self.model.sellTrait(name: TraitName.agility, for: character)
+        XCTAssertTrue(character.trait(name: TraitName.agility) == 2)
+        assert(character.xp == -12, "\(character.xp)")
+        XCTAssertTrue(character.ring(name: RingName.fire) == 2)
     }
 
     func testWounds() {
@@ -143,8 +195,8 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.down) == 34)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.out) == 38)
 
-        self.model.buyItem(type: Item.ItemType.traits, name: TraitName.stamina.rawValue, points: 0, for: character)
-        self.model.buyItem(type: Item.ItemType.traits, name: TraitName.willpower.rawValue, points: 0, for: character)
+        self.model.buyTrait(name: TraitName.stamina, for: character)
+        self.model.buyTrait(name: TraitName.willpower, for: character)
         XCTAssertTrue(character.woundPerLevel() == 6)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.healthy) == 15)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.nicked) == 21)
@@ -155,13 +207,13 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.down) == 51)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.out) == 57)
 
-        self.model.buyItem(type: Item.ItemType.traits, name: TraitName.stamina.rawValue, points: 0, for: character)
-        self.model.buyItem(type: Item.ItemType.traits, name: TraitName.willpower.rawValue, points: 0, for: character)
+        self.model.buyTrait(name: TraitName.stamina, for: character)
+        self.model.buyTrait(name: TraitName.willpower, for: character)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.healthy) == 20)
         XCTAssertTrue(character.woundPerLevel() == 8)
 
-        self.model.buyItem(type: Item.ItemType.traits, name: TraitName.stamina.rawValue, points: 0, for: character)
-        self.model.buyItem(type: Item.ItemType.traits, name: TraitName.willpower.rawValue, points: 0, for: character)
+        self.model.buyTrait(name: TraitName.stamina, for: character)
+        self.model.buyTrait(name: TraitName.willpower, for: character)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.healthy) == 25)
         XCTAssertTrue(character.woundPerLevel() == 10)
     }

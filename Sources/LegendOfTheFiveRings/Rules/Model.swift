@@ -32,6 +32,14 @@ public struct Clan: Codable, Hashable {
 // MARK: - Family
 public struct Family: Codable, Hashable {
     public let name, clan, benefit, description: String
+
+    public func bonusTrait() -> TraitName? {
+        return name.contains("True Ronin") ? nil : textToTrait(text: benefit)
+    }
+    
+    public func textToTrait(text: String) -> TraitName {
+        TraitName.allCases.first(where: {text.lowercased().contains($0.rawValue)})!
+    }
 }
 
 // MARK: - School
@@ -46,6 +54,13 @@ public struct School: Codable, Hashable {
     public let technique3, technique3Description, technique4, technique4Description: String?
     public let technique5, technique5Description, affinity, spells: String?
     public let ringTraits, other: String?
+
+    public func bonusTrait() -> TraitName? {
+        if let benefit = benefit {
+            return TraitName.allCases.first(where: {benefit.lowercased().contains($0.rawValue)})!
+        }
+        return nil
+    }
 }
 
 public enum Discipline: String, Codable, Hashable {

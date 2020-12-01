@@ -41,20 +41,36 @@ public class Character: NSManagedObject {
         ]
     )
 
-    func getItems(type: Item.ItemType) -> Set<Item> {
-        return items.filtered(using: NSPredicate(format: "type == %@", type.rawValue)) as? Set<Item> ?? []
+    func getItems(type: Item.ItemType? = nil, name: String? = nil) -> [Item] {
+        if let type = type {
+            if let name = name {
+                let filtered = items.filtered(using: NSPredicate(format: "type == %@ && name == %@", type.rawValue, name)) as? Set<Item> ?? []
+                return filtered.sorted(by: {$0.order < $1.order})
+            }
+            let filtered = items.filtered(using: NSPredicate(format: "type == %@", type.rawValue)) as? Set<Item> ?? []
+            return filtered.sorted(by: {$0.order < $1.order})
+        }
+        return (items as? Set<Item> ?? []).sorted(by: {$0.order < $1.order})
     }
 
-    func getItems(type: Item.ItemType, name: String) -> Set<Item> {
-        return items.filtered(using: NSPredicate(format: "type == %@ && name == %@", type.rawValue, name)) as? Set<Item> ?? []
+    func getItem(type: Item.ItemType, name: String? = nil) -> Item? {
+        getItems(type: type, name: name).first
     }
 
-    public func clans() -> Set<Item> {
-        return getItems(type: .clan)
+    public func hasMultipleSchools() -> Bool {
+        return getItem(type: Item.ItemType.advantages, name: "Multiple Schools") != nil
     }
 
-    public func schools() -> Set<Item> {
+    public func clan() -> Item? {
+        return getItem(type: Item.ItemType.clans)
+    }
+
+    public func schools() -> [Item] {
         return getItems(type: .schools)
+    }
+    
+    public func family() -> Item? {
+        return getItems(type: .families).first
     }
 
     public func trait(name: TraitName) -> Int {

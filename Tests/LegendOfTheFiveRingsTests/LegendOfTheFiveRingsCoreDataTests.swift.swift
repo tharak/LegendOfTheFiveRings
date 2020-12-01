@@ -95,4 +95,12 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
 
         XCTAssertTrue(fetchCharacters?.isEmpty ?? false)
     }
+
+    func testDeleteItem() {
+        let character = coreDataService.createCharacter(name: "Death Star", xp: 45)
+        let item = coreDataService.createItem(for: character, name: "Item1", type: Item.ItemType.ancestors, points: 0)
+        XCTAssertTrue(coreDataService.getCharacters()?.first?.items.count == 1)
+        coreDataService.delete(item)
+        XCTAssertTrue(coreDataService.getCharacters()?.first?.items.count == 0)
+    }
 }
