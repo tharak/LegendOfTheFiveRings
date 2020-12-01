@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 public struct CoreDataModel {
-    
+
     public init() { }
 
     public static let model: NSManagedObjectModel = CoreDataModelDescription(

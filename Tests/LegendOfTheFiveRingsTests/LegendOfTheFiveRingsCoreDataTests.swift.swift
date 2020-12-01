@@ -95,6 +95,4 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
 
         XCTAssertTrue(fetchCharacters?.isEmpty ?? false)
     }
-    
-    
 }

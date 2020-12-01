@@ -35,7 +35,7 @@ import CoreData
 
 open class CoreDataStack {
     public static let modelName = "LegendOfTheFiveRings"
-    
+
     public static let model: NSManagedObjectModel = CoreDataModel.model
 
     public init() {}

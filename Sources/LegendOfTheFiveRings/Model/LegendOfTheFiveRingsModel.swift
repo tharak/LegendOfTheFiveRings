@@ -24,19 +24,19 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
         coreDataService.createCharacter(name: name, xp: xp)
         characters = coreDataService.getCharacters() ?? []
     }
-    
+
     public func update(character: Character) {
         coreDataService.update(character)
         characters = coreDataService.getCharacters() ?? []
     }
-    
+
     public func delete(character: Character) {
         coreDataService.delete(character)
         characters = coreDataService.getCharacters() ?? []
     }
-    
+
     public func buyItem(type: Item.ItemType, name: String, points: Int, for character: Character) {
         coreDataService.createItem(for: character, name: name, type: type, points: points)
     }
-    
+
 }

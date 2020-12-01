@@ -75,7 +75,7 @@ extension CoreDataService {
         coreDataStack.saveContext(managedObjectContext)
         return item
     }
-    
+
     public func getCharacters() -> [Character]? {
         let reportFetch: NSFetchRequest<Character> = Character.fetchRequest()
         do {
@@ -92,14 +92,13 @@ extension CoreDataService {
         coreDataStack.saveContext(managedObjectContext)
         return character
     }
-    
+
     public func delete(_ character: Character) {
         managedObjectContext.delete(character)
         coreDataStack.saveContext(managedObjectContext)
     }
-    
+
     public func deleteAll() {
-        
         let characters = getCharacters() ?? []
         for character in characters {
             managedObjectContext.delete(character)

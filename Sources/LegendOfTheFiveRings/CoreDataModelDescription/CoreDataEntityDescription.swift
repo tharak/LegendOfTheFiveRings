@@ -23,7 +23,7 @@ public struct CoreDataEntityDescription {
                               configuration: String? = nil) -> CoreDataEntityDescription {
         CoreDataEntityDescription(name: name, managedObjectClassName: NSStringFromClass(managedObjectClass), parentEntity: parentEntity, isAbstract: isAbstract, attributes: attributes, fetchedProperties: fetchedProperties, relationships: relationships, indexes: indexes, constraints: constraints, configuration: configuration)
     }
-    
+
     public var name: String
 
     public var managedObjectClassName: String
@@ -33,7 +33,7 @@ public struct CoreDataEntityDescription {
     public var isAbstract: Bool
 
     public var attributes: [CoreDataAttributeDescription]
-    
+
     public var fetchedProperties: [CoreDataFetchedPropertyDescription]
 
     public var relationships: [CoreDataRelationshipDescription]

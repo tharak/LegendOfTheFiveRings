@@ -1,7 +1,7 @@
 public struct LegendOfTheFiveRings {
-    
+
     public init() {}
-    
+
     public var text = "Hello, World!"
 }
 
@@ -10,7 +10,7 @@ import Foundation
 public struct Book {
 
     public init() {}
-    
+
     public let clans: [Clan] = load(resource: "Clans") ?? []
     public let families: [Family] = load(resource: "Families") ?? []
     public let schools: [School] = load(resource: "Schools") ?? []
@@ -25,7 +25,7 @@ public struct Book {
     public let tattoos: [Tattoo] = load(resource: "Tattoos") ?? []
     public let ancestors: [Ancestor] = load(resource: "Ancestors") ?? []
     public let shadowlandsPowers: [ShadowPower] = load(resource: "ShadowlandsPowers") ?? []
-    
+
     static func load<T: Codable>(resource: String, withExtension: String = "json") -> T? {
         if let path = Bundle.module.url(forResource: resource, withExtension: withExtension) {
             do {

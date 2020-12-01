@@ -21,13 +21,13 @@ public struct CoreDataAttributeDescription {
     public var attributeType: NSAttributeType
 
     public var isOptional: Bool
-    
+
     public var defaultValue: Any?
-    
+
     public var isIndexedBySpotlight: Bool
 
     public func makeAttribute() -> NSAttributeDescription {
-        let attribute = NSAttributeDescription()        
+        let attribute = NSAttributeDescription()
         attribute.name = name
         attribute.attributeType = attributeType
         attribute.isOptional = isOptional

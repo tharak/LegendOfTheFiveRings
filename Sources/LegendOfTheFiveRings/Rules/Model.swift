@@ -7,6 +7,22 @@
 
 import Foundation
 
+public enum TraitName: String, CaseIterable {
+    case stamina, willpower, strength, perception, reflexes, awareness, agility, intelligence, void
+}
+
+public enum ClanName: String, CaseIterable {
+    case crab, crane, dragon, lion, mantis, phoenix, scorpion, spider, unicorn, badger, bat, boar, dragonfly, falcon, fox, hare, monkey, oriole, ox, snake, sparrow, tiger, tortoise, imperial, ronin
+}
+
+public enum RingName: String, CaseIterable {
+     case fire, water, air, earth, void
+}
+
+public enum WoundLevel: String, CaseIterable {
+    case healthy, nicked, grazed, hurt, injured, crippled, down, out
+}
+
 // MARK: - Clan
 public struct Clan: Codable, Hashable {
     public let name, description: String

@@ -157,7 +157,7 @@ public struct CoreDataModelDescription {
         for (configurationName, entities) in configurationNameToEntities {
             model.setEntities(entities, forConfigurationName: configurationName)
         }
-        
+
         return model
     }
 }

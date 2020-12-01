@@ -15,11 +15,11 @@ public class Item: NSManagedObject {
     @NSManaged public var order: Int16
     @NSManaged public var points: Int16
     @NSManaged public var character: Character
-    
+
     public class func fetchRequest() -> NSFetchRequest<Item> {
       return NSFetchRequest<Item>(entityName: String(describing: Item.self))
     }
-    
+
     static let entity = CoreDataEntityDescription.entity(
         name: String(describing: Item.self),
         managedObjectClass: Item.self,
@@ -34,13 +34,9 @@ public class Item: NSManagedObject {
             .relationship(name: "character", destination: String(describing: Character.self), toMany: false, inverse: "items")
         ]
     )
-    
+
     public enum ItemType: String, CaseIterable {
         case advantages, ancestors, armors, clan, disadvantages, families, katas, kihos, schools, shadowlandsPowers, skills,  spells, tattoos, weapons
         case traits
-    }
-
-    public enum TraitsNames: String, CaseIterable {
-        case stamina, willpower, strength, perception, reflexes, awareness, agility, intelligence, void
     }
 }
