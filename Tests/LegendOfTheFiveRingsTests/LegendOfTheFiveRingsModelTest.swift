@@ -52,4 +52,23 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         model.delete(character: self.model.characters.first!)
         XCTAssert(model.characters.count ==  0)
     }
+    
+    func testBuyItem() {
+        let xp = 45
+        let cost = 3
+        self.model.create(name: "Wilson", xp: xp)
+        let character = self.model.characters.first!
+        XCTAssertTrue(character.items.count == 0)
+        model.buyItem(type: Item.ItemType.advantages, name: "Allies", points: cost, for: character)
+        XCTAssertTrue(character.items.count == 1)
+        XCTAssertTrue(character.xp == xp - cost)
+        model.buyItem(type: Item.ItemType.advantages, name: "Allies", points: cost, for: character)
+        XCTAssertTrue(character.items.count == 2)
+        XCTAssertTrue(character.xp == xp - cost - cost)
+        
+        model.buyItem(type: Item.ItemType.disadvantages, name: "Enemies", points: cost, for: character)
+        XCTAssertTrue(character.items.count == 3)
+        XCTAssertTrue(character.xp == xp - cost - cost + cost)
+        
+    }
 }

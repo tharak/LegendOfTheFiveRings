@@ -76,7 +76,7 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
 
     func testUpdateCharacterItems() {
         let character = coreDataService.createCharacter(name: "Snow Planet", xp: 0)
-        let item = coreDataService.createItem(for: character, name: "allies", type: Item.ItemType.advantages.rawValue, points: 5)
+        let item = coreDataService.createItem(for: character, name: "allies", type: Item.ItemType.advantages, points: 5)
         XCTAssertTrue(character.items.count == 1)
         XCTAssertTrue(character.items.contains(item))
         XCTAssertTrue(character.xp == -5)

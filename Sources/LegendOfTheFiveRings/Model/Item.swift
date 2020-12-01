@@ -32,14 +32,15 @@ public class Item: NSManagedObject {
         ],
         relationships: [
             .relationship(name: "character", destination: String(describing: Character.self), toMany: false, inverse: "items")
-        ])
+        ]
+    )
     
-    public enum ItemType: String {
+    public enum ItemType: String, CaseIterable {
         case advantages, ancestors, armors, clan, disadvantages, families, katas, kihos, schools, shadowlandsPowers, skills,  spells, tattoos, weapons
         case traits
     }
 
-    public enum TraitsNames: String {
+    public enum TraitsNames: String, CaseIterable {
         case stamina, willpower, strength, perception, reflexes, awareness, agility, intelligence, void
     }
 }

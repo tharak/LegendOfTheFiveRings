@@ -38,5 +38,6 @@ public class Character: NSManagedObject {
         ],
         relationships: [
             .relationship(name: "items", destination: String(describing: Item.self), toMany: true, deleteRule: .cascadeDeleteRule, inverse: "character")
-        ])
+        ]
+    )
 }

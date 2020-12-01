@@ -63,15 +63,15 @@ extension CoreDataService {
     }
 
     @discardableResult
-    public func createItem(for character: Character, name: String, type: String, points: Int) -> Item {
+    public func createItem(for character: Character, name: String, type: Item.ItemType, points: Int) -> Item {
         let item = Item(context: managedObjectContext)
         item.id = UUID()
         item.order = Int16(character.items.count)
         item.name = name
-        item.type = type
+        item.type = type.rawValue
         item.points = Int16(points)
         item.character = character
-        character.xp = character.xp - item.points
+        character.xp = character.xp + (type == Item.ItemType.disadvantages ? item.points : -item.points)
         coreDataStack.saveContext(managedObjectContext)
         return item
     }
