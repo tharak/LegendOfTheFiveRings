@@ -100,6 +100,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.insight() == 100)
         XCTAssertTrue(character.rank() == 1)
         XCTAssertTrue(character.getItems().isEmpty)
+        XCTAssertTrue(character.ancestors().count == 0)
     }
 
     func testCharacterBuyClan() {
@@ -376,5 +377,57 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.woundPenalty(woundLevel: WoundLevel.crippled) == 20)
         XCTAssertTrue(character.woundPenalty(woundLevel: WoundLevel.down) == 40)
         XCTAssertTrue(character.woundPenalty(woundLevel: WoundLevel.out) == 100)
+    }
+
+    func testBuyOtherStuff() {
+        let book = Book()
+        self.model.create(name: "Wilson", xp: 0)
+        let character = self.model.characters.first!
+        let ancestor = book.ancestors[0]
+        model.buyItem(type: Item.ItemType.ancestors, name: ancestor.name, points: ancestor.points, for: character)
+        XCTAssertTrue(character.ancestors().count == 1)
+        model.sellItem(item: character.ancestors()[0], for: character)
+        XCTAssertTrue(character.ancestors().count == 0)
+
+        let kata = book.katas[0]
+        model.buyItem(type: Item.ItemType.katas, name: kata.name, points: kata.mastery, for: character)
+        XCTAssertTrue(character.katas().count == 1)
+        model.sellItem(item: character.katas()[0], for: character)
+        XCTAssertTrue(character.katas().count == 0)
+
+        let kiho = book.kihos[0]
+        model.buyItem(type: Item.ItemType.kihos, name: kiho.name, points: kiho.mastery, for: character)
+        XCTAssertTrue(character.kihos().count == 1)
+        model.sellItem(item: character.kihos()[0], for: character)
+        XCTAssertTrue(character.kihos().count == 0)
+
+        model.buyItem(type: Item.ItemType.shadowlandsPowers, name: book.shadowlandsPowers[0].name, points: 0, for: character)
+        XCTAssertTrue(character.shadowlandsPowers().count == 1)
+        model.sellItem(item: character.shadowlandsPowers()[0], for: character)
+        XCTAssertTrue(character.shadowlandsPowers().count == 0)
+
+        let spell = book.spells[0]
+        model.buyItem(type: Item.ItemType.spells, name: spell.name, points: spell.mastery ?? "0", for: character)
+        XCTAssertTrue(character.spells().count == 1)
+        model.sellItem(item: character.spells()[0], for: character)
+        XCTAssertTrue(character.spells().count == 0)
+
+        let tattoo = book.tattoos[0]
+        model.buyItem(type: Item.ItemType.tattoos, name: tattoo.name, points: 0, for: character)
+        XCTAssertTrue(character.tattoos().count == 1)
+        model.sellItem(item: character.tattoos()[0], for: character)
+        XCTAssertTrue(character.tattoos().count == 0)
+
+        let weapon = book.weapons[0]
+        model.buyItem(type: Item.ItemType.weapons, name: weapon.name, points: 0, for: character)
+        XCTAssertTrue(character.weapons().count == 1)
+        model.sellItem(item: character.weapons()[0], for: character)
+        XCTAssertTrue(character.weapons().count == 0)
+
+        let armor = book.armors[0]
+        model.buyItem(type: Item.ItemType.armors, name: armor.name, points: 0, for: character)
+        XCTAssertTrue(character.armors().count == 1)
+        model.sellItem(item: character.armors()[0], for: character)
+        XCTAssertTrue(character.armors().count == 0)
     }
 }

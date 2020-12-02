@@ -40,6 +40,12 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
         characters = coreDataService.getCharacters() ?? []
     }
 
+    func buyItem(type: Item.ItemType, name: String, points: String, for character: Character) {
+        if let points = Int(points) {
+            self.buyItem(type: type, name: name, points: points, for: character)
+        }
+    }
+
     func buyItem(type: Item.ItemType, name: String, points: Int, for character: Character) {
         coreDataService.createItem(for: character, name: name, type: type, points: points)
     }

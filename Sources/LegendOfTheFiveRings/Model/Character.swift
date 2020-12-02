@@ -210,4 +210,37 @@ public class Character: NSManagedObject {
             return 100
         }
     }
+
+    public func ancestors() -> [Item] {
+        return getItems(type: .ancestors)
+    }
+
+    public func katas() -> [Item] {
+        return getItems(type: .katas)
+    }
+
+    public func kihos() -> [Item] {
+        return getItems(type: .kihos)
+    }
+
+    public func shadowlandsPowers() -> [Item] {
+        return getItems(type: .shadowlandsPowers)
+    }
+
+    public func spells() -> [Item] {
+        return getItems(type: .spells)
+    }
+
+    public func tattoos() -> [Item] {
+        return getItems(type: .tattoos)
+    }
+
+    public func weapons() -> [Item] {
+        return getItems(type: .weapons)
+    }
+
+    public func armors() -> [Item] {
+        return getItems(type: .armors)
+    }
+
 }
