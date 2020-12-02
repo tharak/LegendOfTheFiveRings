@@ -44,10 +44,10 @@ public class Character: NSManagedObject {
     func getItems(type: Item.ItemType? = nil, name: String? = nil) -> [Item] {
         if let type = type {
             if let name = name {
-                let filtered = items.filtered(using: NSPredicate(format: "type == %@ && name == %@", type.rawValue, name)) as? Set<Item> ?? []
+                let filtered = items.filtered(using: NSPredicate(format: "type == %@ && name == %@", String(describing: type.self), name)) as? Set<Item> ?? []
                 return filtered.sorted(by: {$0.order < $1.order})
             }
-            let filtered = items.filtered(using: NSPredicate(format: "type == %@", type.rawValue)) as? Set<Item> ?? []
+            let filtered = items.filtered(using: NSPredicate(format: "type == %@", String(describing: type.self))) as? Set<Item> ?? []
             return filtered.sorted(by: {$0.order < $1.order})
         }
         return (items as? Set<Item> ?? []).sorted(by: {$0.order < $1.order})
@@ -65,16 +65,48 @@ public class Character: NSManagedObject {
         return getItem(type: Item.ItemType.clans)
     }
 
+    public func getHonor() -> Float {
+        return Float(honor) / 10
+    }
+
+    public func getGlory() -> Float {
+        return Float(glory) / 10
+    }
+
+    public func getStatus() -> Float {
+        return Float(status) / 10
+    }
+
+    public func getShadowlandsTaint() -> Float {
+        return Float(shadowlandsTaint) / 10
+    }
+
     public func schools() -> [Item] {
         return getItems(type: .schools)
     }
-    
+
     public func family() -> Item? {
         return getItems(type: .families).first
     }
 
     public func trait(name: TraitName) -> Int {
         return 2 + getItems(type: .traits, name: name.rawValue).count
+                    + getItems(type: .schoolTrait, name: name.rawValue).count
+                    + getItems(type: .familyTrait, name: name.rawValue).count
+    }
+
+    public func skillRank(name: String) -> Int {
+        return getItems(type: .skills, name: name).count
+            + getItems(type: .schoolSkill, name: name).count
+    }
+
+    public func skills() -> [Item] {
+        return getItems(type: .skills)
+                + getItems(type: .schoolSkill)
+    }
+
+    public func emphases(for skillName: String) -> [Item] {
+        return getItems(type: Item.ItemType.emphasis(skillName: skillName))
     }
 
     public func ring(name: RingName) -> Int {

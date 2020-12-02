@@ -134,35 +134,84 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.trait(name: TraitName.agility) == 3)
     }
 
-    func testCharacterBuySchool() {
-        let schools = Book().schools
+    func testCharacterPickSchool() {
         self.model.create(name: "Wilson", xp: 100)
         let character = self.model.characters.first!
-        self.model.pickSchool(school: schools.first!, for: character)
+        /*
+         "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Traveling Pack, 3 Koku",
+         */
+        self.model.pickSchool(school: Book().schools[0], for: character)
         XCTAssertTrue(character.schools().count == 1)
-        XCTAssertTrue(character.schools().first?.name == schools.first!.name)
-        self.model.pickSchool(school: schools.last!, for: character)
+        XCTAssertTrue(character.schools().first?.name == "Hida Bushi")
+        XCTAssertTrue(character.getHonor() == 3.5)
+        XCTAssertTrue(character.trait(name: TraitName.stamina) == 3)
+        XCTAssertTrue(character.skills().count == 6)
+        for skillName in ["Athletics", "Defense", "Heavy Weapons (Tetsubo)", "Intimidation", "Kenjutsu", "Lore: Shadowlands"] {
+            XCTAssertTrue(character.skillRank(name: skillName) == 1, "\(skillName) is \(character.skillRank(name: skillName)) not 1")
+        }
+        /*
+         "outfit": "Robes, Wakizashi, any one Knives, Scroll Satchel, Traveling Pack, 3 Koku",
+         */
+        self.model.pickSchool(school: Book().schools[1], for: character)
         XCTAssertTrue(character.schools().count == 1)
+        XCTAssertTrue(character.schools().first?.name == "Kuni Shugenja")
+        XCTAssertTrue(character.getHonor() == 2.5)
+        XCTAssertTrue(character.trait(name: TraitName.stamina) == 2)
+        XCTAssertTrue(character.trait(name: TraitName.willpower) == 3)
+        XCTAssertTrue(character.skills().count == 6)
+        for skillName in ["Calligraphy (Cipher)", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"] {
+            if skillName == "Lore: Shadowlands" {
+                XCTAssertTrue(character.skillRank(name: skillName) == 2, "\(skillName) is \(character.skillRank(name: skillName)) instead of 2")
+            } else {
+                XCTAssertTrue(character.skillRank(name: skillName) == 1)
+            }
+        }
+        XCTAssertTrue(character.xp == 100)
     }
 
     func testCharacterBuyTrait() {
         self.model.create(name: "Wilson", xp: 0)
         let character = self.model.characters.first!
-        self.model.buyTrait(name: TraitName.agility, for: character)
-        XCTAssertTrue(character.trait(name: TraitName.agility) == 3)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.agility, for: character)
+        for traitName in TraitName.allCases {
+            if traitName == .agility {
+                XCTAssertTrue(character.trait(name: traitName) == 3)
+            } else {
+                XCTAssertTrue(character.trait(name: traitName) == 2)
+            }
+        }
         assert(character.xp == -12)
-        self.model.buyTrait(name: TraitName.agility, for: character)
-        XCTAssertTrue(character.trait(name: TraitName.agility) == 4)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.agility, for: character)
+        for traitName in TraitName.allCases {
+            if traitName == .agility {
+                XCTAssertTrue(character.trait(name: traitName) == 4)
+            } else {
+                XCTAssertTrue(character.trait(name: traitName) == 2)
+            }
+        }
         assert(character.xp == -12-16)
-        self.model.buyTrait(name: TraitName.agility, for: character)
-        XCTAssertTrue(character.trait(name: TraitName.agility) == 5)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.agility, for: character)
+        for traitName in TraitName.allCases {
+            if traitName == .agility {
+                XCTAssertTrue(character.trait(name: traitName) == 5)
+            } else {
+                XCTAssertTrue(character.trait(name: traitName) == 2)
+            }
+        }
         assert(character.xp == -12-16-20)
         XCTAssertTrue(character.ring(name: RingName.fire) == 2)
-        self.model.buyTrait(name: TraitName.intelligence, for: character)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.intelligence, for: character)
         assert(character.xp == -12-16-20-12)
-        XCTAssertTrue(character.trait(name: TraitName.intelligence) == 3)
+        for traitName in TraitName.allCases {
+            if traitName == .agility {
+                XCTAssertTrue(character.trait(name: traitName) == 5)
+            } else if traitName == .intelligence {
+                XCTAssertTrue(character.trait(name: traitName) == 3)
+            } else {
+                XCTAssertTrue(character.trait(name: traitName) == 2)
+            }
+        }
         XCTAssertTrue(character.ring(name: RingName.fire) == 3)
-
         self.model.sellTrait(name: TraitName.agility, for: character)
         XCTAssertTrue(character.trait(name: TraitName.agility) == 4)
         assert(character.xp == -12-16-12, "\(character.xp)")
@@ -195,8 +244,8 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.down) == 34)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.out) == 38)
 
-        self.model.buyTrait(name: TraitName.stamina, for: character)
-        self.model.buyTrait(name: TraitName.willpower, for: character)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.stamina, for: character)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.willpower, for: character)
         XCTAssertTrue(character.woundPerLevel() == 6)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.healthy) == 15)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.nicked) == 21)
@@ -207,13 +256,13 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.down) == 51)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.out) == 57)
 
-        self.model.buyTrait(name: TraitName.stamina, for: character)
-        self.model.buyTrait(name: TraitName.willpower, for: character)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.stamina, for: character)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.willpower, for: character)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.healthy) == 20)
         XCTAssertTrue(character.woundPerLevel() == 8)
 
-        self.model.buyTrait(name: TraitName.stamina, for: character)
-        self.model.buyTrait(name: TraitName.willpower, for: character)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.stamina, for: character)
+        self.model.buyTrait(type: Item.ItemType.traits, name: TraitName.willpower, for: character)
         XCTAssertTrue(character.wounds(woundLevel: WoundLevel.healthy) == 25)
         XCTAssertTrue(character.woundPerLevel() == 10)
     }
