@@ -71,7 +71,7 @@ extension CoreDataService {
         item.type = String(describing: type.self)
         item.points = Int16(points)
         item.character = character
-        character.xp = character.xp + (type == Item.ItemType.disadvantages ? item.points : -item.points)
+        character.xp = character.xp - item.points
         coreDataStack.saveContext(managedObjectContext)
         return item
     }

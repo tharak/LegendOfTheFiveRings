@@ -243,4 +243,11 @@ public class Character: NSManagedObject {
         return getItems(type: .armors)
     }
 
+    public func advantages() -> [Item] {
+        return getItems(type: .advantages)
+    }
+
+    public func disadvantages() -> [Item] {
+        return getItems(type: .disadvantages)
+    }    
 }

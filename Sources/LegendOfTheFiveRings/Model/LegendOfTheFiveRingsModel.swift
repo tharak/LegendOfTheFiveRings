@@ -40,17 +40,11 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
         characters = coreDataService.getCharacters() ?? []
     }
 
-    func buyItem(type: Item.ItemType, name: String, points: String, for character: Character) {
-        if let points = Int(points) {
-            self.buyItem(type: type, name: name, points: points, for: character)
-        }
-    }
-
     func buyItem(type: Item.ItemType, name: String, points: Int, for character: Character) {
         coreDataService.createItem(for: character, name: name, type: type, points: points)
     }
 
-    func sellItem(item: Item, for character: Character) {
+    public func sellItem(item: Item, for character: Character) {
         character.xp = character.xp + item.points
         delete(item: item, character: character)
     }
@@ -116,12 +110,6 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
         buyItem(type: type, name: name, points: price, for: character)
     }
 
-    public func sellSkill(skill: Item, for character: Character) {
-        if let skillItem = character.getItems(type: .skills, name: skill.name).last {
-            sellItem(item: skillItem, for: character)
-        }
-    }
-
     public func sellSkill(skillName: String, for character: Character) {
         if let skillItem = character.getItems(type: .skills, name: skillName).last {
             sellItem(item: skillItem, for: character)
@@ -160,5 +148,53 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
                 return name.trimmingCharacters(in: .whitespacesAndNewlines)
             }
         return skillsNames + notRankOne
+    }
+
+    public func buyAncestors(name: String, points: String, for character: Character) {
+        if let points = Int(points) {
+            return buyItem(type: .ancestors, name: name, points: points, for: character)
+        }
+    }
+
+    public func buyKatas(name: String, points: String, for character: Character) {
+        if let points = Int(points) {
+            return buyItem(type: .katas, name: name, points: points, for: character)
+        }
+    }
+
+    public func buyKihos(name: String, points: String, for character: Character) {
+        if let points = Int(points) {
+            return buyItem(type: .kihos, name: name, points: points, for: character)
+        }
+    }
+
+    public func buyShadowlandsPowers(name: String, for character: Character) {
+        return buyItem(type: .shadowlandsPowers, name: name, points: 0, for: character)
+    }
+
+    public func buySpells(name: String, points: String, for character: Character) {
+        if let points = Int(points) {
+            self.buyItem(type: .spells, name: name, points: points, for: character)
+        }
+    }
+
+    public func buyTattoos(name: String, for character: Character) {
+        return buyItem(type: .tattoos, name: name, points: 0, for: character)
+    }
+
+    public func buyWeapons(name: String, for character: Character) {
+        return buyItem(type: .weapons, name: name, points: 0, for: character)
+    }
+
+    public func buyArmors(name: String, for character: Character) {
+        return buyItem(type: .armors, name: name, points: 0, for: character)
+    }
+
+    public func buyAdvantage(name: String, points: Int, for character: Character) {
+        return buyItem(type: .advantages, name: name, points: points, for: character)
+    }
+
+    public func buyDisadvantages(name: String, points: Int, for character: Character) {
+        return buyItem(type: .disadvantages, name: name, points: -points, for: character)
     }
 }

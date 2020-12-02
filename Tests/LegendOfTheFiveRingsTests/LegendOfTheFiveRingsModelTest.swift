@@ -59,24 +59,25 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         self.model.create(name: "Wilson", xp: xp)
         let character = self.model.characters.first!
         XCTAssertTrue(character.items.count == 0)
-        model.buyItem(type: Item.ItemType.advantages, name: "Allies", points: cost, for: character)
-        XCTAssertTrue(character.items.count == 1)
+
+        model.buyAdvantage(name: "Allies", points: cost, for: character)
+        XCTAssertTrue(character.advantages().count == 1)
         XCTAssertTrue(character.xp == xp - cost)
-        XCTAssertTrue(character.getItems()[0].name == "Allies")
+        XCTAssertTrue(character.advantages()[0].name == "Allies")
 
-        model.buyItem(type: Item.ItemType.advantages, name: "Allies2", points: cost, for: character)
-        XCTAssertTrue(character.items.count == 2)
+        model.buyAdvantage(name: "Allies2", points: cost, for: character)
+        XCTAssertTrue(character.advantages().count == 2)
         XCTAssertTrue(character.xp == xp - cost - cost)
-        XCTAssertTrue(character.getItems()[0].name == "Allies")
-        XCTAssertTrue(character.getItems()[1].name == "Allies2")
+        XCTAssertTrue(character.advantages()[0].name == "Allies")
+        XCTAssertTrue(character.advantages()[1].name == "Allies2")
 
-        model.buyItem(type: Item.ItemType.disadvantages, name: "Enemies", points: cost, for: character)
-        XCTAssertTrue(character.items.count == 3)
+        model.buyDisadvantages(name: "Enemies", points: cost, for: character)
+        XCTAssertTrue(character.disadvantages().count == 1)
         XCTAssertTrue(character.xp == xp - cost - cost + cost)
 
-        XCTAssertTrue(character.getItems()[0].name == "Allies")
-        XCTAssertTrue(character.getItems()[1].name == "Allies2")
-        XCTAssertTrue(character.getItems()[2].name == "Enemies")
+        XCTAssertTrue(character.advantages()[0].name == "Allies")
+        XCTAssertTrue(character.advantages()[1].name == "Allies2")
+        XCTAssertTrue(character.disadvantages()[0].name == "Enemies")
     }
 
     func testCharacterCreation() {
@@ -99,7 +100,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         }
         XCTAssertTrue(character.insight() == 100)
         XCTAssertTrue(character.rank() == 1)
-        XCTAssertTrue(character.getItems().isEmpty)
+        XCTAssertTrue(character.items.count == 0)
         XCTAssertTrue(character.ancestors().count == 0)
     }
 
@@ -110,22 +111,22 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(self.model.characters.first!.items.count == 1)
         XCTAssertTrue(self.model.characters.first!.clan()?.name == ClanName.crab.rawValue)
         self.model.pickClan(name: ClanName.badger.rawValue, for: character)
-        XCTAssertTrue(self.model.characters.first!.getItems(type: Item.ItemType.clans).count == 1)
-        XCTAssertTrue(self.model.characters.first!.clan()?.name == ClanName.badger.rawValue)
+        XCTAssertTrue(self.model.characters.first!.items.count == 1)
+        XCTAssertTrue(character.clan()?.name == ClanName.badger.rawValue)
     }
-    
+
     func testCharacterBuyFamily() {
         self.model.create(name: "Wilson", xp: 100)
         let character = self.model.characters.first!
         let families = Book().families
         let hida = families.first(where: {$0.name == "Hida"})!
-        
+
         self.model.pickFamily(family: hida, for: character)
         XCTAssertTrue(character.items.count == 2)
         XCTAssertNotNil(character.family())
         XCTAssertTrue(character.family()?.name == "Hida")
         XCTAssertTrue(character.trait(name: TraitName.strength) == 3)
-        
+
         let hiruma = families.first(where: {$0.name == "Hiruma"})!
         self.model.pickFamily(family: hiruma, for: character)
         XCTAssertTrue(character.items.count == 2)
@@ -276,7 +277,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 0)
         XCTAssertTrue(character.xp == 0)
-        
+
         self.model.pickSchool(school: Book().schools[1], for: character)
         for skillName in ["Calligraphy (Cipher)", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"] {
             if skillName == "Lore: Shadowlands" {
@@ -384,50 +385,52 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         self.model.create(name: "Wilson", xp: 0)
         let character = self.model.characters.first!
         let ancestor = book.ancestors[0]
-        model.buyItem(type: Item.ItemType.ancestors, name: ancestor.name, points: ancestor.points, for: character)
+        model.buyAncestors(name: ancestor.name, points: ancestor.points, for: character)
         XCTAssertTrue(character.ancestors().count == 1)
         model.sellItem(item: character.ancestors()[0], for: character)
         XCTAssertTrue(character.ancestors().count == 0)
 
         let kata = book.katas[0]
-        model.buyItem(type: Item.ItemType.katas, name: kata.name, points: kata.mastery, for: character)
+        model.buyKatas(name: kata.name, points: kata.mastery, for: character)
         XCTAssertTrue(character.katas().count == 1)
         model.sellItem(item: character.katas()[0], for: character)
         XCTAssertTrue(character.katas().count == 0)
 
         let kiho = book.kihos[0]
-        model.buyItem(type: Item.ItemType.kihos, name: kiho.name, points: kiho.mastery, for: character)
+        model.buyKihos(name: kiho.name, points: kiho.mastery, for: character)
         XCTAssertTrue(character.kihos().count == 1)
         model.sellItem(item: character.kihos()[0], for: character)
         XCTAssertTrue(character.kihos().count == 0)
 
-        model.buyItem(type: Item.ItemType.shadowlandsPowers, name: book.shadowlandsPowers[0].name, points: 0, for: character)
+        model.buyShadowlandsPowers(name: book.shadowlandsPowers[0].name, for: character)
         XCTAssertTrue(character.shadowlandsPowers().count == 1)
         model.sellItem(item: character.shadowlandsPowers()[0], for: character)
         XCTAssertTrue(character.shadowlandsPowers().count == 0)
 
         let spell = book.spells[0]
-        model.buyItem(type: Item.ItemType.spells, name: spell.name, points: spell.mastery ?? "0", for: character)
+        model.buySpells(name: spell.name, points: spell.mastery ?? "0", for: character)
         XCTAssertTrue(character.spells().count == 1)
         model.sellItem(item: character.spells()[0], for: character)
         XCTAssertTrue(character.spells().count == 0)
 
         let tattoo = book.tattoos[0]
-        model.buyItem(type: Item.ItemType.tattoos, name: tattoo.name, points: 0, for: character)
+        model.buyTattoos(name: tattoo.name, for: character)
         XCTAssertTrue(character.tattoos().count == 1)
         model.sellItem(item: character.tattoos()[0], for: character)
         XCTAssertTrue(character.tattoos().count == 0)
 
         let weapon = book.weapons[0]
-        model.buyItem(type: Item.ItemType.weapons, name: weapon.name, points: 0, for: character)
+        model.buyWeapons(name: weapon.name, for: character)
         XCTAssertTrue(character.weapons().count == 1)
         model.sellItem(item: character.weapons()[0], for: character)
         XCTAssertTrue(character.weapons().count == 0)
 
         let armor = book.armors[0]
-        model.buyItem(type: Item.ItemType.armors, name: armor.name, points: 0, for: character)
+        model.buyArmors(name: armor.name, for: character)
         XCTAssertTrue(character.armors().count == 1)
         model.sellItem(item: character.armors()[0], for: character)
         XCTAssertTrue(character.armors().count == 0)
+
+        XCTAssertTrue(character.items.count == 0)
     }
 }
