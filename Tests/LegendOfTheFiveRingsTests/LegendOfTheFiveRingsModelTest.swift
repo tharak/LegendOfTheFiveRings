@@ -230,6 +230,104 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.ring(name: RingName.fire) == 2)
     }
 
+    func testBuySkill() {
+        self.model.create(name: "Wilson", xp: 0)
+        let character = self.model.characters.first!
+        var expent = 0
+        for i in 1..<11 {
+            self.model.buySkill(type: Item.ItemType.skills, name: "skill", for: character)
+            XCTAssertTrue(character.skillRank(name: "skill") == i)
+            expent -= i
+            XCTAssertTrue(character.xp == expent, "expected \(expent) got \(character.xp)")
+        }
+        XCTAssertTrue(character.skillRank(name: "skill") == 10)
+        XCTAssertTrue(character.xp == -55)
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 9)
+        XCTAssertTrue(character.xp == -55+10, "got \(character.xp)")
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 8)
+        XCTAssertTrue(character.xp == -55+10+9, "got \(character.xp)")
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 7)
+        XCTAssertTrue(character.xp == -55+10+9+8, "got \(character.xp)")
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 6)
+        XCTAssertTrue(character.xp == -55+10+9+8+7, "got \(character.xp)")
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 5)
+        XCTAssertTrue(character.xp == -55+10+9+8+7+6, "got \(character.xp)")
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 4)
+        XCTAssertTrue(character.xp == -55+10+9+8+7+6+5)
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 3)
+        XCTAssertTrue(character.xp == -55+10+9+8+7+6+5+4)
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 2)
+        XCTAssertTrue(character.xp == -55+10+9+8+7+6+5+4+3)
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 1)
+        XCTAssertTrue(character.xp == -55+10+9+8+7+6+5+4+3+2)
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 0)
+        XCTAssertTrue(character.xp == -55+10+9+8+7+6+5+4+3+2+1)
+        self.model.sellSkill(skillName: "skill", for: character)
+        XCTAssertTrue(character.skillRank(name: "skill") == 0)
+        XCTAssertTrue(character.xp == 0)
+        
+        self.model.pickSchool(school: Book().schools[1], for: character)
+        for skillName in ["Calligraphy (Cipher)", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"] {
+            if skillName == "Lore: Shadowlands" {
+                XCTAssertTrue(character.skillRank(name: skillName) == 2, "\(skillName) is \(character.skillRank(name: skillName)) instead of 2")
+            } else {
+                XCTAssertTrue(character.skillRank(name: skillName) == 1)
+            }
+        }
+        self.model.buySkill(type: Item.ItemType.skills, name: "Lore: Shadowlands", for: character)
+        XCTAssertTrue(character.skillRank(name: "Lore: Shadowlands") == 3)
+        self.model.buySkill(type: Item.ItemType.skills, name: "Lore: Shadowlands", for: character)
+        XCTAssertTrue(character.skillRank(name: "Lore: Shadowlands") == 4)
+
+        self.model.buySkill(type: Item.ItemType.skills, name: "Defense", for: character)
+        XCTAssertTrue(character.skillRank(name: "Defense") == 2)
+
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        XCTAssertTrue(character.skillRank(name: "Lore: Shadowlands") == 3)
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        XCTAssertTrue(character.skillRank(name: "Lore: Shadowlands") == 2)
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        XCTAssertTrue(character.skillRank(name: "Lore: Shadowlands") == 2)
+
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        self.model.sellSkill(skillName: "Lore: Shadowlands", for: character)
+        XCTAssertTrue(character.skillRank(name: "Lore: Shadowlands") == 2)
+
+        self.model.sellSkill(skillName: "Defense", for: character)
+        XCTAssertTrue(character.skillRank(name: "Defense") == 1)
+        self.model.sellSkill(skillName: "Defense", for: character)
+        self.model.sellSkill(skillName: "Defense", for: character)
+        self.model.sellSkill(skillName: "Defense", for: character)
+        XCTAssertTrue(character.skillRank(name: "Defense") == 1)
+
+        XCTAssertTrue(character.skillRank(name: "anotherSkill") == 0)
+        self.model.sellSkill(skillName: "anotherSkill", for: character)
+        XCTAssertTrue(character.skillRank(name: "anotherSkill") == 0)
+        self.model.buySkill(type: Item.ItemType.skills, name: "anotherSkill", for: character)
+        XCTAssertTrue(character.skillRank(name: "anotherSkill") == 1)
+        self.model.sellSkill(skillName: "anotherSkill", for: character)
+        XCTAssertTrue(character.skillRank(name: "anotherSkill") == 0)
+        self.model.sellSkill(skillName: "anotherSkill", for: character)
+        self.model.sellSkill(skillName: "anotherSkill", for: character)
+        XCTAssertTrue(character.skillRank(name: "anotherSkill") == 0)
+        XCTAssertTrue(character.xp == 0)
+    }
+
     func testWounds() {
         self.model.create(name: "Wilson", xp: 100)
         let character = self.model.characters.first!

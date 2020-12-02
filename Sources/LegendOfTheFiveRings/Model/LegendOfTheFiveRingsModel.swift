@@ -44,8 +44,8 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
         coreDataService.createItem(for: character, name: name, type: type, points: points)
     }
 
-    func sellItem(item: Item, points: Int, for character: Character) {
-        character.xp = character.xp + Int16(points)
+    func sellItem(item: Item, for character: Character) {
+        character.xp = character.xp + item.points
         delete(item: item, character: character)
     }
 
@@ -106,8 +106,20 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
     }
 
     public func buySkill(type: Item.ItemType, name: String, for character: Character) {
-        let price = type == .skills ? (character.skillRank(name: name) + 1) * 4 : 0
+        let price = type == .skills ? (character.skillRank(name: name) + 1) : 0
         buyItem(type: type, name: name, points: price, for: character)
+    }
+
+    public func sellSkill(skill: Item, for character: Character) {
+        if let skillItem = character.getItems(type: .skills, name: skill.name).last {
+            sellItem(item: skillItem, for: character)
+        }
+    }
+
+    public func sellSkill(skillName: String, for character: Character) {
+        if let skillItem = character.getItems(type: .skills, name: skillName).last {
+            sellItem(item: skillItem, for: character)
+        }
     }
 
     public func buyTrait(type: Item.ItemType, name: TraitName, for character: Character) {
@@ -116,10 +128,8 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
     }
 
     public func sellTrait(name: TraitName, for character: Character) {
-        let traits = character.trait(name: name)
-        if traits > 2 {
-            let price = traits * 4
-            sellItem(item: character.getItem(type: .traits, name: name.rawValue)!, points: price, for: character)
+        if let traitItem = character.getItems(type: .traits, name: name.rawValue).last {
+            sellItem(item: traitItem, for: character)
         }
     }
 
