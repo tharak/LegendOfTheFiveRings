@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import CoreDataModelDescription
 
 public class Item: NSManagedObject {
     @NSManaged public var id: UUID

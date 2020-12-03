@@ -8,16 +8,19 @@ let package = Package(
     platforms: [
         .iOS(SupportedPlatform.IOSVersion.v14),
         .macOS(SupportedPlatform.MacOSVersion.v11),
-        ],
+    ],
     products: [
         .library(
             name: "LegendOfTheFiveRings",
             targets: ["LegendOfTheFiveRings"]),
     ],
+    dependencies: [
+            .package(name: "CoreDataModelDescription", url: "https://github.com/dmytro-anokhin/core-data-model-description.git", from: "0.0.9"),
+    ],
     targets: [
         .target(
             name: "LegendOfTheFiveRings",
-            dependencies: [],
+            dependencies: ["CoreDataModelDescription"],
             resources: [
                 .process("Resources"),
             ]
