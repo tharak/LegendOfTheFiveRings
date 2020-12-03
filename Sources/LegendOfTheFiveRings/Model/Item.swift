@@ -40,7 +40,6 @@ public class Item: NSManagedObject {
         case traits, familyTrait, schoolTrait
         case skills, schoolSkill
         case emphasis(skillName: String)
-         //not implemented
         case katas, kihos, shadowlandsPowers, spells, tattoos
         case weapons, armors
     }

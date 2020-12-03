@@ -82,9 +82,10 @@ extension CoreDataService {
     }
 
     public func getCharacters() -> [Character]? {
-        let reportFetch: NSFetchRequest<Character> = Character.fetchRequest()
+        let fetchRequest: NSFetchRequest<Character> = Character.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         do {
-            let results = try managedObjectContext.fetch(reportFetch)
+            let results = try managedObjectContext.fetch(fetchRequest)
             return results
         } catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")

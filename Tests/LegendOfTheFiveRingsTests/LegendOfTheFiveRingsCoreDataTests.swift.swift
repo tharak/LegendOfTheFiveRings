@@ -34,6 +34,15 @@ final class LegendOfTheFiveRingsCoreDataTests: XCTestCase {
         XCTAssertTrue(character.name == "Death Star")
         XCTAssertTrue(character.xp == 45)
         XCTAssertTrue(character.items.count == 0)
+        
+        coreDataService.createCharacter(name: "C", xp: 45)
+        coreDataService.createCharacter(name: "A", xp: 45)
+        coreDataService.createCharacter(name: "B", xp: 45)
+        
+        let fetchCharacters = coreDataService.getCharacters()!
+        XCTAssertTrue(fetchCharacters[0].name == "A")
+        XCTAssertTrue(fetchCharacters[1].name == "B")
+        XCTAssertTrue(fetchCharacters[2].name == "C")
     }
 
     func testRootContextIsSavedAfterAddingCharacter() {
