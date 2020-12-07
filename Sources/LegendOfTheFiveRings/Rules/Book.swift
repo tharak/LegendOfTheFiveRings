@@ -1,10 +1,3 @@
-public struct LegendOfTheFiveRings {
-
-    public init() {}
-
-    public var text = "Hello, World!"
-}
-
 import Foundation
 
 public struct Book {

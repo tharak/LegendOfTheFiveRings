@@ -15,7 +15,7 @@ let package = Package(
             targets: ["LegendOfTheFiveRings"]),
     ],
     dependencies: [
-            .package(name: "CoreDataModelDescription", url: "https://github.com/dmytro-anokhin/core-data-model-description.git", from: "0.0.9"),
+        .package(name: "CoreDataModelDescription", url: "https://github.com/dmytro-anokhin/core-data-model-description.git", from: "0.0.9"),
     ],
     targets: [
         .target(
