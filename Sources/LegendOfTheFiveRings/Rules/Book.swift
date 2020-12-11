@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Book {
+public class Book: ObservableObject {
 
     public init() {}
 
