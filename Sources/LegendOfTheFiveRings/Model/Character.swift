@@ -104,6 +104,7 @@ public class Character: NSManagedObject {
     public func skills() -> [Item] {
         return getItems(type: .skills)
                 + getItems(type: .schoolSkill)
+                + getItems(type: .extraSkill)
     }
 
     public func emphases(for skillName: String) -> [Item] {

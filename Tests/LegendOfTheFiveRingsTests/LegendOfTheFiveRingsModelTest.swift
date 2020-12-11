@@ -11,6 +11,7 @@ import XCTest
 final class LegendOfTheFiveRingsModelTests: XCTestCase {
 
     var model: LegendOfTheFiveRingsModel!
+    let book = Book()
     // swiftlint:enable implicitly_unwrapped_optional
 
     override func setUp() {
@@ -104,7 +105,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.ancestors().count == 0)
     }
 
-    func testCharacterBuyClan() {
+    func testCharacterPickClan() {
         self.model.create(name: "Wilson", xp: 100)
         let character = self.model.characters.first!
         self.model.pickClan(name: ClanName.crab.rawValue, for: character)
@@ -115,10 +116,10 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.clan()?.name == ClanName.badger.rawValue)
     }
 
-    func testCharacterBuyFamily() {
+    func testCharacterPickFamily() {
         self.model.create(name: "Wilson", xp: 100)
         let character = self.model.characters.first!
-        let families = Book().families
+        let families = book.families
         let hida = families.first(where: {$0.name == "Hida"})!
 
         self.model.pickFamily(family: hida, for: character)
@@ -142,25 +143,25 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         /*
          "outfit": "Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Traveling Pack, 3 Koku",
          */
-        self.model.pickSchool(school: Book().schools[0], for: character)
+        self.model.pickSchool(school: book.schools[0], for: character)
         XCTAssertTrue(character.schools().count == 1)
         XCTAssertTrue(character.schools().first?.name == "Hida Bushi")
         XCTAssertTrue(character.getHonor() == 3.5)
         XCTAssertTrue(character.trait(name: TraitName.stamina) == 3)
-        XCTAssertTrue(character.skills().count == 6)
+        XCTAssertTrue(character.skills().count == 7)
         for skillName in ["Athletics", "Defense", "Heavy Weapons (Tetsubo)", "Intimidation", "Kenjutsu", "Lore: Shadowlands"] {
             XCTAssertTrue(character.skillRank(name: skillName) == 1, "\(skillName) is \(character.skillRank(name: skillName)) not 1")
         }
         /*
          "outfit": "Robes, Wakizashi, any one Knives, Scroll Satchel, Traveling Pack, 3 Koku",
          */
-        self.model.pickSchool(school: Book().schools[1], for: character)
+        self.model.pickSchool(school: book.schools[1], for: character)
         XCTAssertTrue(character.schools().count == 1)
         XCTAssertTrue(character.schools().first?.name == "Kuni Shugenja")
         XCTAssertTrue(character.getHonor() == 2.5)
         XCTAssertTrue(character.trait(name: TraitName.stamina) == 2)
         XCTAssertTrue(character.trait(name: TraitName.willpower) == 3)
-        XCTAssertTrue(character.skills().count == 6)
+        XCTAssertTrue(character.skills().count == 7, "\(character.skills().count) \(character.skills())")
         for skillName in ["Calligraphy (Cipher)", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"] {
             if skillName == "Lore: Shadowlands" {
                 XCTAssertTrue(character.skillRank(name: skillName) == 2, "\(skillName) is \(character.skillRank(name: skillName)) instead of 2")
@@ -169,6 +170,17 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
             }
         }
         XCTAssertTrue(character.xp == 100)
+        
+        for school in book.schools {
+            model.pickSchool(school: school, for: character)
+            if !school.advanced {
+                if ["Dark Moto Cavalry"].contains(school.name) {
+                    XCTAssertTrue(character.skills().count == 8, "\(character.skills().count) \(school.name) \(school.skills ?? "")")
+                } else {
+                    XCTAssertTrue(character.skills().count == 7, "\(character.skills().count)  \(school.name) \(school.skills ?? "")")
+                }
+            }
+        }
     }
 
     func testCharacterBuyTrait() {
@@ -278,7 +290,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.skillRank(name: "skill") == 0)
         XCTAssertTrue(character.xp == 0)
 
-        self.model.pickSchool(school: Book().schools[1], for: character)
+        self.model.pickSchool(school: book.schools[1], for: character)
         for skillName in ["Calligraphy (Cipher)", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"] {
             if skillName == "Lore: Shadowlands" {
                 XCTAssertTrue(character.skillRank(name: skillName) == 2, "\(skillName) is \(character.skillRank(name: skillName)) instead of 2")
@@ -381,7 +393,6 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
     }
 
     func testBuyOtherStuff() {
-        let book = Book()
         self.model.create(name: "Wilson", xp: 0)
         let character = self.model.characters.first!
         let ancestor = book.ancestors[0]

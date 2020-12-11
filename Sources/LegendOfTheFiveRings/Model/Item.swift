@@ -39,7 +39,7 @@ public class Item: NSManagedObject {
     public enum ItemType: Comparable {
         case advantages, clans, disadvantages, families, schools, ancestors
         case traits, familyTrait, schoolTrait
-        case skills, schoolSkill
+        case skills, schoolSkill, extraSkill
         case emphasis(skillName: String)
         case katas, kihos, shadowlandsPowers, spells, tattoos
         case weapons, armors

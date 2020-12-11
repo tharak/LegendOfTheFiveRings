@@ -86,8 +86,11 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
             if character.hasMultipleSchools() {
                 buyItem(type: Item.ItemType.schools, name: school.name, points: 0, for: character)
             } else {
-                if let schoolTrait = character.getItem(type: Item.ItemType.schoolTrait) {
+                for schoolTrait in character.getItems(type: Item.ItemType.schoolTrait) {
                     delete(item: schoolTrait, character: character)
+                }
+                for extraTrait in character.getItems(type: Item.ItemType.extraSkill) {
+                    delete(item: extraTrait, character: character)
                 }
                 for schoolSkill in character.getItems(type: Item.ItemType.schoolSkill) {
                     delete(item: schoolSkill, character: character)
@@ -103,7 +106,22 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
                 buyTrait(type: Item.ItemType.schoolTrait, name: trait, for: character)
             }
             for skillName in skillNames(from: school.skills) {
-                buySkill(type: .schoolSkill, name: skillName, for: character)
+                if skillName.contains("any") {
+                    if skillName.contains("three") {
+                        buySkill(type: .extraSkill, name: skillName, for: character)
+                        buySkill(type: .extraSkill, name: skillName, for: character)
+                        buySkill(type: .extraSkill, name: skillName, for: character)
+                        continue
+                    }
+                    if skillName.contains("two") {
+                        buySkill(type: .extraSkill, name: skillName, for: character)
+                        buySkill(type: .extraSkill, name: skillName, for: character)
+                        continue
+                    }
+                    buySkill(type: .extraSkill, name: skillName, for: character)
+                } else {
+                    buySkill(type: .schoolSkill, name: skillName, for: character)
+                }
             }
             buyItem(type: Item.ItemType.schools, name: school.name, points: 0, for: character)
         }
@@ -143,7 +161,7 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
         let skillsNames = schoolSkills.split(separator: ",")
             .compactMap { (name) -> String? in
                 if name.contains("any") {
-                    return nil
+                    return "\(name)"
                 }
                 if let numberString = name.split(separator: " ").last,
                     let numberChar = numberString.first,

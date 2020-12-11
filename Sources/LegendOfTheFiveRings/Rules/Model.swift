@@ -57,7 +57,7 @@ public struct School: Codable, Hashable {
 
     public func bonusTrait() -> TraitName? {
         if let benefit = benefit {
-            return TraitName.allCases.first(where: {benefit.lowercased().contains($0.rawValue)})!
+            return TraitName.allCases.first(where: {benefit.lowercased().contains($0.rawValue)})
         }
         return nil
     }

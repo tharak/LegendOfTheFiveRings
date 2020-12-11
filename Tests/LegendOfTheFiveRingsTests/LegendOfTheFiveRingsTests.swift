@@ -4,8 +4,9 @@ import CoreData
 
 final class LegendOfTheFiveRingsTests: XCTestCase {
 
+    let book = Book()
+
     func testBookContent() {
-        let book = Book()
         assert(!book.advatages.isEmpty)
         assert(!book.disadvatages.isEmpty)
         assert(!book.armors.isEmpty)
@@ -23,7 +24,7 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
     }
 
     func testAdvatages() {
-        let advantage = Book().advatages.first!
+        let advantage = book.advatages.first!
         XCTAssertNotNil(advantage)
         assert(advantage.name == "Absolute Direction")
         assert(advantage.subtype == Subtype(rawValue: "Mental"))
@@ -32,7 +33,7 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
     }
 
     func testDisadvatages() {
-        let disadvantage = Book().disadvatages.first!
+        let disadvantage = book.disadvatages.first!
         XCTAssertNotNil(disadvantage)
         assert(disadvantage.name == "Antisocial")
         assert(disadvantage.subtype == Subtype(rawValue: "Social"))
@@ -41,7 +42,7 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
     }
 
     func testArmors() {
-        let armor = Book().armors.first!
+        let armor = book.armors.first!
         XCTAssertNotNil(armor)
         assert(armor.name == "Ashigaru Armor")
         assert(armor.tn == "+3")
@@ -51,7 +52,7 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
     }
 
     func testClan() {
-        let clan = Book().clans.first!
+        let clan = book.clans.first!
         XCTAssertNotNil(clan)
         assert(clan.name == "Crab")
         assert(clan.great == true)
@@ -59,7 +60,7 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
     }
 
     func testAncestors() {
-        let ancestor = Book().ancestors.first!
+        let ancestor = book.ancestors.first!
         XCTAssertNotNil(ancestor)
         assert(ancestor.name == "Hida")
         assert(ancestor.description == "Hida was a warrior of unmatched strength and endurance, who relied on that to defeat all foes, never backing down from any of them, even his own Taint-corrupted son. With Hida watching over you, your blows strike hard and true – you gain +1k0 to all damage rolls and may ignore 4 points of an enemy’s Reduction, regardless of what weapon you are using.\n Further, any Crab who fight alongside you in a skirmish are inspired by the spirit of Hida which infuses your frame, and gain +1 bonus Void point (if they do not use this Void point by the end of the skirmish, it is lost).")
@@ -69,7 +70,7 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
     }
 
     func testFamilies() {
-        let family = Book().families.first!
+        let family = book.families.first!
         
         assert(family.name == "Hida")
         assert(family.clan == "Crab")
@@ -80,12 +81,10 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
     }
 
     func testFamilyBenefit() {
-        let family = Book().families.first!
+        let family = book.families.first!
         XCTAssert(family.textToTrait(text: "+1 Strength") == TraitName.strength)
-        
-        let families = Book().families
-        
-        for family in families {
+
+        for family in book.families {
             if family.name.contains("True Ronin") {
                 XCTAssertNil(family.bonusTrait(), "\(family.benefit)")
             } else {
@@ -95,8 +94,16 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
     }
 
     func testSchoolBenefit() {
-        let school = Book().schools.first!
+        let school = book.schools.first!
         assert(school.benefit == "+1 Stamina")
         assert(school.bonusTrait() == TraitName.stamina)
+        
+        for school in book.schools {
+            if school.advanced || ["Tsuno Ravager", "Tsuno Soultwister", "The Fuzake Shugenja"].contains(school.name){
+                XCTAssertNil(school.bonusTrait(), school.benefit ?? "\(school.name) has no benefit")
+            } else {
+                XCTAssertNotNil(school.bonusTrait(), school.benefit ?? "\(school.name) has no benefit")
+            }
+        }
     }
 }
