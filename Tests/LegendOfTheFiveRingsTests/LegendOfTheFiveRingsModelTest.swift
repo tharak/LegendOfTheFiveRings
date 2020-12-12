@@ -148,7 +148,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.schools().first?.name == "Hida Bushi")
         XCTAssertTrue(character.getHonor() == 3.5)
         XCTAssertTrue(character.trait(name: TraitName.stamina) == 3)
-        XCTAssertTrue(character.skills().count == 7)
+        XCTAssertTrue(character.skills().count + character.extraSkills().count == 7)
         for skillName in ["Athletics", "Defense", "Heavy Weapons (Tetsubo)", "Intimidation", "Kenjutsu", "Lore: Shadowlands"] {
             XCTAssertTrue(character.skillRank(name: skillName) == 1, "\(skillName) is \(character.skillRank(name: skillName)) not 1")
         }
@@ -161,7 +161,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.getHonor() == 2.5)
         XCTAssertTrue(character.trait(name: TraitName.stamina) == 2)
         XCTAssertTrue(character.trait(name: TraitName.willpower) == 3)
-        XCTAssertTrue(character.skills().count == 7, "\(character.skills().count) \(character.skills())")
+        XCTAssertTrue(character.skills().count + character.extraSkills().count == 7, "\(character.skills().count) \(character.skills())")
         for skillName in ["Calligraphy (Cipher)", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"] {
             if skillName == "Lore: Shadowlands" {
                 XCTAssertTrue(character.skillRank(name: skillName) == 2, "\(skillName) is \(character.skillRank(name: skillName)) instead of 2")
@@ -175,9 +175,9 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
             model.pickSchool(school: school, for: character)
             if !school.advanced {
                 if ["Dark Moto Cavalry"].contains(school.name) {
-                    XCTAssertTrue(character.skills().count == 8, "\(character.skills().count) \(school.name) \(school.skills ?? "")")
+                    XCTAssertTrue(character.skills().count + character.extraSkills().count == 8, "\(character.skills().count) \(school.name) \(school.skills ?? "")")
                 } else {
-                    XCTAssertTrue(character.skills().count == 7, "\(character.skills().count)  \(school.name) \(school.skills ?? "")")
+                    XCTAssertTrue(character.skills().count + character.extraSkills().count == 7, "\(character.skills().count)  \(school.name) \(school.skills ?? "")")
                 }
             }
         }
