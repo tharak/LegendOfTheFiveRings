@@ -4,6 +4,7 @@
 //
 //  Created by Tharak on 12/12/20.
 //
+import SwiftUI
 
 public enum RingName: String, CaseIterable {
     case fire, water, air, earth, void
