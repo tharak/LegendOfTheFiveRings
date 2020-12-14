@@ -45,8 +45,8 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
         let armor = book.armors.first!
         XCTAssertNotNil(armor)
         assert(armor.name == "Ashigaru Armor")
-        assert(armor.tn == "+3")
-        assert(armor.reduction == "1")
+        assert(armor.tn == [3])
+        assert(armor.reduction == 1)
         assert(armor.price == "5 Koku")
         assert(armor.description == "Much less expensive to produce than either light or heavy samurai armor, ashigaru armor is also lighter, less restrictive, and less protective than traditional light and heavy armor. It consists of plates that protect the head, torso, and upper legs.\n It is not unheard of for scouts among the samurai caste to wear ashigaru armor in lieu of traditional samurai armor to afford them greater mobility in the execution of their duties.\n Ronin also wear it because of its affordability.")
     }
