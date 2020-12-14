@@ -90,9 +90,11 @@ public struct Weapon: Codable, Hashable {
 
 // MARK: - Armor
 public struct Armor: Codable, Hashable {
-    public let name, tn, reduction, price: String
+    public let name, tn, price: String
     public let description: String
     public let special: String?
+    public let reduction: Int
+    public let tn: [Int]
 }
 
 // MARK: - Advantage
