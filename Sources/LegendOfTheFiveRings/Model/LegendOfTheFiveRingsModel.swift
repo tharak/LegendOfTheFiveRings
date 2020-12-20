@@ -23,6 +23,8 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
     public func create(name: String, xp: Int, clan: ClanName, family: Family, school: School) {
         let character = coreDataService.createCharacter(name: name, xp: xp)
         pickClan(name: clan.rawValue, for: character)
+        character.status = 10
+        character.glory = school.discipline == Discipline.monk ? 0 : 10
         pickFamily(family: family, for: character)
         pickSchool(school: school, for: character)
         characters = coreDataService.getCharacters() ?? []
