@@ -40,7 +40,7 @@ public class Item: NSManagedObject {
         case advantages, clans, disadvantages, families, schools, ancestors
         case traits, familyTrait, schoolTrait
         case skills, schoolSkill, extraSkill
-        case emphasis(skillName: String)
+        case emphasis(skillName: String), schoolEmphasis(skillName: String)
         case katas, kihos, shadowlandsPowers, spells, tattoos
         case weapons, armors
     }

@@ -102,8 +102,11 @@ public class Character: NSManagedObject {
     }
 
     public func skills() -> [Item] {
-        return getItems(type: .skills)
-                + getItems(type: .schoolSkill)
+        return (getItems(type: .skills) + getItems(type: .schoolSkill)).reduce(into: []) { (result, item) in
+            if result.first(where: {$0.name == item.name}) == nil {
+                result.append(item)
+            }
+        }
     }
 
     public func extraSkills() -> [Item] {
@@ -111,7 +114,7 @@ public class Character: NSManagedObject {
     }
 
     public func emphases(for skillName: String) -> [Item] {
-        return getItems(type: Item.ItemType.emphasis(skillName: skillName))
+        return getItems(type: Item.ItemType.emphasis(skillName: skillName)) + getItems(type: Item.ItemType.schoolEmphasis(skillName: skillName))
     }
 
     public func ring(name: RingName) -> Int {
@@ -195,7 +198,34 @@ public class Character: NSManagedObject {
         return self.ring(name: RingName.earth) * 2
     }
 
-    public func woundPenalty(woundLevel: WoundLevel) -> Int {
+    public func woundLevel(damage: Int) -> WoundLevel? {
+        let earth = ring(name: .earth)
+        switch damage {
+        case ...(earth * 5):
+            return .healthy
+        case ...(earth * 7):
+            return .nicked
+        case ...(earth * 9):
+            return .grazed
+        case ...(earth * 11):
+            return .hurt
+        case ...(earth * 13):
+            return .injured
+        case ...(earth * 15):
+            return .crippled
+        case ...(earth * 17):
+            return .down
+        case ...(earth * 19):
+            return .out
+        default:
+            return nil
+        }
+    }
+
+    public func woundPenalty(woundLevel: WoundLevel?) -> Int {
+        guard let woundLevel = woundLevel else {
+            return 0
+        }
         switch woundLevel {
         case .healthy:
             return 0
@@ -212,7 +242,7 @@ public class Character: NSManagedObject {
         case .down:
             return 40
         case .out:
-            return 100
+            return 0
         }
     }
 

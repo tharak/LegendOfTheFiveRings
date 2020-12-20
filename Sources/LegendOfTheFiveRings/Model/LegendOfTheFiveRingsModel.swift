@@ -94,6 +94,9 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
                 }
                 for schoolSkill in character.getItems(type: Item.ItemType.schoolSkill) {
                     delete(item: schoolSkill, character: character)
+                    for schoolEmphasis in character.getItems(type: Item.ItemType.schoolEmphasis(skillName: schoolSkill.name)) {
+                        delete(item: schoolEmphasis, character: character)
+                    }
                 }
                 delete(item: schoolItem, character: character)
                 pickSchool(school: school, for: character)
@@ -128,17 +131,34 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
     }
 
     public func buyEmphasis(skillName: String, emphasisName: String, for character: Character) {
-        buyItem(type: Item.ItemType.emphasis(skillName: skillName), name: emphasisName, points: 2, for: character)
+        if character.skillRank(name: skillName) > 0 {
+            if !character.emphases(for: skillName).map({$0.name}).contains(emphasisName) {
+                buyItem(type: Item.ItemType.emphasis(skillName: skillName), name: emphasisName, points: 2, for: character)
+            }
+        }
     }
 
-    public func buySkill(type: Item.ItemType, name: String, for character: Character) {
+    public func buySkill(type: Item.ItemType = Item.ItemType.skills, name: String, for character: Character) {
         let price = type == .skills ? (character.skillRank(name: name) + 1) : 0
-        buyItem(type: type, name: name, points: price, for: character)
+        if name.contains("(") {
+            let skillWithEmphasis = name.split(separator: "(")
+            if let skillName = skillWithEmphasis.first?.trimmingCharacters(in: .whitespacesAndNewlines) {
+                buyItem(type: type, name: skillName, points: price, for: character)
+                if let emphasisName = skillWithEmphasis.dropFirst().split(separator: ")").first {
+                    buyItem(type: Item.ItemType.schoolEmphasis(skillName: skillName), name: "\(emphasisName)", points: 0, for: character)
+                }
+            }
+        } else {
+            buyItem(type: type, name: name, points: price, for: character)
+        }
     }
 
     public func sellSkill(skillName: String, for character: Character) {
         if let skillItem = character.getItems(type: .skills, name: skillName).last {
             sellItem(item: skillItem, for: character)
+            for emphasis in character.emphases(for: skillName) {
+                sellItem(item: emphasis, for: character)
+            }
         }
     }
 

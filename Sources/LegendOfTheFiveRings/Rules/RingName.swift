@@ -6,6 +6,14 @@
 //
 import SwiftUI
 
+public enum TraitName: String, CaseIterable {
+    case stamina, willpower, strength, perception, reflexes, awareness, agility, intelligence, void
+
+    public var color: Color {
+        return RingName.allCases.first(where: {$0.traits.contains(self)})?.color ?? Color.accentColor
+    }
+}
+
 public enum RingName: String, CaseIterable {
     case fire, water, air, earth, void
 

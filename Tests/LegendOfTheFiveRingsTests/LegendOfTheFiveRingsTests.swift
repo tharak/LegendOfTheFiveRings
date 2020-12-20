@@ -23,6 +23,13 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
         assert(!book.weapons.isEmpty)
     }
 
+    func testSkills() {
+        let skills = book.skills
+        for skill in skills {
+            XCTAssertFalse(skill.emphasis.contains("."), skill.emphasis)
+        }
+    }
+    
     func testAdvatages() {
         let advantage = book.advatages.first!
         XCTAssertNotNil(advantage)
@@ -103,6 +110,19 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
                 XCTAssertNil(school.bonusTrait(), school.benefit ?? "\(school.name) has no benefit")
             } else {
                 XCTAssertNotNil(school.bonusTrait(), school.benefit ?? "\(school.name) has no benefit")
+            }
+        }
+    }
+    
+    func testRingsAndTraits() {
+        
+        for trait in TraitName.allCases {
+            XCTAssertNotNil(trait.color)
+        }
+    
+        for ringName in RingName.allCases {
+            for trait in ringName.traits {
+                assert(ringName.color == trait.color)
             }
         }
     }

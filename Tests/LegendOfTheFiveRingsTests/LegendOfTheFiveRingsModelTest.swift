@@ -253,51 +253,66 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
             XCTAssertTrue(character.skillRank(name: "skill") == i)
             expent -= i
             XCTAssertTrue(character.xp == expent, "expected \(expent) got \(character.xp)")
+            XCTAssertTrue(character.skills().count == 1)
         }
         XCTAssertTrue(character.skillRank(name: "skill") == 10)
         XCTAssertTrue(character.xp == -55)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 9)
         XCTAssertTrue(character.xp == -55+10, "got \(character.xp)")
+        XCTAssertTrue(character.skills().count == 1)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 8)
         XCTAssertTrue(character.xp == -55+10+9, "got \(character.xp)")
+        XCTAssertTrue(character.skills().count == 1)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 7)
         XCTAssertTrue(character.xp == -55+10+9+8, "got \(character.xp)")
+        XCTAssertTrue(character.skills().count == 1)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 6)
         XCTAssertTrue(character.xp == -55+10+9+8+7, "got \(character.xp)")
+        XCTAssertTrue(character.skills().count == 1)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 5)
         XCTAssertTrue(character.xp == -55+10+9+8+7+6, "got \(character.xp)")
+        XCTAssertTrue(character.skills().count == 1)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 4)
         XCTAssertTrue(character.xp == -55+10+9+8+7+6+5)
+        XCTAssertTrue(character.skills().count == 1)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 3)
         XCTAssertTrue(character.xp == -55+10+9+8+7+6+5+4)
+        XCTAssertTrue(character.skills().count == 1)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 2)
         XCTAssertTrue(character.xp == -55+10+9+8+7+6+5+4+3)
+        XCTAssertTrue(character.skills().count == 1)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 1)
         XCTAssertTrue(character.xp == -55+10+9+8+7+6+5+4+3+2)
+        XCTAssertTrue(character.skills().count == 1)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 0)
         XCTAssertTrue(character.xp == -55+10+9+8+7+6+5+4+3+2+1)
+        XCTAssertTrue(character.skills().count == 0)
         self.model.sellSkill(skillName: "skill", for: character)
         XCTAssertTrue(character.skillRank(name: "skill") == 0)
         XCTAssertTrue(character.xp == 0)
+        XCTAssertTrue(character.skills().count == 0)
 
         self.model.pickSchool(school: book.schools[1], for: character)
-        for skillName in ["Calligraphy (Cipher)", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"] {
+        let skillNames = ["Calligraphy", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"]
+        for skillName in skillNames {
             if skillName == "Lore: Shadowlands" {
                 XCTAssertTrue(character.skillRank(name: skillName) == 2, "\(skillName) is \(character.skillRank(name: skillName)) instead of 2")
             } else {
                 XCTAssertTrue(character.skillRank(name: skillName) == 1)
             }
         }
+        XCTAssertTrue(character.skills().count == skillNames.count)
+        XCTAssertTrue(character.emphases(for: "Calligraphy").count == 1)
         self.model.buySkill(type: Item.ItemType.skills, name: "Lore: Shadowlands", for: character)
         XCTAssertTrue(character.skillRank(name: "Lore: Shadowlands") == 3)
         self.model.buySkill(type: Item.ItemType.skills, name: "Lore: Shadowlands", for: character)
@@ -340,6 +355,19 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         self.model.sellSkill(skillName: "anotherSkill", for: character)
         XCTAssertTrue(character.skillRank(name: "anotherSkill") == 0)
         XCTAssertTrue(character.xp == 0)
+        
+        let skillName = "Sleight of Hand"
+        model.buyEmphasis(skillName: skillName, emphasisName: "Prestidigitation", for: character)
+        XCTAssertTrue(character.emphases(for: skillName).count == 0)
+        model.buySkill(type: .skills, name: skillName, for: character)
+        model.buyEmphasis(skillName: skillName, emphasisName: "Prestidigitation", for: character)
+        XCTAssertTrue(character.emphases(for: skillName).count == 1)
+        model.buyEmphasis(skillName: skillName, emphasisName: "Prestidigitation", for: character)
+        XCTAssertTrue(character.emphases(for: skillName).count == 1)
+        model.buyEmphasis(skillName: skillName, emphasisName: "Pick Pocket", for: character)
+        XCTAssertTrue(character.emphases(for: skillName).count == 2)
+        model.sellSkill(skillName: skillName, for: character)
+        XCTAssertTrue(character.emphases(for: skillName).count == 0)
     }
 
     func testWounds() {

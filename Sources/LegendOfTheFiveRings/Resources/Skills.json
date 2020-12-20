@@ -57,7 +57,7 @@
         "name": "Etiquette",
         "category": "High",
         "description": "In a rigid hierarchical society such as the Emerald Empire, knowledge of appropriate conduct is essential for all but the most jaded and uncouth bushi. In many ways a proper code of etiquette is a defense for samurai, who can use their knowledge of how one should behave in a court setting as a shield against the manipulation of others. It can also allow them to avoid embarrassing faux pas by ensuring that they know to whom any particular concern should be addressed in the vast and often confusing Imperial bureaucracy, as well as the lesser bureaucracies maintained by the Great Clans.\nEtiquette is essentially the social defense\" Skill of honorable characters in Rokugan's courts. When someone tries to tempt, manipulate, or otherwise influence you (typically with skills like Courtier or Temptation).\nEtiquette is usually used in the ensuing Contested Roll, most often with the Courtesy Emphasis. Courtesy also allows you to offer an opinion without risking offense (at a TN chosen by the GM) or to remember important social mores that might otherwise be forgotten (TNof anywhere from 5 to 20, depending on obscurity).\nThe Bureaucracy Emphasis is used when trying to maneuver through government channels appropriately, such as trying to arrange a meeting with someone of high Status (the Imperial bureaucracy is notoriously difficult to navigate).\nConversation allows you to determine an appropriate, non-offensive topic for discussion (TN 15+).",
-        "emphasis": "Bureaucracy, Conversation. Courtesy",
+        "emphasis": "Bureaucracy, Conversation, Courtesy",
         "mastery": "Rank 3: The character gains an additional +3 Insight above the total normally indicated by his Rings and Skill Ranks.\nRank 5: The character gains a bonus of +1k0 to the total of all Contested Rolls made using Etiquette.\nRank 7: The character gains an additional +7 Insight above the total normally indicated by his Rings and Skill Ranks (in addition to the bonus from Rank 3).",
         "trait": "Awareness",
         "type": "Social Skill"
@@ -93,7 +93,7 @@
         "name": "Medicine",
         "category": "High",
         "description": "War is the purpose of all samurai, and war often results in those who are wounded but not slain. A wounded samurai is a burden on his lord, unable to perform his duties and yet still requiring resources. Those who practice medicine have the sacred task of ensuring that a samurai recovers front his wounds and can rise again to serve once more.\nMedicine can be used to treat many different injuries and ailments, including sonic spiritual ones. Specific diseases may be treated with the Disease Emphasis, although the TN for treatment will vary depending upon the disease in question. The same applies to poisons and the Antidote Emphasis. Non-human races may be treated using the Non-human Emphasis, but it must be purchased separately for each race (i.e. Nezunri Medicine, Naga Medicine, Zokujin Medicine, etc.). When you treat Wounds that an ally has suffered from damage, a successful Medicine (Wound Treatment) / Intelligence roll (TN 15) will remove one die (1k1) of Wounds from the victim. Each successful Raise on this roll allows an additional die to be rolled, but no more than one die is ever kept on such a roll. An injured individual may only benefit from a single Medicine Skill Roll per day each such roll made requires the use of a Medicine Kit, which allows for ten Medicine Skill Rolls before being consumed.",
-        "emphasis": "Antidotes, Disease. Herbalism, Non-Humans, Wound Treatment",
+        "emphasis": "Antidotes, Disease, Herbalism, Non-Humans, Wound Treatment",
         "mastery": "Rank 5: The amount of Wounds healed on a successful Medicine roll is increased by +1k0.",
         "trait": "Intelligence",
         "type": "None"
@@ -147,7 +147,7 @@
         "name": "Athletics",
         "category": "Bugei",
         "description": "The training that every bushi student receives includes vigorous physical conditioning. For some, this results in a lifelong enjoyment of athletics. Like many who pursue a martial lifestyle, some bushi spend their off duty hours engaging in competitions with one another, or simply pitting themselves against challenges designed to test the limits of their physical abilities.\nAthletics covers many areas normally governed by Trait Rolls. If you have a background in Athletics, however, you can perform these activities, principally climbing, running, and swimming, with considerably more ease than most. Athletics can also increase your capacity for movement, even when restricted by heavy armor and the like. The Throwing Emphasis allows you to throw items with greater accuracy, including certain weapons such as knives or even the wakizashi (see the Equipment section for more information on which weapons can be thrown). Using Athletics to throw a weapon offensively is considered an attack roll. Athletics Skill Rolls to climb, run, or swim use Strength, whereas the Throwing Emphasis requires Agility.",
-        "emphasis": "Climbing, Running. Swimming, Throwing",
+        "emphasis": "Climbing, Running, Swimming, Throwing",
         "mastery": "Rank 3: Moderate Terrain no longer impedes movement, and movement across Difficult Terrain reduces the character's Water Ring by 1 instead of 2.\nRank 5: The character no longer suffers movement penalties regardless of terrain.\nRank 7: The character may add 5 feet to the total of one Move Action per Round (this does not increase his maximum possible movement per round).",
         "trait": "Strength",
         "type": "None"
@@ -174,7 +174,7 @@
         "name": "Horsemanship",
         "category": "Bugei",
         "description": "The ability to use a mount is essential to participation in cavalry units, and to swift travel through the Empire. It is a utilitarian skill, taught in most bushi schools in the Empire without having any real degree of prestige attached (save among the ranks of the Unicorn Clan, who consider an inability to ride roughly equivalent to a crippling physical disability). In general, all samurai can ride a horse at normal speed on level ground without the need for a Skill roll  the Skill only comes into play when riding a horse in difficult or stressful situations (bad terrain, thunderstorm, combat, etc.). Individual types of horses react differently to various circumstances, and some can be much harder to control under stressful situations such as combat, Statistics for the common horses found in Rokugan are located in the Book of the Void, including typical TNs for controlling them in different circumstances.",
-        "emphasis": "Gaijin Riding Horse. Rokugani Pony, Utaku Steed",
+        "emphasis": "Gaijin Riding Horse, Rokugani Pony, Utaku Steed",
         "mastery": "Rank 3: The character may utilize the Full Attack Stance when on horseback.\nRank 5: Mounting a horse is a Simple Action rather than a Complex Action, arid dismounting is a Free Action rather than a Simple Action.\nRank 7: Mounting a horse is a Free Action rather than a Simple Action.",
         "trait": "Agility",
         "type": "None"
@@ -210,7 +210,7 @@
         "name": "Chain Weapons",
         "category": "Bugei",
         "description": "Chain weapons are considered unconventional by most traditional bushi, but they have become accepted as legitimate weapons because of the complexity and effectiveness of their use. Generally, chain weapons see a higher degree of use among the Mantis Clan, who favor exotic and unconventional weapons. but see only periodic use among other Great Clans, and typically then only by small groups of specialized warriors.",
-        "emphasis": "Kusarigarna. Kyoketsu-shogi, Manrikikusari",
+        "emphasis": "Kusarigarna, Kyoketsu-shogi, Manrikikusari",
         "mastery": "Rank 3: Chain weapons may be used to initiate a Grapple (see the Book of Earth) Rank 5: Characters wielding a chain weapon gain a bonus of +1k0 on Contested Rolls against opponents who are entangled or Grappled via their weapon.\nRank 7: Use of a chain weapon confers one Free Raise toward use of the Disarm or Knockdown Maneuvers.",
         "trait": "Agility",
         "type": "Weapon Skill"
@@ -255,7 +255,7 @@
         "name": "Ninjutsu",
         "category": "Bugei",
         "description": "A disgraceful practice, ninjutsu is the art of using specialized weapons created specifically for use by the deadly assassins and shadow warriors known as ninja. No honorable warrior would ever humiliate himself and his ancestors by demonstrating knowledge of such a shameful nature, and indeed many samurai, when confronted with the bizarre implements of the ninja, have difficulty fathoming their use altogether, other than as crude and relatively ineffective weapons.",
-        "emphasis": "Blowgun, Shuriken. Tsubute",
+        "emphasis": "Blowgun, Shuriken, Tsubute",
         "mastery": "Rank 3: The damage of all ninjutsu weapons is increased by +1k0.\nRank 5: Dice on damage rolls made for ninjutsu weapons explode normally (Ninjutsu weapon damage dice do not normally explode due to equipment rules later in this chapter).\nRank 7: The damage of all ninjutsu weapons is increased by +0k1 (+1k1 total).",
         "trait": "Agility or Reflexes",
         "type": "Weapon Skill, considered a Low Skill"
@@ -345,7 +345,7 @@
         "name": "Forgery",
         "category": "Low",
         "description": "Documentation is very important in Rokugan. from information on an individuals illustrious lineage to travel papers issued by magistrates, and even the official Imperial Decrees of the Emperor himself. Those with an eye for detail, a steady hand, and a distinct lack of honor can take advantage of this system by falsifying such papers, either for their own use or to sell to others.\nWhen a forgery is created, the result of your Forgery / Agility Skill Roll should be noted. This is the TN for others to detect the forgery using an Investigation / Perception Skill Roll.",
-        "emphasis": "By type of item being forged (Artwork, Documents. Personal Seals, etc.)",
+        "emphasis": "Artwork, Documents, Personal Seals, other",
         "mastery": "Rank 3: The character gains a bonus of +1k0 to his Forgery Skill Roll result for the purposes of establishing the TN of an Investigation / Perception Skill Roll to detect it.\nRank 5: The character gains a bonus of +1k0 on any roll to detect a forgery made by someone else.\nRank 7: The character gains a bonus of +0k1 (for a total of +1k1) to his Forgery Skill Roll result for the purposes of establishing the TN of an Investigation / Perception Skill Roll to detect it.",
         "trait": "Agility",
         "type": "Forgery is considered a Craft Skill for effects that target Craft Skills."
@@ -363,7 +363,7 @@
         "name": "Sleight of Hand",
         "category": "Low",
         "description": "The dexterous manipulation of small objects for the purpose of misdirection or concealment is not looked upon favorably by most honorable samurai. The code of Bushido flatly calls for sincerity in action, word, and thought, and such parlor tricks smack of deception and dishonesty, which no honorable samurai can abide. The Conceal Emphasis allows you to hide small objects (something that can fit in your hand) on your person, requiring a Contested Roll using Sleight of Hand / Agility against Investigation / Perception to detect it. The Escape Emphasis allows you to slip free of bonds. The TN for this Varies considerably, and can be TN 15 for simple ropes or as high as TN 25 or 30 for high-grade chains or bindings, or it can be a Contested Roll against the responsible party's Sailing (Knot- work). Pick Pockets is fairly self explanatory, requiring the same manner of Contested Roll as Conceal in order to avoid detection, and Prestidigitation allows you to use the Skill to entertain or distract people by performing tricks.",
-        "emphasis": "Conceal. Escape, Pick Pocket, Prestidigitation",
+        "emphasis": "Conceal, Escape, Pick Pocket, Prestidigitation",
         "mastery": "Rank 5: The character may use the Conceal Emphasis to conceal small weapons.",
         "trait": "Agility",
         "type": "None"

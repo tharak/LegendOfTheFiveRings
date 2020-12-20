@@ -7,10 +7,6 @@
 
 import Foundation
 
-public enum TraitName: String, CaseIterable {
-    case stamina, willpower, strength, perception, reflexes, awareness, agility, intelligence, void
-}
-
 public enum WoundLevel: String, CaseIterable {
     case healthy, nicked, grazed, hurt, injured, crippled, down, out
 }
