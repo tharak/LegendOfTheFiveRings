@@ -370,6 +370,137 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.emphases(for: skillName).count == 0)
     }
 
+    func testPickSchool2() {
+        self.model.create(name: "Wilson", xp: 0)
+        let character = self.model.characters.first!
+        for school in book.schools {
+            model.pickSchool(school: school, for: character)
+            if let traitText = character.getItem(type: .schoolTrait)?.name {
+                XCTAssertNotNil(TraitName(rawValue: traitText))
+            } else {
+                XCTAssertTrue(school.advanced || ["Fuzake Shugenja", "Tsuno Ravager", "Tsuno Soultwister"].contains(school.name), "\(school.name)")
+            }
+            if !school.advanced {
+                for skill in character.skills() {
+                    if let bookSkill = book.skills.first(where: {$0.name == skill.name}) {
+                        XCTAssertTrue(!bookSkill.type.contains("Macro-skill"))
+                    } else {
+                        XCTAssertTrue(skill.name.contains(":"), "\(school.name) \(skill.name)")
+                    }
+                    for emphases in character.emphases(for: skill.name) {
+                        XCTAssertFalse(emphases.name.contains("("))
+                        XCTAssertFalse(emphases.name.contains(")"))
+                    }
+                }
+            }
+
+            let highs = book.skills.filter({$0.category == .high})
+            let bugeis = book.skills.filter({$0.category == .bugei})
+            let merchants = book.skills.filter({$0.category == .merchant})
+            let lows = book.skills.filter({$0.category == .low})
+            
+            for extra in character.extraSkills().map({$0.name}) {
+                if extra == "Bugei Skill" || extra == "Bugei Skills" {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == bugeis.count, extra)
+                    continue
+                }
+                if ["High Skill", "High or Perform Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == highs.count, extra)
+                    continue
+                }
+                if extra == "Merchant Skill" {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == merchants.count, extra)
+                    continue
+                }
+                if extra == "Low Skill" {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == lows.count, extra)
+                    continue
+                }
+                if extra.contains("Weapon Skill") {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == 12, "\(extra) \(book.skillsForExtra(text: extra).count)")
+                    continue
+                }
+                if ["Lore", "Artisan", "Artisan Skill", "Craft Skill", "Lore Skill", "Craft Skill with 2 ranks"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == 1, "\(school.name) \(extra) \(book.skillsForExtra(text: extra).count)")
+                    continue
+                }
+                if ["Skills", "skill", "Skill", "skills"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == book.skills.count, "\(school.name) \(extra) \(book.skillsForExtra(text: extra).count)")
+                    continue
+                }
+                if ["High or Bugei Skill", "Bugei or High Skill", "High or Bugei Skills"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == highs.count + bugeis.count, extra)
+                    continue
+                }
+                if ["Bugei or Low Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == lows.count + bugeis.count, extra)
+                    continue
+                }
+                if ["High or Merchant Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == highs.count + merchants.count, extra)
+                    continue
+                }
+                if ["Merchant or Low Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == lows.count + merchants.count, extra)
+                    continue
+                }
+                if ["Acting or Artisan", "Artisan or Perform Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == 2, extra)
+                    continue
+                }
+                if ["High or Low Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == highs.count + lows.count, extra)
+                    continue
+                }
+                if ["Low or Bugei Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == bugeis.count + lows.count, extra)
+                    continue
+                }
+                if ["High or Bugei or Merchant Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == highs.count + bugeis.count + merchants.count, extra)
+                    continue
+                }
+                if ["High or Perform"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == highs.count + bugeis.count + merchants.count, extra)
+                    continue
+                }
+                if ["Merchant or Lore Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == merchants.count + 1, extra)
+                    continue
+                }
+                if ["non-Low Skill", "non-Low Skills"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == highs.count + bugeis.count - 1 + merchants.count, extra)
+                    continue
+                }
+                if ["non-Bugei Skill", "High Skill or Merchant or Low Skill"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == highs.count + lows.count + merchants.count, extra)
+                    continue
+                }
+                if ["non-High Skills"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == bugeis.count + lows.count + merchants.count, extra)
+                    continue
+                }
+                if ["skills Acting or Artisan or Perform"].contains(extra) {
+                    XCTAssertTrue(book.skillsForExtra(text: extra).count == 3, extra)
+                    continue
+                }
+                XCTAssertTrue(book.skillsForExtra(text: extra).count == -1, "\(school.name) \(extra) \(book.skillsForExtra(text: extra).count)")
+            }
+        }
+
+        if let school = book.schools.first(where: {$0.name == "Hiruma Bushi" }) {
+            model.pickSchool(school: school, for: character)
+            XCTAssert(character.skills().count == 6)
+            XCTAssert(character.emphases(for: "Kenjutsu").first?.name == "Katana")
+        }
+        if let school = book.schools.first(where: {$0.name == "Yotsu Bushi" }) {
+            model.pickSchool(school: school, for: character)
+            XCTAssert(character.skills().count == 5)
+            XCTAssert(character.emphases(for: "Stealth").first?.name == "Sneaking")
+            XCTAssert(character.extraSkills().count == 2)
+        }
+    }
+
     func testWounds() {
         self.model.create(name: "Wilson", xp: 100)
         let character = self.model.characters.first!

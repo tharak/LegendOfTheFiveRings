@@ -50,11 +50,11 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
         characters = coreDataService.getCharacters() ?? []
     }
 
-    func buyItem(type: Item.ItemType, name: String, points: Int, for character: Character) {
+    private func buyItem(type: Item.ItemType, name: String, points: Int, for character: Character) {
         coreDataService.createItem(for: character, name: name, type: type, points: points)
     }
 
-    public func sellItem(item: Item, for character: Character) {
+    func sellItem(item: Item, for character: Character) {
         character.xp = character.xp + item.points
         delete(item: item, character: character)
     }
@@ -110,22 +110,28 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
             if let trait = school.bonusTrait() {
                 buyTrait(type: Item.ItemType.schoolTrait, name: trait, for: character)
             }
-            for skillName in skillNames(from: school.skills) {
-                if skillName.contains("any") {
-                    if skillName.contains("three") {
-                        buySkill(type: .extraSkill, name: skillName, for: character)
-                        buySkill(type: .extraSkill, name: skillName, for: character)
-                        buySkill(type: .extraSkill, name: skillName, for: character)
-                        continue
+            if !school.advanced {
+                for skillName in skillNames(from: school.skills) {
+                    if skillName.contains("any") {
+                        let cleanName = skillName.replacingOccurrences(of: "any", with: "")
+                        if skillName.contains("three") {
+                            let cleaner = cleanName.replacingOccurrences(of: "three", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+                            buySkill(type: .extraSkill, name: cleaner, for: character)
+                            buySkill(type: .extraSkill, name: cleaner, for: character)
+                            buySkill(type: .extraSkill, name: cleaner, for: character)
+                            continue
+                        }
+                        if skillName.contains("two") {
+                            let cleaner = cleanName.replacingOccurrences(of: "two", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+                            buySkill(type: .extraSkill, name: cleaner, for: character)
+                            buySkill(type: .extraSkill, name: cleaner, for: character)
+                            continue
+                        }
+                        let cleaner = cleanName.replacingOccurrences(of: "one", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+                        buySkill(type: .extraSkill, name: cleaner, for: character)
+                    } else {
+                        buySkill(type: .schoolSkill, name: skillName, for: character)
                     }
-                    if skillName.contains("two") {
-                        buySkill(type: .extraSkill, name: skillName, for: character)
-                        buySkill(type: .extraSkill, name: skillName, for: character)
-                        continue
-                    }
-                    buySkill(type: .extraSkill, name: skillName, for: character)
-                } else {
-                    buySkill(type: .schoolSkill, name: skillName, for: character)
                 }
             }
             buyItem(type: Item.ItemType.schools, name: school.name, points: 0, for: character)
@@ -139,6 +145,13 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
             }
         }
     }
+    
+    public func sellEmphasis(skillName: String, emphasisName: String, for character: Character) {
+        let emphasis = character.getItems(type: Item.ItemType.emphasis(skillName: skillName))
+        if let emphases = emphasis.first(where: {$0.name == emphasisName}) {
+            sellItem(item: emphases, for: character)
+        }
+    }
 
     public func buySkill(type: Item.ItemType = Item.ItemType.skills, name: String, for character: Character) {
         let price = type == .skills ? (character.skillRank(name: name) + 1) : 0
@@ -146,7 +159,7 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
             let skillWithEmphasis = name.split(separator: "(")
             if let skillName = skillWithEmphasis.first?.trimmingCharacters(in: .whitespacesAndNewlines) {
                 buyItem(type: type, name: skillName, points: price, for: character)
-                if let emphasisName = skillWithEmphasis.dropFirst().split(separator: ")").first {
+                if let emphasisName = skillWithEmphasis.last?.split(separator: ")").first {
                     buyItem(type: Item.ItemType.schoolEmphasis(skillName: skillName), name: "\(emphasisName)", points: 0, for: character)
                 }
             }

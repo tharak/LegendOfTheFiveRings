@@ -37,4 +37,25 @@ public class Book: ObservableObject {
             return nil
         }
     }
+    
+    func skillsForExtra(text: String) -> [Skill] {
+        return skills.filter { (skill) -> Bool in
+            if ["skills", "skill"].contains(text.lowercased()) {
+                return true
+            }
+            if text.contains("Weapon") {
+                return skill.type.contains(text)
+            }
+            if ["non-Low Skill", "non-Low Skills"].contains(text) {
+                return skill.category != Category.low && !skill.type.contains("Weapon Skill, considered a Low Skill")
+            }
+            if ["non-Bugei Skill", "High Skill or Merchant or Low Skill"].contains(text) {
+                return skill.category != Category.bugei
+            }
+            if text == "non-High Skills" {
+                return skill.category != Category.high
+            }
+            return text.contains(skill.category.rawValue) || text.contains(skill.name)
+        }
+    }
 }

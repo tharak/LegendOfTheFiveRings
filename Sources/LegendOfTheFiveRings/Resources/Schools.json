@@ -105,7 +105,7 @@
         "discipline": "Shugenja",
         "benefit": "+1 Awareness",
         "honor": "6.5",
-        "skills": "Any one Artisan Skill, Calligraphy (Cipher), Etiquette, Lore: Theology, Meditation, Spellcraft, any one High Skill",
+        "skills": "any one Artisan Skill, Calligraphy (Cipher), Etiquette, Lore: Theology, Meditation, Spellcraft, any one High Skill",
         "outfit": "Robes, Bo, Wakizashi, Scroll Satchel, Traveling Pack, 10 Koku",
         "affinity": "Air / Fire",
         "spells": "Sense, Commune, Summon, 3 Air, 2 Water, 1 Earth",
@@ -162,7 +162,7 @@
         "discipline": "Bushi",
         "benefit": "+1 Stamina",
         "honor": "4.5",
-        "skills": "Defense, Iaijutsu, Kenjutsu (Katana), Lore Shugenja, Meditation, Lore: Theology, any one Bugei or High Skill",
+        "skills": "Defense, Iaijutsu, Kenjutsu (Katana), Lore: Shugenja, Meditation, Lore: Theology, any one Bugei or High Skill",
         "outfit": "Light Armor, Sturdy Clothing, Daisho, any weapon, Traveling Pack, 5 Koku",
         "advanced": false,
         "technique1": "Way of the Dragon",
@@ -220,7 +220,7 @@
         "discipline": "Monk",
         "benefit": "+1 Void",
         "honor": "4.5",
-        "skills": "Athletics, Defense, Craft: Tattooing, Jiujutsu, Any one Lore Skill, Meditation, any one non-Low Skill",
+        "skills": "Athletics, Defense, Craft: Tattooing, Jiujutsu, any one Lore Skill, Meditation, any one non-Low Skill",
         "outfit": "Robes, Bo, Traveling Pack, 5 Koku",
         "advanced": false,
         "technique1": "Blood of the Kami",
@@ -262,7 +262,7 @@
         "discipline": "Shugenja",
         "benefit": "+1 Perception",
         "honor": "6.5",
-        "skills": "Battle, Calligraphy (Cipher), Etiquette, Lore History, Lore: Theology, Spellcraft, any one High or Bugei Skill",
+        "skills": "Battle, Calligraphy (Cipher), Etiquette, Lore: History, Lore: Theology, Spellcraft, any one High or Bugei Skill",
         "outfit": "Robes, Wakizashi, any one Knives, Scroll Satchel, Traveling Pack, 5 Koku",
         "affinity": "Water / Fire",
         "spells": "Sense, Commune, Summon, 3 Water, 2 Air, 1 Earth",
@@ -853,7 +853,7 @@
         "discipline": "Artisan",
         "benefit": "+1 Intelligence",
         "honor": "4.5",
-        "skills": "Any one Artisan Skill, Commerce, any one Craft Skill with two ranks, Defense, any one Weapon Skill, any one High or Bugei or Merchant Skill",
+        "skills": "any one Artisan Skill, Commerce, any one Craft Skill with 2 ranks, Defense, any one Weapon Skill, any one High or Bugei or Merchant Skill",
         "outfit": "Sensible Clothing, Wakizashi, Calligraphy Set, Traveling Pack, 3 Koku",
         "advanced": false,
         "technique1": "Tools of the Fortunes",
@@ -1158,7 +1158,7 @@
         "technique1Description": "The sheer ruthless, murderous nature of the Tengokus Justice fighting style could rival even that of the Forest Killers. Whenever you surprise an opponent in a skirmish, you ma double your Strength for the purposes of determining how many damage dice you roll on that attack."
     },
     {
-        "name": "The Tessen",
+        "name": "Tessen",
         "clan": "Ronin",
         "description": "Composed primarily of former Crane and Lion, the Tessen came together to attempt to protect the people of Toshi Ranbo, centuries before it became the new Imperial City. The constant changing of hands between the two clans left the city in  terrible state, often plagued by criminals who knew the clan were too busy with one another to bother hunting them. Because the Crane forbade any save themselves to carry a blade within the city, these ronin took up the tessen as their weapon of choice, and continue to patrol the streets of the Imperial Cit today, albeit with only grudging acknowledgement from the citys Imperial protectors.",
         "discipline": "Bushi",
@@ -1258,7 +1258,7 @@
         "technique3Description": "There is virtually no one who is immune to the power of an Imperial scion. While conversing with an opponent of equal or lower Status Rank, you may force a Contested Void Roll. If you are successful, you can permanently give the opponent any one Social Disadvantage. Alternatively, you can force the opponent to become ronin, but the technique can only be used in this manner once every six months. Forcing a samurai to become ronin in this way costs you 5 points each of Glory, Honor, and Status."
     },
     {
-        "name": "The Ikoma Lion's Shadow",
+        "name": "Ikoma Lion's Shadow",
         "clan": "Lion",
         "description": "Although many modern Ikoma no longer recall it, or have chosen to forget, the first Ikoma was not a particularly honorable man. He served his lord Akodo with great distinction and loyalty, but the means by which he executed his duties are frequently omitted from any historical record. Most Ikoma do not consider this an issue, but there are some among them who understand this omission is a means of protecting the familys honor, as the first Ikoma was a ruthless, pragmatic individual who would gleefully embrace dishonorable tactics as a necessary means of completing his duties.\n The Ikoma Lions Shadow are a small and extremely secretive group within the Ikoma family who remember exactly who and what Ikoma was, and they celebrate his memory.\n They consider themselves extremely practical individuals who exist as a sort of foil to the dire machinations exercised by the Scorpion and other unsavory individuals. Although they frequently are called upon to sacrifice their honor for the sake of their clan, they do so willingly and without regret, and almost always with the greater Lion Clan remaining completely ignorant of their activities.",
         "discipline": "Bushi",
@@ -1370,7 +1370,7 @@
         "technique1Description": "The monks who study the Diamond Sutra are known for their strange and bizarre behavior and esoteric practices, but also for their extreme spiritual purity and lack of respect for conventional etiquette. You start play with the Disturbing Countenance Disadvantage for no points, but gain a +1k0 bonus to Meditation rolls, Fear rolls, and to all Social Skill Rolls involving members of the heimin and hinin castes. You do not lose Honor for touching dead flesh (but lose Glory or gain Infamy normally)."
     },
     {
-        "name": "The Dark Paragons",
+        "name": "Dark Paragons",
         "clan": "The Brotherhood of Shinsei",
         "description": "There are those among the Spider Clan, particularly among the ranks of the Daigotsu bushi and the Order of the Spider monks, who have embraced their own sinister variant of honor and devotion. Even the touch of Jigoku itself can be used as fuel for their power, a power that strangely resembles the oneness many Brotherhood monks have with the universe.\n Some believe this is an indication that the path of the Spider, while radically different from the paths of the Brotherhood, is a true path to enlightenment. Those among the Brotherhood who are aware of the existence of the Dark Paragons vehemently refute this claim, insisting they are nothing but more seductive tricks of the Realm of Evil. The Paragons themselves insist instead that their power reflects their absolute mastery of themselves, and Jigoku has no reason to leave its mark on its servants when those servants are willing, devoted, and able to enact its will far more effectively without the constraints of the Taint.",
         "discipline": "Monk",
@@ -1478,7 +1478,7 @@
         "technique3Description": "The warriors of Jigoku are able to heal themselves by feeding on the suffering of their enemies, even consuming their honor and strength of soul. Moreover, the maho-bujin has now transcended the Celestial Order and fully embraced the power of the Taint, making him nigh-indestructible. Any time you reduce someone to Down or Out or kill them, you instantly heal a number of Wounds equal to 2 x (their Honor Rank). This may be done any number of times per Round, but you cannot heal off the same person more than once in the same Round.\n In addition, you gain the creature ability of Invulnerability.\n (If you are already Invulnerable due to a Shadowlands power, you gain Reduction 10 instead.)"
     },
     {
-        "name": "The Kenku Swordsman",
+        "name": "Kenku Swordsman",
         "clan": "Kenku",
         "description": "The Kenku are greatly renowned for their wisdom, but they are respected in equal measure for their extraordinary swordsmanship.\n It was in the time of the Five Races that the Kenku first took up arms against the invading forces of Jigoku, and they proved to be phenomenal warriors. Though those days are long past, their martial prowess remains legendary.\n The Kenku Kensei (sword saint) style has persisted since the time of the Five Races, making it the oldest known martial style in Rokugan. While the weapons and techniques have evolved over the millennia, the central Kenku martial philosophies have remained essentially constant. Their style focuses on speed and precision over strength. A Kenku swordsman will patiently bide his time, distracting his enemy with careful feints, while waiting for the proper moment to deliver a single devastating blow. Kenku are also quick learners, able to mimic the techniques of others after brief observation.\n The Kenku do not share these techniques lightly. Even when a Kenku sensei deems a human worthy of his teachings, he may not share the secrets of Kenku swordsmanship. For a Kenku to instruct a human in such a way, something more is required.\n As stated previously, the Kenku are extremely discerning in regards to their techniques. A human student must either prove his worth to a Kenku sensei or be selected by a Kenku to receive training.",
         "discipline": "Bushi",
@@ -1502,7 +1502,6 @@
         "clan": "Tsuno",
         "description": "Tsuno Ravagers are the undisputed leaders of the Tsuno military.\n They are battle-hardened veterans who learn their School Techniques by performing dangerous quests into different Spirit Realms. They return changed: stronger, wiser, faster, and meaner. Ravagers lead from the front, their howls driving their troops into a disciplined but savage battle-frenzy. Tsuno Honor demands obedience in all things and the Ravagers enforce this discipline savagely, killing all who disobey.",
         "discipline": "Bushi",
-        "benefit": "None",
         "honor": "4.5",
         "skills": "Athletics, Battle, Defense, Iaijutsu, Lore: Spirit Realms, Kenjutsu (Tsuno Blade), any one Bugei Skill",
         "outfit": "Tsuno Blade, Light Armor",
@@ -1523,7 +1522,6 @@
         "clan": "Tsuno",
         "description": "Tsuno Soultwisters are peculiar beings  a combination of sage, thief, and warrior. They do not gain their magical abilities by calli\nng on the kami to perform spells for them. Instead they steal the power of the spirits and use it to accomplish what they desire. Soultwisters are some of the toughest Tsuno in existence, for to gain their power they must venture into the wilds of the Spirit Realms and do battle with powerful spirits, stealing their power and claiming it for themselves.\n These battles leave Soultwisters scarred physically, mentally, and spiritually. Many Soultwisters bear these scars as badges of honor and some go so far as to perform ritual scarification to commemorate important victories.",
         "discipline": "Shugenja",
-        "benefit": "None",
         "honor": "3.5",
         "skills": "Athletics, Battle, Defense, Intimidation (Torture), Kenjutsu (Tsuno Blade), Lore: Spirit Realms, any one Bugei Skill",
         "outfit": "Tsuno Blade, Light Armor, satchel with ritual components",
@@ -1620,7 +1618,7 @@
         "technique5Description": "The Witch-Hunter is now the true nemesis of Jigokus forces, able to strike down his enemies with unmatched power. You gain a +4k1 bonus to your attack and damage rolls against Shadowlands creatures and against foes you know to be Tainted. This stacks with the attack bonus from your Rank One technique."
     },
     {
-        "name": "The Daidoji Scout",
+        "name": "Daidoji Scout",
         "clan": "Crane",
         "description": "Although the Iron Warriors are the most well-known public face of the Daidoji family, they also study a style of warfare specialized in scouting, ambush, and precision strikes against vulnerable enemy assets like commanders and supply caravans. Daidoji Scouts readily employ traps and surprise attacks, accepting a certain amount of dishonor in their own conduct for the sake of the greater good of the Crane Clan. They rely on the rest of the clan to provide them with political cover for their questionable actions.",
         "discipline": "Bushi",
@@ -1641,16 +1639,16 @@
         "technique5Description": "The true master of the Daidoji scout school needs only a single strike, for his opponent never survives to see the second one. During a skirmish, you may spend a Void Point as a Free Action to attempt a deadly precision strike on your next attack (this may be done with a melee or a ranged attack, but cannot be done more than once in the same Turn). Any Maneuvers called on this attack require 1 less Raise (to a minimum of 1 Raise), and if you successfully hit you gain a bonus of +1k1 to your Damage roll.\n Furthermore, if your opponent is unaware of you, your Raises on this attack are not limited by your Void."
     },
     {
-        "name": "The Kakita Artisans",
+        "name": "Kakita Artisans",
         "clan": "Crane",
         "description": "Unlike their occasional rivals among the Shiba, the Kakita Artisans do not confine themselves merely to the creation of physical art such as paintings or books of poetry. The Artisan Academy devotes itself to the study of every sort of art, whether it be performance-based or creation-based, and studies not only the ways of art but also the ways in which such art may be turned to the service of the Crane Clan.",
         "discipline": "Artisan",
         "benefit": "+1 Awareness",
         "honor": "5.5",
-        "skills": "Courtier, Games: Sadane, Etiquette, Sincerity, any three skills chosen from the following list: Acting or Artisan (Gardening or Ikebana or Origami or Painting or Poetry or Sculpture) or Perform (Dance or Oratory or Puppeteer or Song or Storytelling or any musical instrument)",
+        "skills": "Courtier, Games: Sadane, Etiquette, Sincerity, any three skills Acting or Artisan or Perform",
         "outfit": "Court Robes, Beautiful Clothing, Wakizashi, Art Supplies, Fan, Steed (Rokugani pony), Traveling Pack, 10 Koku",
         "advanced": false,
-        "technique1": "Sould of the ARtisan",
+        "technique1": "Sould of the Artisan",
         "technique1Description": "The Kakita Artisan is taught from earliest youth to focus on one specific form of art above all others, devoting himself to it heart and soul and pursuing the goal of absolute perfection within its forms. Of course, in keeping with Crane tradition the Artisan is also taught to be a ruthless critic to any artistic rivals. Select one of your three chosen School Skills (Acting, an Artisan skill, or a Perform Skill) as the focus of your artistic training. This becomes your chosen art. When making skill rolls with your chosen art, you gain a +2k0 bonus and your Raises are not limited by your Void.\n Any time you are using Games: Sadane to criticize someone elses art or performance, you gain a Free Raise on your skill roll.",
         "technique2": "The Soul's Dream",
         "technique2Description": "The Kakita Artisan is taught to use his art to affect those around them, inspiring emotions and shifting the views of the audience. When presenting a public performance or display of you chosen art, you may make a Contested Social Roll of [chosen art]/Awareness against the Etiquette (Courtesy)/Willpower of the audience members. Those audience members who fail their rolls are profoundly swayed and their emotions shift in a direction you desirebecoming friendlier, more hostile, calmer, or whatever other emotional shift your art is designed to evoke. This emotional shift normally lasts a number of hours equal to your Insight Rank.\n Note that not all persons are equally susceptible to the impact of artthe GM may rule that a particular individual is affected for a shorter period of time, or award a bonus to the resistance roll for persons whose emotions are difficult to manipulate. The GM should normally have each individual audience member roll separately to resist this technique (this should always be done for PCs or important NPCs), but with large groups of ordinary NPCs the GM can opt to save time by making a single roll for most or all of them.",
@@ -1662,7 +1660,7 @@
         "technique5Description": "You art is now so perfect that a gift of it can profoundly change another persons attitude toward you and your clan. Once per month, you may give a gift of your chosen art to someone from another clan or faction. Make a Contested Social Roll of your [chosen art]/Awareness against their Etiquette (Courtesy)/Willpower. (The GM may award Free Raises to you or the target of this technique based on the type and subject of the art and the attitudes and beliefs of the targetsome people are easier to sway than others.) With a success, you permanently alter their attitude toward your clan/faction in a favorable direction. With a failure, the target becomes aware of your attempt to manipulate his emotions, and his attitude toward your clan/ faction permanently shifts in a hostile direction.\n This technique cannot target the same person more than once per year."
     },
     {
-        "name": "The Kakita Master Artisans",
+        "name": "Kakita Master Artisans",
         "clan": "Crane",
         "description": "The most talented elite of the Kakita Masters learn secret techniques of artistic perfection passed down from the early centuries of the Empire. These methods were developed by some of the Empires finest artists and mastering them is beyond the ability of most students at the Artisan Academy, so only the most supremely gifted are ever taught them. However, for that same reason the techniques are not limited solely to students of the Artisan Academyany supremely talented Crane may become a Kakita Master.\n At their highest pinnacle of skill the Kakita Masters can actually change reality temporarily, a phenomenon which mystifies those shugenja who have studied it. Some speculate the art is so perfect it inspires the kami in response, but in truth no one knows how the Masters achieve these effects.",
         "discipline": "Artisan",
@@ -1706,7 +1704,7 @@
         "technique3Description": "The Master of the Mountain can coax power out of the most contrary kami by confronting them with his own strength and willpower. As a Simple Action you may spend a Void Point and a spell slot from any Ring. Choose a spell keyword. You gain a bonus of +4k1 to the total of all Spell Casting Rolls while casting spells with that keyword.\n This effect lasts until the end of the encounter (in combat) or for an hour (outside of combat)."
     },
     {
-        "name": "The Matsu Beastmasters",
+        "name": "Matsu Beastmasters",
         "clan": "Lion",
         "description": "The Beastmaster organization is completely unique in its approach to war and to animals. Many other clans train animals for combat, but the Matsu Beastmasters take a personal approach to each beast. The lion is a savage creature that fights as part of a group called a pride. The Beastmaster adopts lion warcats into his own pride, bonding emotionally and spiritually to each warcat that charges into battle beside him. The Beastmaster treats his warcats as equals, fostering a sense of family and belonging.\n The communication between Beastmaster and warcat borders on the mystical. Once a warcat has trained with her Beastmaster, she can sense what he wants without any words or gestures. However, this intense empathy between human and predatory animal can sometimes hinder the Beastmasters social abilities among humans. Most Beastmasters tend to stay amongst their own kind rather than share the company of normal samurai. Some Lion generals have raised concerns the Beastmasters may become too feral, to which the Beastmasters retort that they are still Matsu above all. Only the Matsu, they say, are strong and proud enough to maintain their hold on Bushido and human traditions under such pressures.",
         "discipline": "Bushi",
@@ -1847,7 +1845,7 @@
         "technique3Description": "Those who commit the unpardonable sin of breaking the Emperors laws concerning magic are unable to stand against you. You are considered one Rank higher in your original Shugenja School for the purposes of casting spells. Non-shugenja Inquisitors instead gain one additional Kiho, for which you must meet all prerequisites.\n You may now prepare a disruption (as per your Rank One technique) as a Simple Action instead of a Complex Action, and opponents whose spells are disrupted require three additional Raises rather than two."
     },
     {
-        "name": "The Shosuro Actors",
+        "name": "Shosuro Actors",
         "clan": "Scorpion",
         "description": "The Shosuro Butei (Acting) Academy is a famous acting school, rivaling the actors of the Kakita Artisan Academy, but its students are also taught methods of infiltration and impersonation. The most promising students receive instruction in poison, stealth, and assassination, and are given contacts within the Scorpion spy network to help them to build up the false personas which they use in their later espionage careers. For the vast majority of its students, of course, the Butei Academy is simply a school of the artsthe Scorpion students are aware the school is more than it seems, but are content to ignore such unpleasantness and focus on pursuing their craft.\n The skilled infiltrators who emerge from the Butei Academy are a matter of rumor and supposition to the rest of the Empire. There are fanciful tales of Scorpion infiltrators so skilled they could convince a doting mother to place an entire familys welfare into their hands. These are exaggerations, but the Shosuro Actors are certainly quite skilled and they take their clans sacred duty to protect the Empire extremely seriously. In their view, whatever deceptions they must perpetrate are more than justified, and they are as ready to die for the clan as any other Scorpion",
         "discipline": "Ninja",
@@ -1868,7 +1866,7 @@
         "technique5Description": "The Shosuro Actor is now a true master of deception, infiltration, and murder. You gain a third persona. In addition, if you attack a foe who is unaware or does not expect danger from you, your Raises are not limited by your Void."
     },
     {
-        "name": "The Yogo Wardmasters",
+        "name": "Yogo Wardmasters",
         "clan": "Scorpion",
         "description": "The school founded by Yogo is known for an unusual style of magic that focuses on special protective charms known as wards. These are similar to the exorcism wards used by the Toritaka, but are significantly more flexible in their use and application. The Yogo guard their methods carefully and seldom allow others to study in their dojo; even their shugenja cousins in the Soshi family know little about the secrets of ward magic.\n The Yogo have studied their ward magic for countless generations and have become quite adept at using wards to perform magic in unconventional ways. For purposes of spell selection and the use of their Technique, Yogo Shugenja may treat the following spells as having the Wards keyword:\n Air: To Seek the Truth, By the Light of the Moon, Bentens Touch, Summon Fog.\n Earth: Armor of the Earth, Courage of the 7 Thunders, Force of Will, Wholeness of the World.\n Fire: Extinguish, Fires of Purity, Disrupt the Aura, Haze of Battle, Globe of the Everlasting Sun.\n Water: Reversal of Fortunes, Rejuvenating Vapors, Wisdom and Clarity, Near to Ice.",
         "discipline": "Shugenja",
@@ -1898,7 +1896,7 @@
         "technique1Description": "Meishodo is a mixture of gaijin and Rokugani magic, resulting in a fast and powerful method of calling the kami.\n Shugenja studying these methods learn to create meishodo amulets, keyed to invoke the elements in specific ways.\n You may create a magical amulet by making a successful roll of Craft: Meishodo/Ring, using the Ring for the desired spell. The TN of this roll is equal to 15 plus 5x the spells Mastery Level. Creating a meishodo requires a number of hours equal to the spells Mastery Level. If the roll is successful, you create a small charm imbued with the prayer to the kami that will cast the chosen spell. Each meishodo stores only one spell, and is used in place of the scroll normally required to cast the spell.\n Casting a spell through a meishodo requires only one Complex Action, regardless of the Mastery Level of the spell. You do not have to make a Spell Casting Roll to cast the spell, but the spell cannot gain any benefits from Raises (not even Free Raises). You expend a spell slot as normal.\n You may only create meishodo from spells of a Mastery Level equal or less than your Shugenja School Rank, and can never create meishodo from spells of Mastery Level 4, 5 or 6. Other shugenja may use your meishodo if they are proficient in meishodo magic (e.g. trained in this school)."
     },
     {
-        "name": "The Moto Vindicators",
+        "name": "Moto Vindicators",
         "clan": "Unicorn",
         "description": "The Moto family suffered a great blow to their morale and honor during the ninth century when their daimyo Moto Tsume, fueled by pride and arrogance, rode into the Shadowlands with the majority of his forces. He and his men fell to darkness and became some of Jigokus greatest tools in its fight against Rokugan. Those Moto who survived or remained behind were deeply shamed and swore to eradicate all those Tainted creatures who bore their name. This oath gave rise to both the elite White Guard and to the Moto Vindicator school. Although the order of Vindicators existed before the fall of Moto Tsume, they did not have an intense personal hatred of the Shadowlands and their Techniques had not yet advanced to form a full school.\n The disgrace of Tsumes defeat changed everything.\n The Dark Moto were terrible creatures. They rode monstrous steeds that never tired, struck with inhuman strength, and used foul magic to destroy their foes. The threat forced the Vindicators to become stronger, strong enough to overcome their fallen cousins. They trained to spot the signs of the Shadowlands Taint and to neutralize their opponents advantages. The Moto called every favor at their disposal to learn from the best, and the Crab were glad to help, especially since the Shinjo had offered help to their Hiruma family.\n The Moto Vindicator School focuses the fury and dedication of the Moto to a destructive point. If a Vindicator spots his sworn nemesis, he will not retreat until either he or his foe is dead.\n To join this School, you must have either the Higher Purpose (Defeat the Shadowlands) Advantage or the Driven (Defeat the Shadowlands) Disadvantage.",
         "discipline": "Bushi",
@@ -1932,7 +1930,7 @@
         "technique1Description": "The Peoples Legionnaires drill endlessly, learning to act in unison on the battlefield. After Initiative is rolled at the beginning of a skirmish, you may take a Free Action to lower your Initiative score to match that of an ally who is also trained in this technique. If you and an ally with the same Initiative attack the same opponent, you each gain a +1k0 bonus on your attack roll for each such ally striking the same foe. The maximum number of bonus dice you can gain on a single attack roll is equal to your Insight Rank +1."
     },
     {
-        "name": "The Hiruma Scouts",
+        "name": "Hiruma Scouts",
         "clan": "Crab",
         "description": "After the fall of Hiruma Castle, the Hiruma family had no sensei and was unable to preserve the knowledge of its ancient bushi school (the school listed in the L5R 4th Edition Core rulebook as Hiruma Bushi). Most of the samurai who actually knew its advanced techniques had perished in battle with the Maw, and those who knew its more basic methods were too focused on fighting and surviving to pass on their wisdom. By the time the family realized their school was in danger of perishing, it was too late.\n It was the Unicorn Clan which offered a solution, opening its scout dojo to the Hiruma. Training in the Shinjo methods and adapting them for their own use, the Hiruma developed a new school which placed a far stronger focus on stealth and scouting than their ancestral one. The Hiruma relied on this school for over 300 years, until ancient scrolls of the lost Hiruma Bushi school were finally recovered from the Shadowlands. Even after the Hiruma Bushi techniques were recovered, however, the Hiruma refused to abandon their well-tested Scout school, and thereafter their dojo taught both.",
         "discipline": "Bushi",
@@ -1952,7 +1950,7 @@
         "technique5Description": "The Hiruma Scouts strike their opponents from hiding, delivering vicious blows that get past all defenses. If you are striking a surprised or unaware foe, your Raises are not limited by your Void, and you can ignore 10 points of Reduction (from any source)."
     },
     {
-        "name": "The Scorpion Saboteurs",
+        "name": "Scorpion Saboteurs",
         "clan": "Scorpion",
         "description": "The Saboteurs are the military elite of the Scorpion shinobi forces. While the clans other shinobi focus on spying and assassination, the Saboteurs undertake the military defense of the Scorpion lands, using every sort of tactic (including the forbidden gaijin pepper) to weaken, distract, and cripple enemy armies. Although they prefer to operate by stealth, they are more than capable of defending themselves should the need arise.\n During the Clan War era, with most of the Scorpion Clan dead or scattered, the Saboteurs bear the burden of protecting their lands and punishing those who occupy them. Both the Imperial Legions and the later Crab invaders suffer heavily at the Saboteurs hands.",
         "discipline": "Ninja",
@@ -1968,7 +1966,7 @@
         "technique3Description": "The Saboteurs are trained to strike at their opponents weak points with lethal and shocking speed. When fighting with a Small weapon (melee or ranged) you may make a single attack as a Free Action each Round in addition to any other Simple Action or Complex Action attacks you might make. Also, when fighting with a Small weapon (melee or ranged), you may ignore the effects of your opponents armor on his Armor TN and Reduction."
     },
     {
-        "name": "The Daidoji Harriers",
+        "name": "Daidoji Harriers",
         "clan": "Crane",
         "description": "The exact origins of the Daidoji Harriers are obscure and mysterious. The Crane established a covert training site for unconventional tactics in the ruins of Shiro Giji in the year 330, but for many generations that facility was used merely to train selected Daidoji Scouts in the more ruthless and pragmatic sort of fighting methods. However, at some point the training at Shiro Giji took on a darker and less honorable tone, focusing on the use of truly heinous methods such as sabotage and assassination. The final turning point seems to have been the decision to covertly manufacture and use gaijin pepper, whose secrets were discovered after the defeat of the gaijin in the Battle of White Stag.\n The students of Shiro Giji took to calling themselves Harriers to distinguish their methods from the somewhat more honorable tactics of other Daidoji Scouts. With time, the rulers of the family came to see the Harriers as a separate organization, a hand-picked band of men and women who would do anything and sacrifice any amount of their own honor for the greater good of the Crane. They carefully concealed the Harriers existence and methods from the rest of the clan, ensuring the leadership of the Crane could maintain honor and propriety. In this way the Harriers covertly served the Crane Clan for many generations.\n The organization was finally exposed during the socalled War of Silk and Steel between the Dragon and Crane in the late twelfth century. Crane Champion Doji Domotai was outraged by the Harriers activities and ordered the entire group disbanded, an order reluctantly obeyed by the Daidoji daimyo.",
         "discipline": "Ninja",
@@ -2033,7 +2031,7 @@
         "technique1Description": "The Moto Death Priests carry the favor of gaijin death gods and bestow their blessings to their enemies. As a Simple Action you may sacrifice a spell slot and target one enemy (within a maximum range equal to your School Rank x 100 feet). Make a Contested Willpower Roll against that opponent. If you are successful, the target may not benefit from exploding dice or from Advantages that allow him to re-roll a roll. This effect lasts for a number of Rounds equal to your School Rank.\n You gain a Free Raise on any spell with the Travel keyword."
     },
     {
-        "name": "The Sodan-Senzo",
+        "name": "Sodan-Senzo",
         "clan": "Lion",
         "description": "All members of the Lion Clans Kitsu family have some degree of ancestral connection to the original five kitsu who became human, although in most cases the link is only via marriage.\n Still, the connection is sufficient that the average practicing Kitsu shugenja has the ability to perceive and influence the connections mortals possess to the ancestral realms. A small handful of the Kitsu, however, possess a true blood lineage to their inhuman kitsu founders, and in these individuals much more significant powers can manifest.\n The true-blooded Kitsu are known as sodan-senzo, and the familys sensei teach them secret techniques that evoke their hidden powers. They can not only sense ancestral connections but can actually project their souls into the spirit realms in order to interact with the souls of the dead. The Kitsu regard this as the most sacred of tasks and never undertake such a thing lightly. Some are also able to manifest a pale shadow of the original kitsus physical abilities as well, something that has proven a fatal surprise for many of the Lions enemies over the centuries.",
         "discipline": "Shugenja",
@@ -2055,7 +2053,7 @@
         "discipline": "Bushi",
         "benefit": "+1 Agility",
         "honor": "5.5",
-        "skills": "Commerce, Hunting, Kenjutsu, Kyujutsu, Lore (Gaijin or Shadowlands), Stealth (Sneaking), one Low or Bugei Skill",
+        "skills": "Commerce, Hunting, Kenjutsu, Kyujutsu, any Lore (Gaijin or Shadowlands), Stealth (Sneaking), any one Low or Bugei Skill",
         "outfit": "Daisho, Light or Ashigaru Armor, any two weapons, Sturdy Clothing, Traveling Pack, 4 Koku",
         "advanced": false,
         "technique1": "The Tiger's Tread",
@@ -2091,7 +2089,7 @@
         "technique5Description": "The final lesson of the Hantei School is that the divine strike of Celestial Favor may defeat any foe, even one so powerful as Lord Moon himself. Once per skirmish, after hitting your opponent, you may spend four Void Points to automatically inflict enough damage to reduce that opponent to Down/Out/Dead (whichever applies first).\n If your opponent is nonhuman you may activate this Technique for three Void Points instead.\n It is GMs discretion whether this Technique can defeat exceptionally powerful or transcendent entities such as Fortunes or similar. As an option, the GM may allow the Technique to work on such foes if you voluntarily choose to die in order to activate it."
     },
     {
-        "name": "The Otomo Diplomats",
+        "name": "Otomo Diplomats",
         "clan": "Owl",
         "description": "Hanteis Celestial fighting style was unmatched among the Kami. However, in the canonical history of Rokugan, Hantei never shared the secrets of his fighting skills with any of his mortal followers, and they died with him after the First War. In the timeline of the Togashi Dynasty, Hantei adapts his Techniques to his clans new duty of fighting against nonhuman threats to the Empire, and it is in this form that an echo of his original peerless talent is passed down through the ages.",
         "discipline": "Courtier",
@@ -2140,7 +2138,7 @@
         "technique1Description": "Your recognition that enlightenment and understanding transcend both race and time allows you to learn one additional Mystical kiho and grants you a +1k0 bonus on all Etiquette and Lore Skills."
     },
     {
-        "name": "The Order of Rebirth",
+        "name": "Order of Rebirth",
         "clan": "The Brotherhood of Shinsei",
         "description": "The Brothers of the Order of Rebirth come from a militant tradition of sohei who once served in the ranks of the Order of Thunder devoted to Osano-Wo, the Fortune of Fire and Thunder. The Order embraces new paths and philosophies in an attempt to unlock new truths about both the self and the universe. Their subtle disregard for tradition has earned them a fair amount of disdain from other sects, but the brothers of Rebirth tend to ignore this hostility; as an oft-repeated maxim of their sect observes, the first step upon a new path is always the most difficult",
         "discipline": "Monk",
@@ -2166,7 +2164,7 @@
         "technique1Description": "The monks of Tengokus Fist strike with surety and purpose, and their strength is magnified by the influence of the divine. When making an unarmed attack against an opponent, or an attack using a bisento, a bo staff, or a weapon with the Monk property, you may gain a Free Raise on the attack roll if your Fire Ring is higher than your opponents Fire Ring."
     },
     {
-        "name": "The Temple of Heavenly Wisdom",
+        "name": "Temple of Heavenly Wisdom",
         "clan": "The Brotherhood of Shinsei",
         "description": "Perhaps the eldest, monastic traditions within the Crane Clans provinces. The temple itself was ancient when the Lady Doji first approached it, having been created by primitive men to revere the oldest of the Fortunes.\n These monks and their studies aided the Lady Doji in the promotion of culture throughout the Empire, and in the process their temple became something of a sensation in early Rokugan, affording the brothers there an unexpected amount of social prestige and influence. This was something of an anomaly in the early Brotherhood and created some difficulties  for the sect, but in the intervening centuries the impact of monks upon Rokugans society has long since been accepted by the Brotherhoods leadership",
         "discipline": "Monk",
@@ -2179,7 +2177,7 @@
         "technique1Description": "The Fortune of Wisdoms showers his blessings upon those monks who revere him, granting them insight into the ways of politics and diplomacy where others might make grievous errors. When making any Social Skill Roll, you may select any one Kiho you possess. You may not use that Kiho for the remainder of the day, but you gain a bonus of +1k1 to the Social Skill Roll. You may only select each Kiho you know once per day for this purpose."
     },
     {
-        "name": "The Order of Jurojin's Blessing",
+        "name": "Order of Jurojin's Blessing",
         "clan": "The Brotherhood of Shinsei",
         "description": "The Order of Jurojins Blessing was founded during the Great Famine and is dedicated to helping the sick, regardless of caste or other obstacle. Some members of the Order also study the treatment of physical injuries, and in later centuries a few members of the Order even begin to specializes in the diagnosis and treatment of madness.",
         "discipline": "Monk",
@@ -2192,7 +2190,7 @@
         "technique1Description": "You gain a +1k1 bonus to all Medicine rolls made for the purpose of treating disease or infection, and a +1k0 bonus to all Medicine rolls made for the purpose of treating Wounds. You may also attempt to treat natural (non-Taint-induced) insanity with a Medicine roll, although it is the GMs option whether your treatment actually has any effect."
     },
     {
-        "name": "The Shrine of Heaven's Mirror (Path)",
+        "name": "Shrine of Heaven's Mirror (Path)",
         "clan": "The Brotherhood of Shinsei",
         "description": "Adherents of the Shrine of Heavens Mirror seek to extend their perceptions beyond the ordinary reality of Ningen-do. To this end, they cultivate the ability to enter a trance-state to become more receptive to the guidance of the Fortunes, spirits, and other outside forces. They will deprive themselves of sleep for days on end, drink alcohol to the point of delirium, dance with wild and exhausting abandon, and consume hallucinogenic plants. In return, they gain unusual insight into all forms of divination, especially the interpretation of omens.\n You must be Ascetic and follow the peculiar practices of the Heavens Mirror sect, regardless of the social consequences of doing so.\n Failing to embrace these practices will result in your losing the benefits of your School Technique, and may also result in expulsion from this sect.",
         "discipline": "Monk",
@@ -2204,7 +2202,7 @@
         "technique1Description": "The peculiar practices of Heavens Mirror monks grant them insights denied to other mortals. You gain a bonus of +1k0 to all Divination Skill rolls. If the roll involves interpretation of an omen, the bonus is +1k1 instead. Once per day, you may spend a Void Point to interpret an omen with absolute accuracy, with no need for a Skill roll to do so. (Of course, the GM still has discretion as to what the correct interpretation of the omen might be.)"
     },
     {
-        "name": "The Legion of two Thousand",
+        "name": "Legion of two Thousand",
         "clan": "Ronin",
         "description": "Sponsored by the Imperial house, the Legion of Two Thousand  recruited from some of the best soldiers in Toturi's ronin army  enjoys resources and support which most ronin can only dream about. As a result, it has been able to develop extensive martial techniques, an extremely rare accomplishment for wave-men.",
         "discipline": "Bushi",
@@ -2220,7 +2218,7 @@
         "technique3Description": "The ascension of the brilliant tactician Tamago to the leadership of the Legion of Two Thousand leads to the Legion developing more advanced training. You may make melee attacks with Samurai weapons as Simple Actions."
     },
     {
-        "name": "The Disciples of Sun Tao",
+        "name": "Disciples of Sun Tao",
         "clan": "Ronin",
         "description": "The Disciples are an ancient ronin band based around Sun Taos legendary book. The leaders of the band believe they possess the only complete copy of Sun Taos writings.\n Due to the bands age and dedication, it has actually developed multiple Techniques. Those raised within the band usually learn the Gaze of Sun Tao initially before moving on to study the Disciples advanced teachings.\n However, the Disciples also recruit other ronin who have learned different basic Techniques.",
         "discipline": "Bushi",
@@ -2257,11 +2255,10 @@
         "technique5Description": "Those ronin who survive long enough to perfect their skills become legends of the battlefield, able to endure all manner of hardship and prevail in spite of severe injuries. Choose another melee weapon: you may attack with that weapon as a Simple Action. Additionally, you may spend a Void Point to activate your R1 Technique without requireing a Willpower Trait Roll; when you activate it in this way, it lasts a number of Rounds equal to your Fire Ring."
     },
     {
-        "name": "The Fuzake Shugenja",
+        "name": "Fuzake Shugenja",
         "clan": "Ronin",
         "description": "The Fuzake originated as a small order of ronin shugenja within Toturi's Army, led by a young man named Yasuki Garou (later Fuzake Garou) who was a close friend to Toku. When the Monkey Clan was formed he immediately swore fealty to it. The Fuzake dedicate themselves to healing and to an intense but rather eccentric veneration of the Fortunes.",
         "discipline": "Shugenja",
-        "benefit": "",
         "honor": "5.5",
         "skills": "Calligraphy, Defense, Etiquette, Lore: Theology, Medicine, Spellcraft, any one High or Merchant Skill",
         "outfit": "Robes, Wakizashi, any one Knives, Scroll Satchel, Traveling Pack, 2 Koku",
@@ -2272,7 +2269,7 @@
         "technique1Description": "The shugenja who came to be known as Fuzake Garou was originally trained by the Kuni, but spent much of his life trying to protect and heal those around him. Over time he found ways to call on his Earth magic to support his efforts, and after his disappearance and apparent death at the Battle of Oblivions Gate, his followers pursued and eventually perfected the crude technique he devised. When casting a spell that heals Wounds or cures poison or illness (such as Path to Inner Peace or Peace of the Kami), you may opt to also expend one or more Earth spell slots; each such slot awards a Free Raise on your Spell Casting Roll."
     },
     {
-        "name": "The Order of Peaceful Repose",
+        "name": "Order of Peaceful Repose",
         "clan": "The Brotherhood of Shinsei",
         "description": "Pockets of this sect may be found throughout Rokugan, especially in places where warfare or local spiritual conditions make ghosts more common. They dedicate themselves to serving Emma-O by laying ghosts to rest, without regard for whether those ghosts are the spirits of heimin or samurai. In the twelfth century the monks of this Order form an alliance with the newly-formed Brothers of Rebirth, whose aims they see as harmonious with their own.",
         "discipline": "Monk",
@@ -2298,7 +2295,7 @@
         "technique1Description": "Monks of the Order of the Five Rings excel at seeking out the imbalances within others and exploiting them to their own advantage. Whenever you are making an attack roll or a Social Skill Roll against a mortal opponent, you gain a bonus to the roll equal to twice the difference between your opponents highest and lowest Rings."
     },
     {
-        "name": "The Hawk Purists (Path)",
+        "name": "Hawk Purists (Path)",
         "clan": "Ronin",
         "description": "During the years of the Heresy the Empire has, as always, many ronin desperate for acceptance and belonging.\n Since the Hawk Clan did not yet formally exist, there was technically no penalty for impersonating a member, and some ronin took this opportunity to represent themselves as members of the Hawk Clan, hoping not only to mitigate the circumstances of their day-to-day existence but also perhaps to gain acceptance into the ranks of the Hawk Clan if the Heresy succeeded. As the Heresy escalated, these ronin became numerous enough to band together and develop a simple Technique to enhance their efforts, but once Gorinno was cast down it became dangerous to continue claiming allegiance to the Hawk, and the former Purists scattered and abandoned their Technique.\n GM may also use the Hawk Purist Technique to represent any ronin band that aspires to become a Minor Clan and thus lays claim to a larger name and identity.",
         "discipline": "Courtier",
@@ -2348,7 +2345,7 @@
         "technique3Description": "Those who devote themselves utterly to the cause of the Empress are nigh unstoppable in their fervor. If your Honor Rank exceeds your opponents Honor Rank, you may make a single additional melee attack (as a Free Action) once per Round against that opponent."
     },
     {
-        "name": "The Fudoist Monks",
+        "name": "Fudoist Monks",
         "clan": "The Brotherhood of Shinsei",
         "description": "The resurgence of Fudoist philosophy in the Colonies has given rise to a new generation of monks who subscribe to its ancient and forbidden texts. Many are benevolent and enthusiastic adherents of this mindset, but some among their ranks are beginning to display the sort of malevolent behaviors that doomed the first incarnation of the sect. (GMs may also use this School to represent the followers of the original Fudoist heresy from the early days of the Empire.)",
         "discipline": "Monk",
@@ -2361,7 +2358,7 @@
         "technique1Description": "Monks of Fudo must choose their own path, and it can vary wildly from one to another. At the time of character creation, you must choose a low or high Honor Rank (as indicated above). Likewise, you must choose to specialize in either opposed Social Skill Rolls or in Attack rolls. You gain a bonus to your total in the selected roll type equal to twice the difference between your Honor Rank and that of your opponent."
     },
     {
-        "name": "The Children of Doji",
+        "name": "Children of Doji",
         "clan": "Crane",
         "description": "The Doji Courtier School thrives on alliances, maintaining a vast network of friends and favors. The elite order known as the Children of Doji claims absolute dominance over the Crane system of allies and favors. Each of these elite courtiers is trained to understand that nothing is beyond ones reach so long as one has the aid of a few dozen friends. The Children of Doji know everyone desires something and all samurai below the Emperor must bow to the will of another. Know the correct favor to offer, know the right ear in which to speak, and an entire court will dance to ones tune. Even a wars course can be changed by such influence with sufficient skill and artistry.",
         "discipline": "Courtier",
