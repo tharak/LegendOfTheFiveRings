@@ -152,6 +152,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         for skillName in ["Athletics", "Defense", "Heavy Weapons", "Intimidation", "Kenjutsu", "Lore: Shadowlands"] {
             XCTAssertTrue(character.skillRank(name: skillName) == 1, "\(skillName) is \(character.skillRank(name: skillName)) not 1")
         }
+        XCTAssertTrue(character.emphases(for: "Heavy Weapons").count == 1, "\(character.emphases(for: "Heavy Weapons").count)")
         XCTAssertTrue(character.emphases(for: "Heavy Weapons").first?.name == "Tetsubo")
         
         /*
@@ -171,6 +172,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
                 XCTAssertTrue(character.skillRank(name: skillName) == 1)
             }
         }
+        XCTAssertTrue(character.emphases(for: "Calligraphy").count == 1, "\(character.emphases(for: "Calligraphy").count)")
         XCTAssertTrue(character.xp == 100)
         
         self.model.pickSchool(school: book.schools.first(where: {$0.name == "Isawa Shugenja"})!, for: character)
@@ -182,6 +184,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         for skillName in ["Calligraphy", "Lore: Theology", "Medicine", "Meditation", "Spellcraft"] {
             XCTAssertTrue(character.skillRank(name: skillName) == 1)
         }
+        XCTAssertTrue(character.emphases(for: "Calligraphy").count == 1, "\(character.emphases(for: "Calligraphy").count)")
         XCTAssertTrue(character.emphases(for: "Calligraphy").first?.name == "Cipher")
         
         for school in book.schools {
@@ -399,12 +402,14 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
             }
             if !school.advanced {
                 for skill in character.skills() {
+                    
                     if let bookSkill = book.skills.first(where: {$0.name == skill.name}) {
                         XCTAssertTrue(!bookSkill.type.contains("Macro-skill"))
                     } else {
                         XCTAssertTrue(skill.name.contains(":"), "\(school.name) \(skill.name)")
                     }
                     for emphases in character.emphases(for: skill.name) {
+                        XCTAssertTrue(character.emphases(for: skill.name).count == 1, "\(character.schools().first?.name ?? "") \(emphases.name) \(character.emphases(for: skill.name).count)")
                         XCTAssertFalse(emphases.name.contains("("))
                         XCTAssertFalse(emphases.name.contains(")"))
                     }

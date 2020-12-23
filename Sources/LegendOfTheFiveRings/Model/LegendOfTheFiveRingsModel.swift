@@ -95,10 +95,10 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
                     delete(item: extraTrait, character: character)
                 }
                 for schoolSkill in character.getItems(type: Item.ItemType.schoolSkill) {
-                    delete(item: schoolSkill, character: character)
                     for schoolEmphasis in character.getItems(type: Item.ItemType.schoolEmphasis(skillName: schoolSkill.name)) {
                         delete(item: schoolEmphasis, character: character)
                     }
+                    delete(item: schoolSkill, character: character)
                 }
                 delete(item: schoolItem, character: character)
                 pickSchool(school: school, for: character)
@@ -119,16 +119,14 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
                             buySkill(type: .extraSkill, name: cleaner, for: character)
                             buySkill(type: .extraSkill, name: cleaner, for: character)
                             buySkill(type: .extraSkill, name: cleaner, for: character)
-                            continue
-                        }
-                        if skillName.contains("two") {
+                        } else if skillName.contains("two") {
                             let cleaner = cleanName.replacingOccurrences(of: "two", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
                             buySkill(type: .extraSkill, name: cleaner, for: character)
                             buySkill(type: .extraSkill, name: cleaner, for: character)
-                            continue
+                        } else {
+                            let cleaner = cleanName.replacingOccurrences(of: "one", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+                            buySkill(type: .extraSkill, name: cleaner, for: character)
                         }
-                        let cleaner = cleanName.replacingOccurrences(of: "one", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
-                        buySkill(type: .extraSkill, name: cleaner, for: character)
                     } else {
                         buySkill(type: .schoolSkill, name: skillName, for: character)
                     }
@@ -158,9 +156,11 @@ public class LegendOfTheFiveRingsModel: ObservableObject {
         if name.contains("(") {
             let skillWithEmphasis = name.split(separator: "(")
             if let skillName = skillWithEmphasis.first?.trimmingCharacters(in: .whitespacesAndNewlines) {
-                buyItem(type: type, name: skillName, points: price, for: character)
+                buySkill(type: type, name: skillName, for: character)
                 if let emphasisName = skillWithEmphasis.last?.split(separator: ")").first {
-                    buyItem(type: Item.ItemType.schoolEmphasis(skillName: skillName), name: "\(emphasisName)", points: 0, for: character)
+                    if character.emphases(for: skillName).count == 0 {
+                        buyItem(type: Item.ItemType.schoolEmphasis(skillName: skillName), name: "\(emphasisName)", points: 0, for: character)
+                    }
                 }
             }
         } else {

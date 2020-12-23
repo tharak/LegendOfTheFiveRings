@@ -47,9 +47,9 @@ public class Item: NSManagedObject {
         var stringValue: String {
             switch self {
             case .emphasis(let skillName):
-                return skillName
+                return skillName + "Emphasis"
             case .schoolEmphasis(let skillName):
-                return skillName
+                return skillName + "SchoolEmphasis"
             default:
                 return String(describing: self)
             }
