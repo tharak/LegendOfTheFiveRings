@@ -68,7 +68,7 @@ extension CoreDataService {
         item.id = UUID()
         item.order = Int16(character.items.count)
         item.name = name
-        item.type = String(describing: type.self)
+        item.type = type.stringValue
         item.points = Int16(points)
         item.character = character
         character.xp = character.xp - item.points

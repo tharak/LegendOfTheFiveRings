@@ -45,10 +45,10 @@ public class Character: NSManagedObject {
     func getItems(type: Item.ItemType? = nil, name: String? = nil) -> [Item] {
         if let type = type {
             if let name = name {
-                let filtered = items.filtered(using: NSPredicate(format: "type == %@ && name == %@", String(describing: type.self), name)) as? Set<Item> ?? []
+                let filtered = items.filtered(using: NSPredicate(format: "type == %@ && name == %@", type.stringValue, name)) as? Set<Item> ?? []
                 return filtered.sorted(by: {$0.order < $1.order})
             }
-            let filtered = items.filtered(using: NSPredicate(format: "type == %@", String(describing: type.self))) as? Set<Item> ?? []
+            let filtered = items.filtered(using: NSPredicate(format: "type == %@", type.stringValue)) as? Set<Item> ?? []
             return filtered.sorted(by: {$0.order < $1.order})
         }
         return (items as? Set<Item> ?? []).sorted(by: {$0.order < $1.order})

@@ -106,7 +106,7 @@ final class LegendOfTheFiveRingsTests: XCTestCase {
         assert(school.bonusTrait() == TraitName.stamina)
         
         for school in book.schools {
-            if school.advanced || ["Tsuno Ravager", "Tsuno Soultwister", "The Fuzake Shugenja"].contains(school.name){
+            if school.advanced || ["Tsuno Ravager", "Tsuno Soultwister", "Fuzake Shugenja"].contains(school.name){
                 XCTAssertNil(school.bonusTrait(), school.benefit ?? "\(school.name) has no benefit")
             } else {
                 XCTAssertNotNil(school.bonusTrait(), school.benefit ?? "\(school.name) has no benefit")

@@ -149,9 +149,11 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.getHonor() == 3.5)
         XCTAssertTrue(character.trait(name: TraitName.stamina) == 3)
         XCTAssertTrue(character.skills().count + character.extraSkills().count == 7)
-        for skillName in ["Athletics", "Defense", "Heavy Weapons (Tetsubo)", "Intimidation", "Kenjutsu", "Lore: Shadowlands"] {
+        for skillName in ["Athletics", "Defense", "Heavy Weapons", "Intimidation", "Kenjutsu", "Lore: Shadowlands"] {
             XCTAssertTrue(character.skillRank(name: skillName) == 1, "\(skillName) is \(character.skillRank(name: skillName)) not 1")
         }
+        XCTAssertTrue(character.emphases(for: "Heavy Weapons").first?.name == "Tetsubo")
+        
         /*
          "outfit": "Robes, Wakizashi, any one Knives, Scroll Satchel, Traveling Pack, 3 Koku",
          */
@@ -161,8 +163,8 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.getHonor() == 2.5)
         XCTAssertTrue(character.trait(name: TraitName.stamina) == 2)
         XCTAssertTrue(character.trait(name: TraitName.willpower) == 3)
-        XCTAssertTrue(character.skills().count + character.extraSkills().count == 7, "\(character.skills().count) \(character.skills())")
-        for skillName in ["Calligraphy (Cipher)", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"] {
+        XCTAssertTrue(character.skills().count + character.extraSkills().count == 6, "\(character.skills().count) \(character.skills().map({$0.name}))")
+        for skillName in ["Calligraphy", "Defense", "Lore: Shadowlands", "Lore: Theology", "Spellcraft"] {
             if skillName == "Lore: Shadowlands" {
                 XCTAssertTrue(character.skillRank(name: skillName) == 2, "\(skillName) is \(character.skillRank(name: skillName)) instead of 2")
             } else {
@@ -171,10 +173,25 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         }
         XCTAssertTrue(character.xp == 100)
         
+        self.model.pickSchool(school: book.schools.first(where: {$0.name == "Isawa Shugenja"})!, for: character)
+        XCTAssertTrue(character.schools().count == 1)
+        XCTAssertTrue(character.schools().first?.name == "Isawa Shugenja")
+        XCTAssertTrue(character.getHonor() == 4.5)
+        XCTAssertTrue(character.trait(name: TraitName.intelligence) == 3)
+        XCTAssertTrue(character.skills().count + character.extraSkills().count == 7, "\(character.skills().count) \(character.skills())")
+        for skillName in ["Calligraphy", "Lore: Theology", "Medicine", "Meditation", "Spellcraft"] {
+            XCTAssertTrue(character.skillRank(name: skillName) == 1)
+        }
+        XCTAssertTrue(character.emphases(for: "Calligraphy").first?.name == "Cipher")
+        
         for school in book.schools {
             model.pickSchool(school: school, for: character)
             if !school.advanced {
-                if ["Dark Moto Cavalry"].contains(school.name) {
+                if ["Kuni Shugenja", "Daidoji Iron Warriors", "Tsuruchi Archer", "Shosuro Infiltrator",
+                "Utaku Battle Maiden", "Order of the Spider", "Toritaka Bushi", "Shinjo Bushi",
+                "Hida Pragmatist", "Matsu Beastmasters", "Asako Henshin", "Tengoku's Fist", "Tsi Smith", "Temple of Osano-Wo", "Shinmaki Order Divination", "Shinmaki Order"].contains(school.name) {
+                    XCTAssertTrue(character.skills().count + character.extraSkills().count == 6, "\(character.skills().count) \(school.name) \(school.skills ?? "")")
+                } else if ["Dark Moto Cavalry"].contains(school.name) {
                     XCTAssertTrue(character.skills().count + character.extraSkills().count == 8, "\(character.skills().count) \(school.name) \(school.skills ?? "")")
                 } else {
                     XCTAssertTrue(character.skills().count + character.extraSkills().count == 7, "\(character.skills().count)  \(school.name) \(school.skills ?? "")")
@@ -548,7 +565,7 @@ final class LegendOfTheFiveRingsModelTests: XCTestCase {
         XCTAssertTrue(character.woundPenalty(woundLevel: WoundLevel.injured) == 15)
         XCTAssertTrue(character.woundPenalty(woundLevel: WoundLevel.crippled) == 20)
         XCTAssertTrue(character.woundPenalty(woundLevel: WoundLevel.down) == 40)
-        XCTAssertTrue(character.woundPenalty(woundLevel: WoundLevel.out) == 100)
+        XCTAssertTrue(character.woundPenalty(woundLevel: WoundLevel.out) == 0)
     }
 
     func testBuyOtherStuff() {

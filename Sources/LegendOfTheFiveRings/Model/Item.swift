@@ -43,5 +43,16 @@ public class Item: NSManagedObject {
         case emphasis(skillName: String), schoolEmphasis(skillName: String)
         case katas, kihos, shadowlandsPowers, spells, tattoos
         case weapons, armors
+        
+        var stringValue: String {
+            switch self {
+            case .emphasis(let skillName):
+                return skillName
+            case .schoolEmphasis(let skillName):
+                return skillName
+            default:
+                return String(describing: self)
+            }
+        }
     }
 }
